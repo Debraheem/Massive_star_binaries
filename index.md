@@ -44,6 +44,44 @@ tree
 
 The `tree` command would show the files contained in the `my_thursday_lab` directory and its subdirectories as shown in Fig. 1.
 
+```plaintext
+➜  test2 tree evolve_binary_lab1 
+evolve_binary_lab1
+├── binary
+├── ck
+├── clean
+├── history_columns.list
+├── inlist
+├── inlist1
+├── inlist2
+├── inlist_pgbinary
+├── inlist_pgstar
+├── inlist_project
+├── make
+│   ├── binary_run.o
+│   ├── makefile
+│   ├── run_binary.mod
+│   ├── run_binary.o
+│   ├── run_binary_extras.mod
+│   ├── run_binary_extras.o
+│   ├── run_binary_extras.smod
+│   ├── run_star_extras.mod
+│   ├── run_star_extras.o
+│   └── run_star_extras.smod
+├── mk
+├── profile_columns.list
+├── re
+├── rn
+├── rn1
+└── src
+    ├── binary_run.f90
+    ├── run_binary_extras.f90
+    └── run_star_extras.f90
+
+3 directories, 28 files
+```
+
+
 ![The contents of the current directory](Figures/output-onlinepngtools.png)
 
 If your terminal does not have `tree` installed, you  can do it by executing
