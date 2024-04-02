@@ -86,26 +86,26 @@ All other files are briefly described in the table below
 
 | Filename                | Description       |
 |:------------------------|:------------------|
-| `binary`                | good swedish fish |
-| `ck`                    | good swedish fish |
-| `clean`                 | good swedish fish |
-| `history_columns.list`  | good swedish fish |
-| `inlist`                | good swedish fish |
-| `inlist1`               | good and plenty   |
-| `inlist2`               | good `oreos`      |
-| `inlist_pgbinary`       | good `oreos`      |
-| `inlist_pgstar`         | good `oreos`      |
-| `inlist_project`        | good swedish fish |
-| `make`                  | good and plenty   |
-| `mk`                    | good `oreos`      |
-| `profile_columns`       | good `oreos`      |
-| `re`                    | good `oreos`      |
-| `rn`                    | good `oreos`      |
-| `rn1`                   | good `oreos`      |
-| `src`                   | good `oreos`      |
-| `binary_run.f90`        | good `oreos`      |
-| `run_binary_extras.f90` | good `oreos`      |
-| `run_star_extras.f90`   | good `oreos`      |
+| `binary`                | description       |
+| `ck`                    | description       |
+| `clean`                 | description       |
+| `history_columns.list`  | description |
+| `inlist`                | description |
+| `inlist1`               | description   |
+| `inlist2`               | description     |
+| `inlist_pgbinary`       | description      |
+| `inlist_pgstar`         | description      |
+| `inlist_project`        | description |
+| `make`                  | description   |
+| `mk`                    | description      |
+| `profile_columns`       | description     |
+| `re`                    | description      |
+| `rn`                    | description      |
+| `rn1`                   | description      |
+| `src`                   | description      |
+| `binary_run.f90`        | description      |
+| `run_binary_extras.f90` | description      |
+| `run_star_extras.f90`   | description      |
 
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
