@@ -22,6 +22,9 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [HELP LINK for website building](./help.html)
 
+[Google drive link to download Thursday Lab Materials]([./help.html](https://drive.google.com/file/d/1kuKGSnNPDEjx45ahGyltGhIJtdvJF_jC/view?usp=share_link))
+
+
 
 
 To begin, we make a copy of a desired pre-setup directory from the location
