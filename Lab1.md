@@ -1,4 +1,12 @@
-```markdown
+
+[Lab1](./Lab1.html)
+
+[Lab2](./Lab2.html)
+
+[Lab3](./Lab3.html)
+
+
+
 ## MiniLab1 - Modeling a star through envelope stripping
 
 Assume that we have a binary star system where the components are close enough to undergo Roche Lobe overflow (RLOF) from the inner L1 Lagrangian point. Additionally, assume that both components do not have the same mass so that the evolution of one star slightly lags the other star. In the lab, we would like to explore how the primary - more massive - star evolves in such a binary.
