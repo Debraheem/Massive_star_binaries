@@ -44,10 +44,7 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 `tree ./Lab1_binary` should return the following.
 
 ```shell
-├── binary
-├── ck
 ├── clean
-├── history_columns.list
 ├── inlist
 ├── inlist1
 ├── inlist2
@@ -55,8 +52,9 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 ├── inlist_pgstar
 ├── inlist_project
 ├── make
-│   ├── makefile
+│   └── makefile
 ├── mk
+├── history_columns.list
 ├── profile_columns.list
 ├── re
 ├── rn
@@ -65,7 +63,7 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
     ├── run_binary_extras.f90
     └── run_star_extras.f90
 
-3 directories, 28 files
+3 directories, 16 files
 ```
 
 
@@ -76,10 +74,7 @@ All other files are briefly described in the table below
 
 | Filename                | Description       |
 |:------------------------|:------------------|
-| `binary`                | description       |
-| `ck`                    | description       |
 | `clean`                 | description       |
-| `history_columns.list`  | description |
 | `inlist`                | description |
 | `inlist1`               | description   |
 | `inlist2`               | description     |
@@ -88,7 +83,8 @@ All other files are briefly described in the table below
 | `inlist_project`        | description |
 | `make/`                  | description   |
 | `mk`                    | description      |
-| `profile_columns`       | description     |
+| `history_columns.list`  | description |
+| `profile_columns.list`       | description     |
 | `re`                    | description      |
 | `rn`                    | description      |
 | `src/`                   | description      |
