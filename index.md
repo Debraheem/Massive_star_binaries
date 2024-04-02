@@ -5,11 +5,11 @@ title: Introduction
 
 # Introduction
 
-[**Lab1**](./Lab1.html)
+[Lab1](./Lab1.html)
 
-[**Lab2**](./Lab2.html)
+[Lab2](./Lab2.html)
 
-[**Lab3**](./Lab3.html)
+[Lab3](./Lab3.html)
 
 
 [HELP LINK for website building](./help.html)
