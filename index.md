@@ -1,10 +1,22 @@
 ---
 layout: default
+title: Introduction
+permalink: /
 ---
+
+# Introduction
+
+To begin, we make a copy of a desired pre-setup directory from the location `$MESA_DIR/binary/test_suite/evolve_both_stars`.
+
+To make a copy, type the following in your terminal (or you can do it using the graphical user interface):
+
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[Lab1](./lab1.html).
+[Lab2](./lab2.html).
+[Lab3](./lab3.html).
 
 There should be whitespace between paragraphs.
 
