@@ -55,21 +55,11 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 ├── inlist_pgstar
 ├── inlist_project
 ├── make
-│   ├── binary_run.o
 │   ├── makefile
-│   ├── run_binary.mod
-│   ├── run_binary.o
-│   ├── run_binary_extras.mod
-│   ├── run_binary_extras.o
-│   ├── run_binary_extras.smod
-│   ├── run_star_extras.mod
-│   ├── run_star_extras.o
-│   └── run_star_extras.smod
 ├── mk
 ├── profile_columns.list
 ├── re
 ├── rn
-├── rn1
 └── src
     ├── binary_run.f90
     ├── run_binary_extras.f90
@@ -78,7 +68,7 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 3 directories, 28 files
 ```
 
-You will not modify anything in `make/` directory so we will not discuss this files here. 
+
 
 All other files are briefly described in the table below
 
@@ -96,13 +86,12 @@ All other files are briefly described in the table below
 | `inlist_pgbinary`       | description      |
 | `inlist_pgstar`         | description      |
 | `inlist_project`        | description |
-| `make`                  | description   |
+| `make/`                  | description   |
 | `mk`                    | description      |
 | `profile_columns`       | description     |
 | `re`                    | description      |
 | `rn`                    | description      |
-| `rn1`                   | description      |
-| `src`                   | description      |
+| `src/`                   | description      |
 | `binary_run.f90`        | description      |
 | `run_binary_extras.f90` | description      |
 | `run_star_extras.f90`   | description      |
