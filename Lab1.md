@@ -39,6 +39,15 @@ Now, we will run the model. As before, for this, we need to execute the below co
 
 ### Bonus exercise - Evolving both stars
 
-## MiniLab2 - Modelling the mass gainer
+## Add a custom stopping condition, something like...
+
+```fortran
+if (b% point_mass_i == 0) then
+            if (b% m(2) > 1.2d0 * b % m(1) ) then
+               extras_binary_finish_step = terminate
+               write(*,*) "Terminate due to m2 > 1.3 x m1"
+               return
+            end if
+         end if
 ```
 
