@@ -20,14 +20,17 @@ Since here we are primarily interested in the evolution of the primary, to save 
 
 ### The evolution of the primary star
 
-To begin, we will first make a copy of the `evolve_star_and_point_mass` directory located in the binary `test_suites` directory. To do this, type the following in your terminal.
+To begin, we will use our `Lab1_binary` directory from the introduction.
 
-```
-cp - r $MESA_DIR/binary/test_suite/evolve_star_poin_mass my_thursday_lab1
-cd my_thursday_lab1
-```
+Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the table below
 
-Now that you have cloned the directory, you should choose desired values for the initial mass and period of the binary in the `inlist_project` file. For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` file in your preferred text editor and modify the following lines
+
+
+
+
+
+
+For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` file in your preferred text editor and modify the following lines
 
 ```
 m1 = 15d0  ! donor mass in Msun
