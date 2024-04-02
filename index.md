@@ -44,7 +44,7 @@ tree
 
 The `tree` command would show the files contained in the `my_thursday_lab` directory and its subdirectories as shown in Fig. 1.
 
-```plaintext
+```bash
 ➜  test2 tree evolve_binary_lab1 
 evolve_binary_lab1
 ├── binary
