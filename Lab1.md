@@ -7,7 +7,12 @@
 [Lab3](./Lab3.html)
 
 
+Here is a downloadable copy of the desired [Lab1_binary](https://drive.google.com/file/d/1y0AEFWzGv4vHgohqnEJMNITR15oGPHRi/view?usp=share_link) MESA work directory.
+This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
+
 ## MiniLab1 - Modeling a star through envelope stripping
+
+
 
 Assume that we have a binary star system where the components are close enough to undergo Roche Lobe overflow (RLOF) from the inner L1 Lagrangian point. Additionally, assume that both components do not have the same mass so that the evolution of one star slightly lags the other star. In the lab, we would like to explore how the primary - more massive - star evolves in such a binary.
 
