@@ -224,10 +224,19 @@ This run should return a nice pgbinary plot showing the evolution of both primar
 
 
 
-#### Finding and fixing a bug in MESA
+#### Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
-Let's try running this model in the single star mode, by setting  `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass, so open `inlist_project` and
-make sure to set `evolve_both_stars = .false.`.
+Let's try running this model in the single star mode, so open `inlist_project` and set `evolve_both_stars = .false.`.
+
+Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
+
+Chances are, if you're running using the intel fortran compilers, pgbinary probably crashed your simulation with the following error:
+
+```
+Backtrace error goes here
+```
+
+How do we fix this bug? 
 
 
 
