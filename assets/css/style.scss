@@ -1,57 +1,49 @@
 ---
 ---
 @import 'jekyll-theme-modernist';
-
 #banner {
     background: #134181;
     border: 1px solid #134181;
     right: 0;
     margin-right: 0;
-    /* Additional banner styles */
+    /* I think this is what actually controls the position of the repo button */
+    /* .fork {
+        position: unset;
+        left: unset;
+        margin-left: unset;    
+        float: right;  
+    } */
 }
 
-/* Updated wrapper to use flex display for layout */
 .wrapper {
-    display: flex; // Enable flex display
-    flex-direction: row; // Default direction, can be omitted
-    width: 100%; // Ensure wrapper takes full width to contain sidebar and main content
-    margin: 0 auto; // Center the wrapper if needed, though full width might make this moot
-    position: relative; // Keep relative positioning
+    width: 60%; /* Adjust this percentage to make the content area wider or narrower */
+    margin: 0 auto; /* This centers the wrapper in the page */
+    position: relative;
 }
-
-/* Styling for the sidebar navigation */
-nav {
-    width: 215px; // Fixed width for the sidebar
-    height: 100vh; // Full viewport height
-    position: fixed; // Ensure sidebar is fixed during scroll
-    left: 0; // Stick to the left side
-    top: 0; // Stick to the top
-    overflow-y: auto; // Allow scrolling if content overflows
-    padding: 20px; // Padding inside the sidebar
-    background-color: #f0f0f0; // Sidebar background color
-}
-
-/* Adjustments for main content section */
 section {
-    flex-grow: 1; // Allow section to fill available space
-    margin-left: 235px; // Adjust left margin to make space for sidebar
-    padding: 20px; // Padding inside the section for content
-    /* Removed width calculation for simplicity, adjust if needed */
+    width: unset;
+    /* margin-top: 75px; */
+}      
+nav {
+    /* top: 75px; */
+    /* top: 170px; */
+    /* text-align: left; */
+    margin-left: 0px;
+    width: 215px;
+    position: fixed;
+    left: 0;
 }
-
-/* Footer adjustments for consistency with the layout */
 footer {
-    clear: both; // Ensure footer is below all floated content
-    width: 100%; // Footer width to match the layout's width
-    position: relative; // Adjust position to relative
-    margin-left: 235px; // Align footer's left margin with the section content
-    /* Removed bottom and width adjustments for simplicity */
+    /* text-align: left; */
+    margin-left: 25px;
+    width: 185px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
-
 .red-text {
   color: red;
 }
-
 .blue-text {
   color: blue;
 }
