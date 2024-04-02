@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction
-permalink: /index.html/
+permalink: /
 ---
 
 # Introduction
