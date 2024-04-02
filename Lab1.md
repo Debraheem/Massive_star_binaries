@@ -22,10 +22,17 @@ Since here we are primarily interested in the evolution of the primary, to save 
 
 To begin, we will use our `Lab1_binary` directory from the introduction.
 
-Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the table below
+Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) table below
 
 
 
+| Primary Mass (M$_{\odot}$)            | Period (days)      | Mass Transfer Efficiency ($\beta$)
+|:------------------------|:------------------|---------------
+| 12.5          | 2       |   0.1                      |
+| 13         | 4        |       0.3                  |
+| 15         | 8        |          0.5               |
+| 20        | 15         |            0.8                        |
+| 25        | 30       |            1.0            |
 
 
 
