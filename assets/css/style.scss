@@ -1,6 +1,5 @@
 ---
 ---
-
 @import 'jekyll-theme-modernist';
 
 #banner {
@@ -8,46 +7,39 @@
     border: 1px solid #134181;
     right: 0;
     margin-right: 0;
-
-    /* I think this is what actually controls the position of the repo button */
-    /* .fork {
-        position: unset;
-        left: unset;
-        margin-left: unset;    
-        float: right;  
-    } */
 }
 
 .wrapper {
-    width: 60%; /* Adjust this percentage to make the content area wider or narrower */
-    margin: 0 auto; /* This centers the wrapper in the page */
-    position: relative;
+    display: flex; // Enables flexbox layout
+    justify-content: center; // Centers the content horizontally
+    align-items: flex-start; // Aligns items at the start of the flex container
+    margin-top: 20px; // Adds some space at the top of the wrapper
+}
+
+nav {
+    flex: 0 0 215px; // Gives the sidebar a fixed width of 215px
+    height: 100vh; // Full viewport height
+    position: fixed; // Fixed position to stay visible on scroll
+    left: 0; // Aligns to the left edge
+    top: 0; // Aligns to the top edge
+    overflow-y: auto; // Allows vertical scrolling if content overflows
+    padding: 20px; // Inner spacing
+    background-color: #f0f0f0; // Sidebar background color
 }
 
 section {
-    width: unset;
-    /* margin-top: 75px; */
-}      
-
-nav {
-    /* top: 75px; */
-    /* top: 170px; */
-    /* text-align: left; */
-    margin-left: 0px;
-    width: 215px;
-    position: fixed;
-    left: 0;
+    flex-grow: 1; // Takes up the remaining width of the flex container
+    margin-left: 240px; // Adjusts the left margin to prevent overlap with the sidebar
+    width: calc(60% - 240px); // Calculates the width dynamically, subtracting the sidebar width
+    padding: 20px; // Adds padding inside the section
 }
 
 footer {
-    /* text-align: left; */
-    margin-left: 25px;
-    width: 185px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    margin-left: 240px; // Adjusts the left margin to align with the section content
+    width: calc(60% - 240px); // Adjusts the width to align with the section above
+    position: relative; // Changes position to relative to flow naturally with the content
+    bottom: unset; // Removes the fixed bottom positioning
 }
-
 
 .red-text {
   color: red;
