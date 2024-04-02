@@ -4,7 +4,7 @@ title: Introduction
 ---
 ![](Figures/contact_binary_image.jpg)
 
-credit: ESO/L. Calçada
+credit": ESO/L. Calçada"
 
 # Introduction
 
