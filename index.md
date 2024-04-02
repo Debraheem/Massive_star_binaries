@@ -23,21 +23,25 @@ credit: ESO/L. Calçada
 
 
 
-To begin, we make a copy of a desired pre-setup directory from the location
+To begin, please download and unzip a copy of the [Lab1_binary](https://drive.google.com/file/d/1y0AEFWzGv4vHgohqnEJMNITR15oGPHRi/view?usp=share_link) MESA work directory.
+This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
+
+
+
+To get an idea of what is inside `Lab1_binary` we can use the `tree` command.
+
+The `tree` command shows the files contained in the `Lab1_binary` directory and its subdirectories.
+
+If your terminal does not have `tree` installed, you  can do it by executing
 
 ```
-$MESA_DIR/binary/test_suite/evolve_both_stars
+brew install tree (on mac)
+or
+sudo apt-get install tree (on linux)
 ```
+It's alright if you don't have `tree` or cannot download it, `ls` should suffice.
 
-To make a copy, type the following in your terminal (or you can do it using the graphical user interface)
-
-```
-cp - r $MESA_DIR/binary/test_suite/evolve_both_stars my_thursday_lab
-cd my_thursday_lab
-tree
-```
-
-The `tree` command would show the files contained in the `my_thursday_lab` directory and its subdirectories as shown in Fig. 1.
+`tree ./Lab1_binary` should return the following.
 
 ```shell
 ├── binary
@@ -75,19 +79,10 @@ The `tree` command would show the files contained in the `my_thursday_lab` direc
 ```
 
 
-![The contents of the current directory](Figures/output-onlinepngtools.png)
-
-If your terminal does not have `tree` installed, you  can do it by executing
-
-```
-brew install tree (on mac)
-or
-sudo apt-get install tree (on linux)
-```
 
 ### Setting the stellar parameters
 
-In Fig. 1, there are three main files that will contain the information of the various physical properties that we would like our stars to have. These are `inlist_project`, `inlist1`, and `inlist2`.
+`inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
 #### Binary parameters
 
