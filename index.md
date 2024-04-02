@@ -213,3 +213,9 @@ A picture is worth a thousand words
 , so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 ```
 
+
+
+![pgstar](Figures/grid1_000040.png)
+
+
+
