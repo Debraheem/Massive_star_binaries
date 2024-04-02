@@ -24,7 +24,6 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 
 
-```markdown
 To begin, we make a copy of a desired pre-setup directory from the location
 
 ```
