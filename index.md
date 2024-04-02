@@ -83,6 +83,7 @@ You will not modify anything in `make/` directory so we will not discuss this fi
 All other files are briefly described in the table below
 
 ### Setting the stellar parameters
+
 | head1                   | head two          | three |
 |:------------------------|:------------------|:------|
 | `binary`                | good swedish fish | nice  |
