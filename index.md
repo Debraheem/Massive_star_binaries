@@ -20,7 +20,7 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 [Lab3](./Lab3.html)
 
 
-
+[HELP LINK for website building](./help.html)
 
 
 
