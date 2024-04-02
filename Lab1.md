@@ -26,7 +26,7 @@ Open the `inlist_project` file and choose desired values for the initial mass an
 
 
 
-| Primary Mass (M$_{\odot}$)            | Period (days)      | Mass Transfer Efficiency ($\beta$)
+| Primary Mass ( $M_{\odot}$ )            | Period (days)      | Mass Transfer Efficiency ($\beta$)
 |:------------------------|:------------------|---------------
 | 12.5          | 2       |   0.1                      |
 | 13         | 4        |       0.3                  |
