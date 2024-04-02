@@ -78,9 +78,35 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 3 directories, 28 files
 ```
 
+You will not modify anything in `make/` directory so we will not discuss this files here. 
 
+All other files are briefly described in the table below
 
 ### Setting the stellar parameters
+| head1                   | head two          | three |
+|:------------------------|:------------------|:------|
+| `binary`                | good swedish fish | nice  |
+| `ck`                    | good swedish fish | nice  |
+| `clean`                 | good swedish fish | nice  |
+| `history_columns.list`  | good swedish fish | nice  |
+| `inlist`                | good swedish fish | nice  |
+| `inlist1`               | good and plenty   | nice  |
+| `inlist2`               | good `oreos`      | hmm   |
+| `inlist_pgbinary`       | good `oreos`      | hmm   |
+| `inlist_pgstar`         | good `oreos`      | hmm   |
+| `inlist_project`        | good swedish fish | nice  |
+| `make`                  | good and plenty   | nice  |
+| `mk`                    | good `oreos`      | hmm   |
+| `profile_columns`       | good `oreos`      | hmm   |
+| `re`                    | good `oreos`      | hmm   |
+| `rn`                    | good `oreos`      | hmm   |
+| `rn1`                   | good `oreos`      | hmm   |
+| `src`                   | good `oreos`      | hmm   |
+| `binary_run.f90`        | good `oreos`      | hmm   |
+| `run_binary_extras.f90` | good `oreos`      | hmm   |
+| `run_star_extras.f90`   | good `oreos`      | hmm   |
+
+| ok              | good `zoute` drop | yumm  |
 
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
