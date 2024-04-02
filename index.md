@@ -23,6 +23,7 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 [HELP LINK for website building](./help.html)
 
 [Google drive link to download Thursday Lab Materials](https://drive.google.com/drive/folders/1yFy2I7kBh6UZPYmhFxkZswQVPI0Qavjc?usp=share_link)
+
 [Link to Lab Solutions](https://drive.google.com/drive/folders/11WEpwn17_XuxKugH0B57OHMjby-jomUj?usp=share_link)
 
 
