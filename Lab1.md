@@ -20,7 +20,8 @@ Since here we are primarily interested in the evolution of the primary, to save 
 
 ### The evolution of the primary star
 
-To begin, we will use our `Lab1_binary` directory from the introduction.
+To begin, we will use our `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass, so open `inlist_project` and
+make sure to set `evolve_both_stars = .false.`.
 
 Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) table below
 
@@ -31,13 +32,12 @@ Open the `inlist_project` file and choose desired values for the initial mass an
 | 12.5          | 2       |   0.1                      |
 | 13         | 4        |       0.3                  |
 | 15         | 8        |          0.5               |
-| 20        | 15         |            0.8                        |
+| 20        | 15         |            0.8              |
 | 25        | 30       |            1.0            |
 
 
 
-
-For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` file in your preferred text editor and modify the following lines
+For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` fill in your chosen values of Primary Mass, Period, and $\beta$ from the spread sheet. This can be done by modifying the following lines
 
 ```
 m1 = 15d0  ! donor mass in Msun
