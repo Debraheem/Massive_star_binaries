@@ -82,32 +82,34 @@ You will not modify anything in `make/` directory so we will not discuss this fi
 
 All other files are briefly described in the table below
 
-### Setting the stellar parameters
+### MESA BINARY work directory
 
-| head1                   | head two          | three |
-|:------------------------|:------------------|:------|
-| `binary`                | good swedish fish | nice  |
-| `ck`                    | good swedish fish | nice  |
-| `clean`                 | good swedish fish | nice  |
-| `history_columns.list`  | good swedish fish | nice  |
-| `inlist`                | good swedish fish | nice  |
-| `inlist1`               | good and plenty   | nice  |
-| `inlist2`               | good `oreos`      | hmm   |
-| `inlist_pgbinary`       | good `oreos`      | hmm   |
-| `inlist_pgstar`         | good `oreos`      | hmm   |
-| `inlist_project`        | good swedish fish | nice  |
-| `make`                  | good and plenty   | nice  |
-| `mk`                    | good `oreos`      | hmm   |
-| `profile_columns`       | good `oreos`      | hmm   |
-| `re`                    | good `oreos`      | hmm   |
-| `rn`                    | good `oreos`      | hmm   |
-| `rn1`                   | good `oreos`      | hmm   |
-| `src`                   | good `oreos`      | hmm   |
-| `binary_run.f90`        | good `oreos`      | hmm   |
-| `run_binary_extras.f90` | good `oreos`      | hmm   |
-| `run_star_extras.f90`   | good `oreos`      | hmm   |
+| Filename                | Description       |
+|:------------------------|:------------------|
+| `binary`                | good swedish fish |
+| `ck`                    | good swedish fish |
+| `clean`                 | good swedish fish |
+| `history_columns.list`  | good swedish fish |
+| `inlist`                | good swedish fish |
+| `inlist1`               | good and plenty   |
+| `inlist2`               | good `oreos`      |
+| `inlist_pgbinary`       | good `oreos`      |
+| `inlist_pgstar`         | good `oreos`      |
+| `inlist_project`        | good swedish fish |
+| `make`                  | good and plenty   |
+| `mk`                    | good `oreos`      |
+| `profile_columns`       | good `oreos`      |
+| `re`                    | good `oreos`      |
+| `rn`                    | good `oreos`      |
+| `rn1`                   | good `oreos`      |
+| `src`                   | good `oreos`      |
+| `binary_run.f90`        | good `oreos`      |
+| `run_binary_extras.f90` | good `oreos`      |
+| `run_star_extras.f90`   | good `oreos`      |
 
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
+
+### Setting the stellar parameters
 
 #### Binary parameters
 
