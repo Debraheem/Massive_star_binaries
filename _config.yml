@@ -5,3 +5,15 @@ plugins:
 title: "Thursday: Massive Stars in Binaries"
 description: Thursday Massive Stars in Binaries
 
+
+sidebar: true
+sidebar_content:
+  - text: "Introduction"
+    link: /introduction/
+  - text: "Lab 1"
+    link: /lab1/
+  - text: "Lab 2"
+    link: /Lab2/
+  - text: "Lab 3"
+    link: /Lab3/
+    
