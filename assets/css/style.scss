@@ -7,38 +7,45 @@
     border: 1px solid #134181;
     right: 0;
     margin-right: 0;
+    /* Additional banner styles */
 }
 
+/* Updated wrapper to use flex display for layout */
 .wrapper {
-    display: flex; // Enables flexbox layout
-    justify-content: center; // Centers the content horizontally
-    align-items: flex-start; // Aligns items at the start of the flex container
-    margin-top: 20px; // Adds some space at the top of the wrapper
+    display: flex; // Enable flex display
+    flex-direction: row; // Default direction, can be omitted
+    width: 100%; // Ensure wrapper takes full width to contain sidebar and main content
+    margin: 0 auto; // Center the wrapper if needed, though full width might make this moot
+    position: relative; // Keep relative positioning
 }
 
+/* Styling for the sidebar navigation */
 nav {
-    flex: 0 0 215px; // Gives the sidebar a fixed width of 215px
+    width: 215px; // Fixed width for the sidebar
     height: 100vh; // Full viewport height
-    position: fixed; // Fixed position to stay visible on scroll
-    left: 0; // Aligns to the left edge
-    top: 0; // Aligns to the top edge
-    overflow-y: auto; // Allows vertical scrolling if content overflows
-    padding: 20px; // Inner spacing
+    position: fixed; // Ensure sidebar is fixed during scroll
+    left: 0; // Stick to the left side
+    top: 0; // Stick to the top
+    overflow-y: auto; // Allow scrolling if content overflows
+    padding: 20px; // Padding inside the sidebar
     background-color: #f0f0f0; // Sidebar background color
 }
 
+/* Adjustments for main content section */
 section {
-    flex-grow: 1; // Takes up the remaining width of the flex container
-    margin-left: 240px; // Adjusts the left margin to prevent overlap with the sidebar
-    width: calc(60% - 240px); // Calculates the width dynamically, subtracting the sidebar width
-    padding: 20px; // Adds padding inside the section
+    flex-grow: 1; // Allow section to fill available space
+    margin-left: 235px; // Adjust left margin to make space for sidebar
+    padding: 20px; // Padding inside the section for content
+    /* Removed width calculation for simplicity, adjust if needed */
 }
 
+/* Footer adjustments for consistency with the layout */
 footer {
-    margin-left: 240px; // Adjusts the left margin to align with the section content
-    width: calc(60% - 240px); // Adjusts the width to align with the section above
-    position: relative; // Changes position to relative to flow naturally with the content
-    bottom: unset; // Removes the fixed bottom positioning
+    clear: both; // Ensure footer is below all floated content
+    width: 100%; // Footer width to match the layout's width
+    position: relative; // Adjust position to relative
+    margin-left: 235px; // Align footer's left margin with the section content
+    /* Removed bottom and width adjustments for simplicity */
 }
 
 .red-text {
