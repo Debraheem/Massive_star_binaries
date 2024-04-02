@@ -9,9 +9,9 @@ description: Thursday Massive Stars in Binaries
 sidebar: true
 sidebar_content:
   - text: "Introduction"
-    link: /introduction/
+    link: /index/
   - text: "Lab 1"
-    link: /lab1/
+    link: /Lab1/
   - text: "Lab 2"
     link: /Lab2/
   - text: "Lab 3"
