@@ -211,11 +211,24 @@ On executing the above commands, MESA will print the model output on the termina
 A picture is worth a thousand words
 
 , so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
+
+We can turn on the `pgbinary` plots by uncommenting the following line in `&starjob`. followed by `./rn`
+
+```
+!   pgbinary_flag = .true.
 ```
 
-
+This run should return a nice pgbinary plot showing the evolution of both primary and secondary in one panel, with a nice orbital seperation diagram in the top right corner.
 
 ![pgstar](Figures/grid1_000040.png)
+
+
+
+#### Finding and fixing a bug in MESA
+
+Let's try running this model in the single star mode, by setting  `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass, so open `inlist_project` and
+make sure to set `evolve_both_stars = .false.`.
+
 
 
 
