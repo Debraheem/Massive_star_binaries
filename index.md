@@ -5,19 +5,11 @@ title: Introduction
 
 # Introduction
 
-To begin, we make a copy of a desired pre-setup directory from the location `$MESA_DIR/binary/test_suite/evolve_both_stars`.
+[**Lab1**](./Lab1.html)
 
-To make a copy, type the following in your terminal (or you can do it using the graphical user interface):
+[**Lab2**](./Lab2.html)
 
-
-
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-[Lab1](./Lab1.html)
-
-[Lab2](./Lab2.html)
-
-[Lab3](./Lab3.html)
+[**Lab3**](./Lab3.html)
 
 
 [HELP LINK for website building](./help.html)
