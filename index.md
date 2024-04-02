@@ -14,9 +14,11 @@ To make a copy, type the following in your terminal (or you can do it using the 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Lab1](./lab1.html).
-[Lab2](./lab2.html).
-[Lab3](./lab3.html).
+[Lab1](./lab1.html)
+
+[Lab2](./lab2.html)
+
+[Lab3](./lab3.html)
 
 There should be whitespace between paragraphs.
 
