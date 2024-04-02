@@ -23,7 +23,15 @@ credit: ESO/L. Calçada
 
 
 
+To begin, we make a copy of a desired pre-setup directory from the location `$MESA_DIR/binary/test_suite/evolve_both_stars`.
 
+To make a copy, type the following in your terminal (or you can do it using the graphical user interface):
+
+```plaintext
+cp -r $MESA_DIR/binary/test_suite/evolve_both_stars Lab1_binary
+cd my_thursday_lab
+tree
+```
 
 To get an idea of what is inside `Lab1_binary` we can use the `tree` command.
 
