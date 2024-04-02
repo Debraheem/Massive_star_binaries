@@ -106,8 +106,6 @@ All other files are briefly described in the table below
 | `run_binary_extras.f90` | good `oreos`      | hmm   |
 | `run_star_extras.f90`   | good `oreos`      | hmm   |
 
-| ok              | good `zoute` drop | yumm  |
-
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
 #### Binary parameters
