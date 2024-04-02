@@ -19,9 +19,9 @@
 }
 
 .wrapper {
-    width: unset;
-    margin:0 230px 0 230px;
-    position:relative;
+    width: 70%; /* Adjust this percentage to make the content area wider or narrower */
+    margin: 0 auto; /* This centers the wrapper in the page */
+    position: relative;
 }
 
 section {
