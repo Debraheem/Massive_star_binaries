@@ -23,9 +23,6 @@ credit: ESO/L. Calçada
 
 
 
-To begin, please download and unzip a copy of the [Lab1_binary](https://drive.google.com/file/d/1y0AEFWzGv4vHgohqnEJMNITR15oGPHRi/view?usp=share_link) MESA work directory.
-This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
-
 
 
 To get an idea of what is inside `Lab1_binary` we can use the `tree` command.
