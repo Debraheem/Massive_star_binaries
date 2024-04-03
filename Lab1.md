@@ -45,6 +45,9 @@ m2 = 9d0 ! companion mass in Msun
 initial_period_in_days = 6d0
 ```
 
+
+Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary ` plots.
+
 Now, we will run the model. As before, for this, we need to execute the below commands in the terminal
 
 ```
@@ -52,7 +55,20 @@ Now, we will run the model. As before, for this, we need to execute the below co
 ./rn
 ```
 
-### Bonus exercise - Evolving both stars
+
+The model should take roughly 7 minutes to run on a 4 core machine, so let's use this time to modify our pgstar to output some quantities of interest.
+
+
+
+
+
+
+
+once we have our nice pgstar, let's modify the stopping conditions
+
+we want something like the following:
+
+
 
 ## Add a custom stopping condition, something like...
 
@@ -65,4 +81,11 @@ if (b% point_mass_i == 0) then
             end if
          end if
 ```
+
+
+
+### Bonus exercise - Evolving both stars (Over lunch if necessary)
+
+
+
 
