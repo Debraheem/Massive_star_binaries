@@ -25,9 +25,9 @@ make sure to set `evolve_both_stars = .false.`.
 
 Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) table below
 
+Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1)
 
-
-| Primary Mass ( $M_{\odot}$ )            | Period (days)      | Mass Transfer Efficiency ($\beta$)
+| Primary Mass ( $M_{\odot}$ )            | Period (days)      
 |:------------------------|:------------------|---------------
 | 12.5          | 2       |   0.1                      |
 | 13         | 4        |       0.3                  |
@@ -35,6 +35,60 @@ Open the `inlist_project` file and choose desired values for the initial mass an
 | 20        | 15         |            0.8              |
 | 25        | 30       |            1.0            |
 
+
+<table>
+<tr>
+<th>Primary Mass ( \(M_{\odot}\) )</th>
+<th>Period (days)</th>
+</tr>
+<tr>
+<td>12.5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>4</td>
+</tr>
+<tr>
+<td>15</td>
+<td>8</td>
+</tr>
+<tr>
+<td>20</td>
+<td>15</td>
+</tr>
+<tr>
+<td>25</td>
+<td>30</td>
+</tr>
+</table>
+
+<table style="margin-left: 20px;">
+<tr>
+<th>Primary Mass ( \(M_{\odot}\) )</th>
+<th>Period (days)</th>
+</tr>
+<tr>
+<td>12.5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>4</td>
+</tr>
+<tr>
+<td>15</td>
+<td>8</td>
+</tr>
+<tr>
+<td>20</td>
+<td>15</td>
+</tr>
+<tr>
+<td>25</td>
+<td>30</td>
+</tr>
+</table>
 
 
 For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` fill in your chosen values of Primary Mass, Period, and $\beta$ from the spread sheet. This can be done by modifying the following lines
