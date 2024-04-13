@@ -324,7 +324,7 @@ cd $MESA_DIR/star/
 ./export
 ```
 
-Now let's navigate back into our Lab1_binary directory and recomile MESA star and run our binary model again.
+Now let's navigate back into our Lab1_binary directory, recompile MESA star, and run our binary model again.
 
 ```
 ./clean
