@@ -279,7 +279,7 @@ finished
 
 How do we fix this bug? 
 
-Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/star/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
+Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
 
 ```fortran
 call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
@@ -316,7 +316,7 @@ These should appear on lines 206-208, With lines 198-212 shown below, in context
       end if
 ```
 
-Save the file and navigate backward into the `$MESA_DIR/star` directory. Next, let's recompile MESA star and export our changes with the following commands.
+Save the file and navigate backward into the `$MESA_DIR/binary` directory. Next, let's recompile MESA binary and export our changes with the following commands.
 
 ```
 cd $MESA_DIR/star/
