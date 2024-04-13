@@ -230,14 +230,108 @@ Let's try running this model in the single star mode, so open `inlist_project` a
 
 Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
 
-Chances are, if you're running using the intel fortran compilers, pgbinary probably crashed your simulation with the following error:
+If you're running on an apple arm cpu (e.g. M1), there should be no issue.
+However, if you're running using the intel fortran compilers, chances are pgbinary probably crashed your simulation with the following error:
 
 ```
-Backtrace error goes here
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x1550fd0437f2 in ???
+#1  0x1550fd042985 in ???
+#2  0x1550fc470acf in ???
+#3  0x1550fc4f21e9 in ???
+#4  0x1550fd350a33 in ???
+#5  0x1550fd351163 in ???
+#6  0x1550fd306679 in ???
+#7  0x1550fd3094df in ???
+#8  0x1550fd3096e8 in ???
+#9  0x1550fd3091cb in ???
+#10  0x1550fd30975e in ???
+#11  0x1550fd344b8a in ???
+#12  0x49658c in __pgbinary_orbit_MOD_orbit_panel
+	at ../private/pgbinary_orbit.f90:240
+#13  0x48f539 in __pgbinary_grid_MOD_grid_plot
+	at ../private/pgbinary_grid.f90:537
+#14  0x4929f5 in __pgbinary_grid_MOD_grid1_plot
+	at ../private/pgbinary_grid.f90:61
+#15  0x42a767 in __pgbinary_MOD_onscreen_plots
+	at /home1/rhirai/MESA/mesa-r24.03.1/binary/make/pgbinary.f90:878
+#16  0x42a96d in __pgbinary_MOD_do_pgbinary_plots
+	at /home1/rhirai/MESA/mesa-r24.03.1/binary/make/pgbinary.f90:764
+#17  0x42d5a6 in __pgbinary_MOD_update_pgbinary_plots
+	at /home1/rhirai/MESA/mesa-r24.03.1/binary/make/pgbinary.f90:85
+#18  0x428efa in __run_binary_support_MOD_do_run1_binary
+	at ../private/run_binary_support.f90:712
+#19  0x40926c in __binary_lib_MOD_run1_binary
+	at ../public/binary_lib.f90:72
+#20  0x408bb8 in __run_binary_MOD_do_run_binary
+	at /home1/rhirai/MESA/mesa-r24.03.1/binary/job/run_binary.f90:7
+#21  0x408bd4 in binary_run
+	at ../src/binary_run.f90:4
+#22  0x408c0b in main
+	at ../src/binary_run.f90:2
+./rn1: line 6: 49640 Segmentation fault      (core dumped) ./binary
+DATE: 2024-04-04
+TIME: 12:48:18
+finished 
 ```
 
 How do we fix this bug? 
 
+Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/star/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
 
+```fortran
+call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
+```
+
+What seems to be happening?
+
+When MESA binary runs in single star mode, it appears that X2s_RL and y2s_RL are unset in the `pgbinary_orbit` panel.
+To solve this issue, we can set these variables by adding the following just below line 205 in `pgbinary_orbit.f90`.
+
+```fortran
+ else
+     x2s_RL = 0d0
+     y2s_RL = 0d0
+```
+
+These should appear on lines 206-208, With lines 198-212 shown below, in context.
+
+```fortran
+            do i = 1, num_points  ! displace the xs
+               x2s_RL(i) = -(x2s_RL(i) - a2 * (1 - e))  ! flip x for 2nd star!
+               x2s_RL(2 * num_points - i + 1) = x2s_RL(i)
+            end do
+            x2s_RL(2 * num_points + 1) = x2s_RL(1)
+             y2s_RL(2 * num_points + 1) = y2s_RL(1)
+             x2max = maxval(abs(x2s_RL))
+             xmax = max(x2max, xmax)
+          else
+             x2s_RL = 0d0
+             y2s_RL = 0d0
+          end if
+       else if (b% pg% Orbit_show_RL .and. abs(log10(q)) > 2) then
+          write(*, 1) "pgbinary: Not plotting RL, q too extreme: abs(log(q)) = ", abs(log10(q))
+      end if
+```
+
+Save the file and navigate backward into the `$MESA_DIR/star` directory. Next, let's recompile MESA star and export our changes with the following commands.
+
+```
+cd $MESA_DIR/star/
+./mk
+./export
+```
+
+Now let's navigate back into our Lab1_binary directory and recomile MESA star and run our binary model again.
+
+```
+./clean
+./mk
+./rn
+```
+
+pgbinary should no longer crash!
 
 
