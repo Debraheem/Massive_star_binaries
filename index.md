@@ -323,6 +323,7 @@ cd $MESA_DIR/star/
 ./mk
 ./export
 ```
+**If you are having trouble correctly modifying pgbinary.f90, feel free to download the [pgbinary.f90 solution here](https://drive.google.com/file/d/1r-AA9a-MjCdpmw3QaMxfVrqTEMv0NMqK/view?usp=share_link), and replace the file.**
 
 Now let's navigate back into our Lab1_binary directory, recompile MESA star, and run our binary model again.
 
