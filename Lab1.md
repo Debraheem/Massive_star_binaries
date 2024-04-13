@@ -27,69 +27,21 @@ Open the `inlist_project` file and choose desired values for the initial mass an
 
 Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1)
 
-| Primary Mass ( $M_{\odot}$ )            | Period (days)      
-|:------------------------|:------------------|---------------
-| 12.5          | 2       |   0.1                      |
-| 13         | 4        |       0.3                  |
-| 15         | 8        |          0.5               |
-| 20        | 15         |            0.8              |
-| 25        | 30       |            1.0            |
+| Primary Mass ( $M_{\odot}$ ) |   
+|:------------------------|
+| 12.5      |
+| 13        |
+| 15        |
+| 20        |
+| 25        |
 
-
-<table>
-<tr>
-<th>Primary Mass ( \(M_{\odot}\) )</th>
-<th>Period (days)</th>
-</tr>
-<tr>
-<td>12.5</td>
-<td>2</td>
-</tr>
-<tr>
-<td>13</td>
-<td>4</td>
-</tr>
-<tr>
-<td>15</td>
-<td>8</td>
-</tr>
-<tr>
-<td>20</td>
-<td>15</td>
-</tr>
-<tr>
-<td>25</td>
-<td>30</td>
-</tr>
-</table>
-
-<table style="margin-left: 20px;">
-<tr>
-<th>Primary Mass ( \(M_{\odot}\) )</th>
-<th>Period (days)</th>
-</tr>
-<tr>
-<td>12.5</td>
-<td>2</td>
-</tr>
-<tr>
-<td>13</td>
-<td>4</td>
-</tr>
-<tr>
-<td>15</td>
-<td>8</td>
-</tr>
-<tr>
-<td>20</td>
-<td>15</td>
-</tr>
-<tr>
-<td>25</td>
-<td>30</td>
-</tr>
-</table>
-
+| Period (days) |     
+|:--------------|
+| 2        | 
+| 4        | 
+| 8        | 
+| 15       |
+| 30       |  
 
 For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` fill in your chosen values of Primary Mass, Period, and $\beta$ from the spread sheet. This can be done by modifying the following lines
 
