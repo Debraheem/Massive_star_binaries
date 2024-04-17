@@ -33,19 +33,25 @@ Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
 | 15        |
 | 20        |
 | 25        |
+| 25        |
 
 | Period (days) |     
 |:--------------|
 | 2        | 
 | 4        | 
-| 8        | 
+| 6        | 
+| 8        |
 | 15       |
-| 30       | 
-| 2        | 
-| 4        | 
-| 8        | 
-| 15       |
-| 30       | 
+| 20       |
+| 25       |
+| 30       |
+| 50       |
+| 100       |
+| 200        | 
+| 300        | 
+| 400        | 
+| 500       |
+| 600       | 
 
 For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` fill in your chosen values of Primary Mass, Period, and $\beta$ from the spread sheet. This can be done by modifying the following lines
 
