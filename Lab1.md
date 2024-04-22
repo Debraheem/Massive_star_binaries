@@ -61,6 +61,20 @@ initial_period_in_days = 6d0
 
 Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary ` plots.
 
+
+
+
+We want our binary evolution to terminate when the mass transfer phase is complete. All forms of mass transfer A, B, and C are typically complete by the time the primary has reached core-Helium depletion, as the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime.
+
+## In `inlist1`, set a stopping condition such that the model terminates when the primary reaches helium depletion. Let's terminate the model when $X$({$^4$He}) $\leq$ 1d-4:
+
+
+```plaintext
+      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit(1) = 1d-4
+```
+
+
 Now, we will run the model. As before, for this, we need to execute the below commands in the terminal
 
 ```
@@ -75,28 +89,23 @@ The model should take roughly 7 minutes to run on a 4 core machine, so let's use
 
 
 
+**Here are some questions to discuss at your table and answer while your model evolves**
+
+1. What is the mass ratio of your system
+2. What type of mass transfer does your system undergo? Case A, B, C?
+3. Is the mass transfer in your system stable or unstable?
+4. What is the approximate mass of your primary when the mass transfer phase ends?
 
 
-once we have our nice pgstar, let's modify the stopping conditions! We want our binary evolution to terminate when the mass transfer phase is complete. To do this, we can set a stopping condition which terminates  
+
+Please fill in the following excell sheet so we can dicuss as a class.
 
 
-we want something like the following:
 
 
 
-## Add a custom stopping condition, something like...
 
-```fortran
-if (b% point_mass_i == 0) then
-            if (b% m(2) > 1.2d0 * b % m(1) ) then
-               extras_binary_finish_step = terminate
-               write(*,*) "Terminate due to m2 > 1.3 x m1"
-               return
-            end if
-         end if
-```
-
-
+### Bonus exercise - Nonconservative mass transfer (Over lunch if necessary)
 
 ### Bonus exercise - Evolving both stars (Over lunch if necessary)
 
