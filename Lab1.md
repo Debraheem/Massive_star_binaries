@@ -88,15 +88,36 @@ we want something like the following:
 
 ```fortran
 if (b% point_mass_i == 0) then
-            if (b% m(2) > 1.2d0 * b % m(1) ) then
-               extras_binary_finish_step = terminate
-               write(*,*) "Terminate due to m2 > 1.3 x m1"
-               return
-            end if
-         end if
+   if (b% m(2) > 1.2d0 * b % m(1) ) then
+      extras_binary_finish_step = terminate
+      write(*,*) "Terminate due to m2 > 1.3 x m1"
+      return
+   end if
+end if
 ```
 
+## What kind of outcomes to expect
 
+Mass transfer in binary systems are often classified based on which burning stage the donor star is in. This is because stars have very different structures depending on the burning stage and therefore respond to mass loss in completely different ways.
+
+<dl>
+  <dt> Case A mass transfer </dt>
+       <dd> Mass transfer from a core hydrogen burning star (main sequence star). It often starts off with a rapid phase (thermal timescale) and followed by a slower phase (nuclear timescale).</dd>
+  <dt> Case B mass transfer </dt>
+       <dd> Mass transfer from a core hydrogen depleted star (post-main sequence star).  </dd>
+  <dt> Case C mass transfer </dt>
+       <dd> Mass transfer from a core helium depleted star. </dd>
+</dl>
+
+How do we know which type of mass transfer occurs? This can be done by simply comparing the size of the star during various burning stages to the size of its  Roche lobe.
+
+The Roche lobe size can be estimated with the following formula
+
+$$
+\frac{R_\mathrm{rl}}{a} = \frac{0.49q^{2/3}}{0.6q^{2/3}+\ln{(1+q^{1/3})}}
+$$
+
+Here, $R_\mathrm{rl}$ is the volume equivalent Roche lobe radius of the donor, $a$ is the orbital semimajor axis and $q\equiv M_\mathrm{d}/M_\mathrm{a}$ is the mass ratio of the donor to accretor.
 
 ### Bonus exercise - Evolving both stars (Over lunch if necessary)
 
