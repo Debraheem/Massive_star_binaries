@@ -20,12 +20,18 @@ Since here we are primarily interested in the evolution of the primary, to save 
 
 ### The evolution of the primary star
 
-To begin, we will use our `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass, so open `inlist_project` and
-make sure to set `evolve_both_stars = .false.`.
+Using the downloaded `Lab1_binary` directory,we will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
 
-Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) table below
+In the `&binary_controls`, you should see the following lines:
 
+```
+   m1 = 15d0  ! donor mass in Msun
+   m2 = 12d0 ! companion mass in Msun
+   initial_period_in_days = 6d0
+```
 Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
+
+For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m1`. We will explore the following mass range $M_{1} = 12.5 - 30 M_{\odot}$ and periods $Period = 2 - 200$ days. We've descritized this parameter space in the following two tables:
 
 | Primary (Donor) Mass ( $M_{\odot}$ ) |   
 |:------------------------|
@@ -33,7 +39,7 @@ Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
 | 15        |
 | 20        |
 | 25        |
-| 25        |
+| 30        |
 
 | Period (days) |     
 |:--------------|
@@ -49,19 +55,10 @@ Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
 | 100       |
 | 200        | 
 
-
-For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` fill in your chosen values of Primary Mass, Period, and $\beta$ from the spread sheet. This can be done by modifying the following lines
-
-```
-m1 = 15d0  ! donor mass in Msun
-m2 = 9d0 ! companion mass in Msun
-initial_period_in_days = 6d0
-```
+Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
 
 
-Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary ` plots.
-
-
+Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary` plots.
 
 
 We want our binary evolution to terminate when the mass transfer phase is complete. All forms of mass transfer A, B, and C are typically complete by the time the primary has reached core-Helium depletion, as the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime.
