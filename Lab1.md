@@ -1,17 +1,13 @@
-[Introduction](./index.html)
-
-[Lab1](./Lab1.html)
-
-[Lab2](./Lab2.html)
-
-[Lab3](./Lab3.html)
+---
+layout: default
+title: Lab1
+---
 
 
 Here is a downloadable copy of the desired [Lab1_binary](https://drive.google.com/file/d/1I6MnPMCoP70sHlNo4NWNYZYrRpX5UzUm/view?usp=share_link) MESA work directory.
 This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
-## MiniLab1 - Modeling a star through envelope stripping
-
+## Lab1 - Modeling a star through envelope stripping
 
 
 Assume that we have a binary star system where the components are close enough to undergo Roche Lobe overflow (RLOF) from the inner L1 Lagrangian point. Additionally, assume that both components do not have the same mass so that the evolution of one star slightly lags the other star. In the lab, we would like to explore how the primary - more massive - star evolves in such a binary.
@@ -20,12 +16,18 @@ Since here we are primarily interested in the evolution of the primary, to save 
 
 ### The evolution of the primary star
 
-To begin, we will use our `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass, so open `inlist_project` and
-make sure to set `evolve_both_stars = .false.`.
+Using the downloaded `Lab1_binary` directory,we will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
 
-Open the `inlist_project` file and choose desired values for the initial mass and period of the binary from the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) table below
+In the `&binary_controls`, you should see the following lines:
 
+```
+   m1 = 15d0  ! donor mass in Msun
+   m2 = 12d0 ! companion mass in Msun
+   initial_period_in_days = 6d0
+```
 Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
+
+For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m1`. We will explore the following mass range $M_{1} = 12.5 - 30 M_{\odot}$ and periods $Period = 2 - 200$ days. We've descritized this parameter space in the following two tables:
 
 | Primary (Donor) Mass ( $M_{\odot}$ ) |   
 |:------------------------|
@@ -33,7 +35,7 @@ Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
 | 15        |
 | 20        |
 | 25        |
-| 25        |
+| 30        |
 
 | Period (days) |     
 |:--------------|
@@ -49,19 +51,10 @@ Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
 | 100       |
 | 200        | 
 
-
-For this lab we agree to work with a standard set of values for these parameters. Open the `inlist_project` fill in your chosen values of Primary Mass, Period, and $\beta$ from the spread sheet. This can be done by modifying the following lines
-
-```
-m1 = 15d0  ! donor mass in Msun
-m2 = 9d0 ! companion mass in Msun
-initial_period_in_days = 6d0
-```
+Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
 
 
-Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary ` plots.
-
-
+Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary` plots.
 
 
 We want our binary evolution to terminate when the mass transfer phase is complete. All forms of mass transfer A, B, and C are typically complete by the time the primary has reached core-Helium depletion, as the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime.
@@ -83,13 +76,19 @@ Now, we will run the model. As before, for this, we need to execute the below co
 ```
 
 
-The model should take roughly 7 minutes to run on a 4 core machine, so let's use this time to modify our pgstar to output some quantities of interest.
+The model should take roughly 7 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
 
+When your model is finished running, try to make a movie of your `&pgbianry` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
 
+```
+images_to_movie "png/*.png" movie.mp4
+```
 
+Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
 
+**CATCH UP:If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).**
 
-**Here are some questions to discuss at your table and answer while your model evolves**
+**Below are some questions to discuss at your table and answer while your model evolves**
 
 1. What is the mass ratio of your system
 2. What type of mass transfer does your system undergo? Case A, B, C?
@@ -97,8 +96,11 @@ The model should take roughly 7 minutes to run on a 4 core machine, so let's use
 4. What is the approximate mass of your primary when the mass transfer phase ends?
 
 
+In the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
 
-Please fill in the following spread sheet so we can dicuss as a class.
+| M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
+|:-----------------------------------------|:-------------------------|:-------------------------|:----------------------------------|:--------------------|:---------------------|
+
 
 
 
