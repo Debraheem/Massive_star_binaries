@@ -8,13 +8,6 @@ credit: ESO/L. Calçada
 
 # Introduction
 
-[Lab1](./Lab1.html)
-
-[Lab2](./Lab2.html)
-
-[Lab3](./Lab3.html)
-
-
 [HELP LINK for website building](./help.html)
 
 [Google drive link to download Thursday Lab Materials](https://drive.google.com/drive/folders/1yFy2I7kBh6UZPYmhFxkZswQVPI0Qavjc?usp=share_link)
