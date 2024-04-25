@@ -109,7 +109,7 @@ Mass transfer in binary systems are often classified based on which burning stag
 
 <dl>
   <dt> Case A mass transfer </dt>
-       <dd> Mass transfer from a core hydrogen burning star (main sequence star). It often starts off with a rapid phase (thermal timescale) and followed by a slower phase (nuclear timescale).</dd>
+       <dd> Mass transfer from a core hydrogen burning star (main sequence star).</dd>
   <dt> Case B mass transfer </dt>
        <dd> Mass transfer from a core hydrogen depleted star (post-main sequence star).  </dd>
   <dt> Case C mass transfer </dt>
