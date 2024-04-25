@@ -76,18 +76,23 @@ Now, we will run the model. As before, for this, we need to execute the below co
 ```
 
 
-The model should take roughly 7 minutes to run on a 4 core machine, so let's use this time to modify our pgstar to output some quantities of interest.
+The model should take roughly 7 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
 
+When your model is finished running, try to make a movie of your `&pgbianry` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
 
+```
+images_to_movie "png/*.png" movie.mp4
+```
 
+Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
 
-
-**Here are some questions to discuss at your table and answer while your model evolves**
+**Below are some questions to discuss at your table and answer while your model evolves**
 
 1. What is the mass ratio of your system
 2. What type of mass transfer does your system undergo? Case A, B, C?
 3. Is the mass transfer in your system stable or unstable?
 4. What is the approximate mass of your primary when the mass transfer phase ends?
+
 
 In the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
 
