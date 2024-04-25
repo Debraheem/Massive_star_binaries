@@ -86,6 +86,8 @@ images_to_movie "png/*.png" movie.mp4
 
 Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
 
+**CATCH UP:If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).**
+
 **Below are some questions to discuss at your table and answer while your model evolves**
 
 1. What is the mass ratio of your system
