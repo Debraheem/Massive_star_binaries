@@ -91,7 +91,8 @@ The model should take roughly 7 minutes to run on a 4 core machine, so let's use
 
 In the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
 
-| M_primary / M_accretor |   M_primary Final |   M_accretor Final | Type of Mass transfer (A, B, C?) | Stable or unstable? | Final Period (days) |
+| M\textsubscript{primary} / M\textsubscript{accretor} |   M_primary Final |   M_accretor Final | Type of Mass transfer (A, B, C?) | Stable or unstable? | Final Period (days) |
+|:------------------------|
 
 
 
