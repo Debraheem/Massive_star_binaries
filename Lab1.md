@@ -1,10 +1,9 @@
-[Introduction](./index.html)
-
-[Lab1](./Lab1.html)
-
-[Lab2](./Lab2.html)
-
-[Lab3](./Lab3.html)
+---
+layout: default
+title: Lab1
+parent: Introduction
+nav_order: 2
+---
 
 
 Here is a downloadable copy of the desired [Lab1_binary](https://drive.google.com/file/d/1I6MnPMCoP70sHlNo4NWNYZYrRpX5UzUm/view?usp=share_link) MESA work directory.
