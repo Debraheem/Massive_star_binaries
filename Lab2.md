@@ -2,13 +2,7 @@
 layout: default
 title: Lab2
 ---
-
-## MiniLab2 - Modeling The Mass Gainer
-
-
-
-
-
+## MiniLab2 - Nonconservative mass transfer
 
 
 
