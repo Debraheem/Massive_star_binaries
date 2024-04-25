@@ -83,7 +83,7 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 4. What is the approximate mass of your primary when the mass transfer phase ends?
 
 
-In the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
+In the [Day 4 Massive Binaries Lab2 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
 
 | M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
 |:-----------------------------------------|:-------------------------|:-------------------------|:----------------------------------|:--------------------|:---------------------|
