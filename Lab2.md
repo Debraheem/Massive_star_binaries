@@ -35,7 +35,7 @@ Now go to the directory of Minilab1, and from there, copy the file named `accret
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
  
-| :question: | 
+| :question: QUESTION | 
 | :--- |
 | Can you tell where in `inlist_accretor` is the pre-evolved accretor model being loaded? |
 
@@ -59,11 +59,9 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
     *A sample plot showing a snapshot of the evolution of the accretor star.*
 
 
-<table>
-    <tr>
-        <td> :zap: </td><td>While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.</td>
-    </tr>
-</table>
+| :light_bulb: TIP|
+|:--|
+|While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
 
 
 ## Single star versus binary star directory
