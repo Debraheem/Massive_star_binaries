@@ -35,8 +35,7 @@ Now go to the directory of Minilab1, and from there, copy the file named `accret
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
 | :question: | Can you tell where in `inlist_accretor`is the pre-evolved accretor model being loaded? |
-| --- | :--- |
-
+|---|:---|
 
 
 ## Evolution of the mass gainer
@@ -60,8 +59,7 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
 
 
 | :zap: | While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
-| --- | :--- |
-
+|---|:---|
 
 
 ## Single star versus binary star directory
@@ -105,7 +103,7 @@ To begin, download the necessary files required to evolve a single star from the
 
 
 | :question: | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
-| --- | :--- |
+|---|:---|
 
 
  To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. In the downloaded directory, this has already been done.
@@ -124,11 +122,11 @@ To run the model, you will need to execute the below commands in your terminal (
 
 
 | :question: | What difference do you notice between the accretor's evolution versus that of a single star? |
+|---|:---|
 
-| --- | :--- |
 
 | :information_source: | Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html). |
-| --- | :--- |
+|---|:---|
 
 
 <details><summary>Answer</summary>
