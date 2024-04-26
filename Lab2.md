@@ -3,6 +3,8 @@ layout: default
 title: Lab2
 ---
 
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 ## Lab2 -  Modeling The Mass Gainer
 
@@ -122,6 +124,7 @@ To run the model, you will need to execute the below commands in your terminal (
 
 
 | :question: | What difference do you notice between the accretor's evolution versus that of a single star? |
+
 | --- | :--- |
 
 | :information_source: | Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html). |
