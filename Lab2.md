@@ -32,9 +32,8 @@ Now go to the directory of Minilab1, and from there, copy the file named `accret
 
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
-**Q.**
-   Can you tell where in `inlist_accretor`is the pre-evolved accretor model being loaded?
-
+| :question: | Can you tell where in `inlist_accretor`is the pre-evolved accretor model being loaded? |
+| --- | :--- |
 
 
 
@@ -58,10 +57,9 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
     *A sample plot showing a snapshot of the evolution of the accretor star.*
 
 
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>
-Tip</p>
-<p>While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.</p>
-</div>
+| :zap: | While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
+| --- | :--- |
+
 
 
 ## Single star versus binary star directory
@@ -104,9 +102,8 @@ To begin, download the necessary files required to evolve a single star from the
  This directory has the same structure as the previously used directory in Minilab2. However, the names of the `inlists` have been modified to show that we are now evolving a single star explicitly. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
 
 
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
-<p>What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?</p>
-</div>
+| :question: | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
+| --- | :--- |
 
 
  To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. In the downloaded directory, this has already been done.
@@ -124,21 +121,53 @@ To run the model, you will need to execute the below commands in your terminal (
    *A snapshot of the single star's evolution.*
 
 
-> [!TIP]
-> test
+| :question: | What difference do you notice between the accretor's evolution versus that of a single star? |
+| --- | :--- |
 
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>
- Question </p>
-<p>What difference do you notice between the accretor's evolution versus that of a single star?</p>
-</div>
-
-<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>
-Hint</p>
-<p>Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html).</p>
-</div>
+| :information_source: | Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html). |
+| --- | :--- |
 
 
 <details><summary>Answer</summary>
 \comment{Jan do you have a preferred answer here apart from the surface composition and the internal composition plus the Kippenhahn diagram?}
 </details>
+
+
+
+
+## Lab extension - Evolving the secondary alongside a black hole
+
+Although to save computation we approximated the accretor's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. 
+
+This section is devoted to that.
+
+
+
+
+While initially, there would not be much difference in the evolution, once the accretor begins to expand, it might fill its Roche Lobe and initiate a phase of mass transfer on what was earlier a primary star. This will strip the secondary of its surface material and expose its inner core. Moreover, the primary star would have long disappeared and only a compact remnant would be left behind. As such, we will approximate the primary star as a point mass, i.e. only the gravitational influence of the primary would be important to us. The primary star - which is now model as a black hole - would feed on the mass dumped by the secondary and *would act as a source of strong X-ray radiation*.
+
+
+
+
+### The black hole's evolution
+
+The accreted mass would cause the properties of the black hole to change. The no-hair theorems suggest that the only relevant parameters of an astrophysical black hole that fully determine its property are its mass $M$ and angular momentum $J$. 
+So our task is to see how $M$ and $J$ evolve with time. 
+Using $M, J$ we can define another parameter called the *dimensionless Kerr spin parameter* of the black hole as 
+$$
+    a = \frac{Jc}{GM^2}
+$$
+where $c, G$ is the speed of light and Newton's gravitational constant, respectively. The usefulness of this parameter is evident from the fact that for astrophysical black holes $a \in [0, 1)$ (e.g., \cite{Thorne_1974}). A value of $a \geq 1$ implies the violation of the *cosmic censorship principle* (Penrose 1969).
+
+
+Let us assume that the infalling matter has sufficient AM to at least circularise outside the (innermost stable circular orbit) ISCO of the black hole from where it is directly accreted. Then the change in $J$ of the mass accreting black hole is $dJ/dm = j_{\rm isco}$ where $dm$ is the rest mass of the matter being accreted.
+Similarly, the change in $M$ is $dM/dm = E_{\rm isco}/c^2$, where $E_{\rm isco}$ is the specific energy of a particle at ISCO. The evolution of the spin parameter due to accretion can be obtained by differentiating the above equation w.r.t. $m$, resulting in
+$$
+    \frac{d a}{d \ln m}=\frac{c}{r_{\mathrm{g}}} \frac{j_{\mathrm{isco}}}{E_{\mathrm{isco}}}-2 a .
+$$
+One can then solve this for $a$. For a initially non rotating black hole with mass $M_{0}$ and final mass $M$ this solution can be found by integrating the above and is given by (Bardeen_1970, Thorne_1974)
+$$
+    a = \begin{cases}\sqrt{\frac{2}{3}} \frac{M_0}{M}\left[4-\sqrt{18 \frac{M_0^2}{M^2}-2}\right] & \text { if } M \leq \sqrt{6} M_0 \,,\\ 1 & \text { if } M>\sqrt{6} M_0 \,.\end{cases} 
+$$
+
 
