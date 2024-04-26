@@ -3,6 +3,9 @@ layout: default
 title: Lab3
 ---
 
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 ## Lab3 - Exploring the Stability of Mass Transfer
 
 In Lab1 we assumed fully conservative mass transfer, i.e. ($\beta$ == 1). In this circumstance all of the mass lost by the Primary star is assumed to be accreted on to the doner. 
