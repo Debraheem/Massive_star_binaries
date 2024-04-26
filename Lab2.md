@@ -35,9 +35,9 @@ Now go to the directory of Minilab1, and from there, copy the file named `accret
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
  
-| :question: | Can you tell where in `inlist_accretor` is the pre-evolved accretor model being loaded? | 
-| --- | :--- |
-
+| :question: | 
+| :--- |
+| Can you tell where in `inlist_accretor` is the pre-evolved accretor model being loaded? |
 
 ## Evolution of the mass gainer
 
