@@ -142,9 +142,11 @@ $$
 P_\mathrm{orb}=2\pi\sqrt{\frac{a^3}{G(M_1+M_2)}}.
 $$
 
-+ Case A: $0.9~\mathrm{d}\lesssim P_\mathrm{orb}\lesssim6.4~\mathrm{d}$
-+ Case B: $6.4~\mathrm{d}\lesssim P_\mathrm{orb}\lesssim1860~\mathrm{d}$
-+ Case C: $1860~\mathrm{d}\lesssim P_\mathrm{orb}\lesssim2720~\mathrm{d}$
+<dl>
+ <dt>Case A: $0.9~\mathrm{d}\lesssim P_\mathrm{orb}\lesssim6.4~\mathrm{d}$</dt>
+ <dt>Case B: $6.4~\mathrm{d}\lesssim P_\mathrm{orb}\lesssim1860~\mathrm{d}$</dt>
+ <dt>Case C: $1860~\mathrm{d}\lesssim P_\mathrm{orb}\lesssim2720~\mathrm{d}$</dt>
+</dl>
 
 Discussion point: What are the ratios of Case A vs Case B vs Case C mass transfer if we assume a log-uniform orbital period distribution?
 
