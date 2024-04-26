@@ -103,11 +103,9 @@ To begin, download the necessary files required to evolve a single star from the
 
  This directory has the same structure as the previously used directory in Minilab2. However, the names of the `inlists` have been modified to show that we are now evolving a single star explicitly. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
 
-<table>
-    <tr>
-        <td>:question:</td><td> What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?</td>
-    </tr>
-</table>
+|:question: QUESTION |
+|:--|
+| What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
 
 
  To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. In the downloaded directory, this has already been done.
@@ -125,17 +123,15 @@ To run the model, you will need to execute the below commands in your terminal (
    *A snapshot of the single star's evolution.*
 
 
-<table>
-    <tr>
-        <td>:question:</td><td> What difference do you notice between the accretor's evolution versus that of a single star?</td>
-    </tr>
-</table>
+|:question: QUESTION|
+|:--|
+|What difference do you notice between the accretor's evolution versus that of a single star?|
 
-<table>
-    <tr>
-        <td>:information_source:</td><td>Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html).</td>
-    </tr>
-</table>
+
+|:information_source: TIP|
+|:--|
+|Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html).|
+
 
 
 <details><summary>Answer</summary>
