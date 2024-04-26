@@ -59,7 +59,7 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
     *A sample plot showing a snapshot of the evolution of the accretor star.*
 
 
-| :light_bulb: TIP|
+| :eyes: IMPORTANT |
 |:--|
 |While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
 
