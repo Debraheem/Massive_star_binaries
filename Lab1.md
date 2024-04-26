@@ -101,7 +101,8 @@ In the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.co
 
 | M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
 
-|:---|:---|:---|:---|:---|:---|
+| :--- | :--- | :--- | :--- | :--- | :--- |
+|  |  |  |  |  |  |
 
 
 
