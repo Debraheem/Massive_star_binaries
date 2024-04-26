@@ -34,8 +34,11 @@ Now go to the directory of Minilab1, and from there, copy the file named `accret
 
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
-| :question: | Can you tell where in `inlist_accretor`is the pre-evolved accretor model being loaded? |
-|---|:---|
+<table>
+    <tr>
+        <td>:question:</td><td>Can you tell where in `inlist_accretor`is the pre-evolved accretor model being loaded?</td>
+    </tr>
+</table>
 
 
 ## Evolution of the mass gainer
@@ -58,8 +61,11 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
     *A sample plot showing a snapshot of the evolution of the accretor star.*
 
 
-| :zap: | While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
-|---|:---|
+<table>
+    <tr>
+        <td> :zap: </td><td>While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.</td>
+    </tr>
+</table>
 
 
 ## Single star versus binary star directory
@@ -101,9 +107,11 @@ To begin, download the necessary files required to evolve a single star from the
 
  This directory has the same structure as the previously used directory in Minilab2. However, the names of the `inlists` have been modified to show that we are now evolving a single star explicitly. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
 
-
-| :question: | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
-|---|:---|
+<table>
+    <tr>
+        <td>:question:</td><td> What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?</td>
+    </tr>
+</table>
 
 
  To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. In the downloaded directory, this has already been done.
@@ -121,12 +129,17 @@ To run the model, you will need to execute the below commands in your terminal (
    *A snapshot of the single star's evolution.*
 
 
-| :question: | What difference do you notice between the accretor's evolution versus that of a single star? |
-|---|:---|
+<table>
+    <tr>
+        <td>:question:</td><td> What difference do you notice between the accretor's evolution versus that of a single star?</td>
+    </tr>
+</table>
 
-
-| :information_source: | Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html). |
-|---|:---|
+<table>
+    <tr>
+        <td>:information_source:</td><td>Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html).</td>
+    </tr>
+</table>
 
 
 <details><summary>Answer</summary>
