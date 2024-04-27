@@ -216,34 +216,34 @@ Above the index "1" refers to the primary star. These lines set the primary star
 
 1. Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition. After this, you are all set.
     ```fortran
-         call  calc_black_hole_spin(b% eq_initial_bh_mass, b% m(1), vals(1))
-        
-         contains
-         
-         ! include the below file in you Minilab2 directory. It contains one more function
-         include '../black_hole_spin.f90'
+       call  calc_black_hole_spin(b% eq_initial_bh_mass, b% m(1), vals(1))
+      
+       contains
+       
+       ! include the below file in you Minilab2 directory. It contains one more function
+       include '../black_hole_spin.f90'
     ```
 
     If you are curious about the contents of the `black_hole_spin.f90` file then they should look like this
     ```fortran
-       subroutine calc_black_hole_spin(Mbh_in, Mbh, abh)  
-        
-            real(dp) :: Mbh_in, Mbh, abh, dt, c, G
-    
-            ! Define constants
-            c = 2.99792d10  !speed of light (cgs)
-            G = 6.674d-8     !Newton's constant (cgs)
+    subroutine calc_black_hole_spin(Mbh_in, Mbh, abh)  
      
-            ! Note
-            !Mbh_in is the initial mass of the black hole 
-            !Mbh is its current mass
-            !abh is its current Kerr spin parameter
-                
-            ! Calculating abh evoltuion 
-            abh = sqrt(2.0/3.0) * (Mbh_in / Mbh) * (4.0 - sqrt(18.0 * (Mbh_in**2) / (Mbh**2) - 2.0))
-            if (abh > 0.994) abh = 0.9994 ! Max spin that we allow here
-                
-       end subroutine calc_black_hole_spin
+         real(dp) :: Mbh_in, Mbh, abh, dt, c, G
+    
+         ! Define constants
+         c = 2.99792d10  !speed of light (cgs)
+         G = 6.674d-8     !Newton's constant (cgs)
+    
+         ! Note
+         !Mbh_in is the initial mass of the black hole 
+         !Mbh is its current mass
+         !abh is its current Kerr spin parameter
+             
+         ! Calculating abh evoltuion 
+         abh = sqrt(2.0/3.0) * (Mbh_in / Mbh) * (4.0 - sqrt(18.0 * (Mbh_in**2) / (Mbh**2) - 2.0))
+         if (abh > 0.994) abh = 0.9994 ! Max spin that we allow here
+             
+    end subroutine calc_black_hole_spin
     ```
 
 
