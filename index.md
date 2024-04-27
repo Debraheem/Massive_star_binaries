@@ -243,21 +243,23 @@ A picture is worth a thousand words
 
 , so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 
-We can turn on the `pgbinary` plots by uncommenting the following line in `&starjob`. followed by `./rn`
+We can turn on the `pgbinary` plots by uncommenting the following line in `&starjob`. 
 
 ```
 !   pgbinary_flag = .true.
 ```
+we also want to try running this model in the single star mode, so open so let's ensure `evolve_both_stars = .false.` as well.
 
-This run should return a nice pgbinary plot showing the evolution of both primary and secondary in one panel, with a nice orbital seperation diagram in the top right corner.
+Now we can  `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass.
 
-![pgstar](Figures/grid1_000040.png)
+This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panle on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appears in the top right corner followed by other plots of the orbital evolution of both stars.
+
+![pgstar](Figures/grid1_000080.png)
 
 
 
 #### Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
-Let's try running this model in the single star mode, so open `inlist_project` and set `evolve_both_stars = .false.`.
 
 Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
 
