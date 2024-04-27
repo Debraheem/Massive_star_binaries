@@ -8,14 +8,19 @@ title: Lab3
 
 ## Lab3 - Exploring the Stability of Mass Transfer
 
+### Science goal
+
+The goal of this lab is to explore the impact of different initial periods and mass ratios **m1/m2** on the evolution of our binary system. 
+
+#### Bonus goal
+
+Our bonus goal is to explore the impact of nonconservative mass transfer on the mass transfer stability.
 
 
-## Goal of the Lab
 
 
-
-This lab will continye using the downloaded `Lab1_binary` directory, we will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
-
+### Exploring a grid of mass transfer models with varying mass ratios
+This lab will continue using the downloaded `Lab1_binary` directory, we will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
 
 
 To explore the stability of mass transfer across various mass ratios and orbital periods, we have crafted a grid o
