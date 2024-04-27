@@ -64,23 +64,23 @@ All files are briefly described in the table below
 
 | Filename                | Description       |
 |:------------------------|:------------------|
-| `clean`                 | description       |
-| `inlist`                | description |
-| `inlist1`               | description   |
-| `inlist2`               | description     |
-| `inlist_pgbinary`       | description      |
-| `inlist_pgstar`         | description      |
-| `inlist_project`        | description |
-| `make/`                  | description   |
-| `mk`                    | description      |
-| `history_columns.list`  | description |
-| `profile_columns.list`       | description     |
-| `re`                    | description      |
-| `rn`                    | description      |
-| `src/`                   | description      |
-| `binary_run.f90`        | description      |
-| `run_binary_extras.f90` | description      |
-| `run_star_extras.f90`   | description      |
+| `clean`                 | A bash file for cleaning the model directory.       |
+| `inlist`                | The header inlist which points to all other inlists to determine which inlists are read and in what order. |
+| `inlist1`               | The main inlist which contains controls for the stellar evolution of the `m1`  |
+| `inlist2`               | The main inlist which contains controls for the stellar evolution of the `m2`     |
+| `inlist_pgbinary`       | The inlist which controls the pgstar output for the binary evolution.      |
+| `inlist_pgstar`         | The inlist which controls the pgstar output for each single star.      |
+| `inlist_project`        | The main inlist which contains controls for the evolution of the binary |
+| `make/`                  | A directory containing the makefile.   |
+| `mk`                    | A bash file for compiling MESA binary and Star in the model directory.      |
+| `history_columns.list`  | A log file which determines which history values are saved in data files as a function of model timestep. |
+| `profile_columns.list`       | A log file which determines which profiles values are saved in data files as a function of Mass/radius.     |
+| `re`                    | A bash file for restarting the binary/star model executable from photos      |
+| `rn`                    | A bash file for running the binary/star model executable.      |
+| `src/`                   | A directory containing the three files listed below.      |
+| `binary_run.f90`        | A fortran file for running the binary model.      |
+| `run_binary_extras.f90` | A fortran file which can be modified to agument the binary evolution routines.      |
+| `run_star_extras.f90`   | A fortran file which can be modified to agument the stellar evolution routines.     |
 
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
