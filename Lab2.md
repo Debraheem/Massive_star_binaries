@@ -50,13 +50,13 @@ $ ./rn
 If all went as planned, then you should see a terminal window that should be similar to the one shown below.
  
 ![Terminal output Minilab 2](Figures/terminal_ouput_Minilab2.png)
-   *An example of the terminal output for Minilab2*
+   *<br>An example of the terminal output for Minilab2*
 
  
 Additionally, you should see a `pgstar` plot (similar to the screen below) popping up on your screen that shows the real-time evolution of the star. What output is shown on this plot depends on the user's requirement and can be modified at will. These modifications can be performed by modifying the file `inlist_pgstar`
 
 ![Accretor plot](Figures/accretor_plot.png)
-    *A sample plot showing a snapshot of the evolution of the accretor star.*
+   *<br>A sample plot showing a snapshot of the evolution of the accretor star.*
 
 
 | :eyes: IMPORTANT |
@@ -68,7 +68,7 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
 
 Before we proceed further, it would be worthwhile to explore the primary differences between the contents of the previous lab directory and this lab. In the last lab, we evolved both stars. As such, we had two `inlists` (one each for the primary and the secondary star). These inlists contained the parameters that were relevant for each star. In addition, there was an inlist called `inlist_project`, which contained the binary parameters, e.g., the period of the binary and the initial mass of each star in the binary, etc.  Meanwhile, the files contained in the directory of Minilab2 are shown below.
 
-![Output online png tools](Figures/output-onlinepngtools.png)
+<img src="Figures/output-onlinepngtools.png" width="200">
    *<br>The contents of the `evolve_accretor_star` directory*
 
 
@@ -120,7 +120,7 @@ $ ./rn
  Like the last run, you should again see similar activity on your monitor. For example, we show below a snapshot of the star's evolution plotted using `pgstar`. 
 
 ![Single star plot](Figures/single_star_plot.png)
-   *A snapshot of the single star's evolution.*
+   *<br>A snapshot of the single star's evolution.*
 
 
 |:question: QUESTION|
