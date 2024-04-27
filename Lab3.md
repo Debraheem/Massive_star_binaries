@@ -141,7 +141,7 @@ How do we know which type of mass transfer occurs? This can be done by simply co
 
 
 
-## Bonu: Nonconservative Mass Transfer
+## Bonus: Nonconservative Mass Transfer
 
 As in Lab1, try adopting the following nonconservative Mass transfer controls and re run your model. When your model is finished. In the [Day 4 Massive Binaries Lab3_nonconservative tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
 
