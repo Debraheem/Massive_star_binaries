@@ -100,7 +100,7 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 4. What is the approximate mass of your primary when the mass transfer phase ends?
 
 
-In the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
+In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
 
 | M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
 |:-----------------------------------------|:-------------------------|:-------------------------|:----------------------------------|:--------------------|:---------------------|
@@ -131,3 +131,18 @@ Mass transfer in binary systems are often classified based on which burning stag
 </dl>
 
 How do we know which type of mass transfer occurs? This can be done by simply comparing the size of the star during various burning stages to the size of its  Roche lobe.
+
+
+
+
+
+## Bonu: Nonconservative Mass Transfer
+
+As in Lab1, try adopting the following nonconservative Mass transfer controls and re run your model. When your model is finished. In the [Day 4 Massive Binaries Lab3_nonconservative tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
+
+| $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
+|:-----|:--------------|:--------------|:----------------|
+| 0 | 0.6 | 0.1 | 1.2 |
+
+**CATCH UP:If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).**
+
