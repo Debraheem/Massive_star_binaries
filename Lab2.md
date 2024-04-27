@@ -50,7 +50,7 @@ $ ./rn
 If all went as planned, then you should see a terminal window that should be similar to the one shown below.
  
 ![Terminal output Minilab 2](Figures/terminal_ouput_Minilab2.png)
-*An example of the terminal output for Minilab2*
+   *An example of the terminal output for Minilab2*
 
  
 Additionally, you should see a `pgstar` plot (similar to the screen below) popping up on your screen that shows the real-time evolution of the star. What output is shown on this plot depends on the user's requirement and can be modified at will. These modifications can be performed by modifying the file `inlist_pgstar`
@@ -69,7 +69,7 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
 Before we proceed further, it would be worthwhile to explore the primary differences between the contents of the previous lab directory and this lab. In the last lab, we evolved both stars. As such, we had two `inlists` (one each for the primary and the secondary star). These inlists contained the parameters that were relevant for each star. In addition, there was an inlist called `inlist_project`, which contained the binary parameters, e.g., the period of the binary and the initial mass of each star in the binary, etc.  Meanwhile, the files contained in the directory of Minilab2 are shown below.
 
 ![Output online png tools](Figures/output-onlinepngtools.png)
-*The contents of the `evolve_accretor_star` directory*
+   *<br>The contents of the `evolve_accretor_star` directory*
 
 
 As mentioned earlier, to see the above files in your terminal, you need to run the `tree` command. You will notice that here, we only have one main inlist named `inlist_accretor`, which contains the parameters we need to set for evolving the accretor star. Although we would stress that this is not necessary, and you are free to break this one inlist into many sub-inlists. As an example, see the files located in the directory `\$MESA_DIR/star/test_suite/ccsn_IIp` \,. Additionally, you will see that the `src` directory for the accretor star (i.e., evolved as a single star) no longer contains the `run_binary_extras.f90` file - as we are not evolving a binary model anymore.
