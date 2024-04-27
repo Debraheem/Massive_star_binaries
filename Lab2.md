@@ -28,8 +28,8 @@ For computational ease, we will load the _saved accretor model_ from the last (M
 
 Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the Minilab2 directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab2 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
 
-```
-   $ cp -r ./Minilab1/accretor\_final.mod ./Minilab2
+```shell-session
+$ cp -r ./Minilab1/accretor\_final.mod ./Minilab2
 ```
 
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
@@ -42,9 +42,9 @@ Now go to the directory of Minilab1, and from there, copy the file named `accret
 ## Evolution of the mass gainer
 
 Now, let us continue the evolution of the accretor star from where we left it in Minilab1. For this, you will need to execute the below commands in your terminal (given that you are already present in the Minilab2 directory)
-```
-    $ ./mk 
-    $ ./rn
+```shell-session
+$ ./mk 
+$ ./rn
 ```
 
 If all went as planned, then you should see a terminal window that should be similar to the one shown below.
@@ -82,8 +82,8 @@ As mentioned earlier, to see the above files in your terminal, you need to run t
 ## Making a movie from the `pgstar` output
 
 The `pgstar` output shows the evolution of the star in real time. But what if we would like to see the evolution of the model at a later time? The `pgstar` output is also saved in the `Minilab2_png` directory. Perhaps the best way to access the information contained in these `png` files is to make a movie out of them. The MESA SDK includes an ffmpeg encoder and a script named `images_to_movie.sh` that allows users to create movies from `png` files. To do this, execute the following command in your terminal from within the Minilab2 directory
-```
-  $ images_to_movie 'png/*.png' movie_accretor_star.mp4
+```shell-session
+$ images_to_movie 'png/*.png' movie_accretor_star.mp4
 ```
 This will create a movie out of the `png` files and save it with the name `movie_accretor_star.mp4`.
 
@@ -112,9 +112,9 @@ To begin, download the necessary files required to evolve a single star from the
  
 To run the model, you will need to execute the below commands in your terminal (given that you are already present in the right directory)
  
-```
-   $ ./mk
-   $ ./rn
+```shell-session
+$ ./mk
+$ ./rn
 ```
 
  Like the last run, you should again see similar activity on your monitor. For example, we show below a snapshot of the star's evolution plotted using `pgstar`. 
