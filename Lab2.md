@@ -198,6 +198,7 @@ Above the index "1" refers to the primary star. These lines set the primary star
    |:question: QUESTION|
    |:--|
    |Can you find the mass and period of the binary as they were at the end of Minilab1?|
+   
     Take the above value for the period (say 6 days( and set it accordingly in the `inist_project` as shown below
     ```
        initial_period_in_days = 6d0  ! Period of the binary at the end of Minilab1
