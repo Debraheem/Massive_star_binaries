@@ -29,7 +29,7 @@ For computational ease, we will load the _saved accretor model_ from the last (M
 Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the Minilab2 directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab2 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
 
 ```shell-session
-$ cp -r ./Minilab1/accretor\_final.mod ./Minilab2
+$ cp -r ./Minilab1/accretor_final.mod ./Minilab2
 ```
 
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
