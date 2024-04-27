@@ -53,12 +53,12 @@ Now, let's explore the different types of mass transfer and the impact of noncon
 
 For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 12d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different mass ratios later on in Lab3. In this lab we will explore the binary evolution of our system with varying periods and and a fixed initial mass ratio *15/12* by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting different values for $\alpha, \beta, \delta, \gamma$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
 
-| Primary (Donor) Mass ( $M_{\odot}$ ) | Period (days)| $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
-|:------------------------||:--------------||:--------------|
-| 15        | 4        | 0 | 0 | 0 | 0 |
-| 15        | 15       | 0 | 0 | 0 | 0 |
-| 15        | 200      | 0 | 0 | 0 | 0 | 
-| 15        | 4        | 0 | 0.6 | 0.1 | 1.2 |
+| Case |Primary (Donor) Mass ( $M_{\odot}$ ) | Period (days)| $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
+|:-----||:--------------||:--------------|:----------------||:--------------||:--------------||:--------------|
+| 1| 15        | 4        | 0 | 0 | 0 | 0 |
+| 2| 15        | 15       | 0 | 0 | 0 | 0 |
+| 3| 15        | 200      | 0 | 0 | 0 | 0 | 
+| 4| 15        | 4        | 0 | 0.6 | 0.1 | 1.2 |
 
 Now choose a value for the initial mass and period of the binary system from this table.
 
@@ -89,6 +89,12 @@ When your model is finished running, try to make a movie of your `&pgbianry` dia
 ```
 images_to_movie "png/*.png" movie.mp4
 ```
+<details><summary>Answers</summary>
+
+Here is an example pgstar produced from the case 1 in the table above
+![Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion](Figures/4days_15M_primary.mp4)
+
+</details>
 
 Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
 
@@ -148,8 +154,6 @@ Discussion point: What are the ratios of Case A vs Case B vs Case C mass transfe
 
 </details>
 
-
-### Bonus exercise - Nonconservative mass transfer (Over lunch if necessary)
 
 
 
