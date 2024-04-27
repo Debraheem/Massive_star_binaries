@@ -195,6 +195,7 @@ Above the index "1" refers to the primary star. These lines set the primary star
     ```
     This lets the code know the birth mass of the point object. 
 1. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass. 
+
    |:question: QUESTION|
    |:--|
    |Can you find the mass and period of the binary as they were at the end of Minilab1?|
