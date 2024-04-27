@@ -33,11 +33,7 @@ For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, 
 
 | Primary (Donor) Mass ( $M_{\odot}$ ) |   
 |:------------------------|
-| 12.5      |
 | 15        |
-| 20        |
-| 25        |
-| 30        |
 
 | Period (days) |     
 |:--------------|
