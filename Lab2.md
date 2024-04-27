@@ -182,19 +182,19 @@ $$
 To set the evolved primary as a point mass source, we will reuse Minilab1. *Here are the steps* that you would need to follow before we can evolve the binary:
 
 
-1\. Make a fresh copy of Minilab1 bonus exercise (you should have left it running during the break).
-1\. Open the `inlist_project` and include the following commands in the `&binary_job` region
+1. Make a fresh copy of Minilab1 bonus exercise (you should have left it running during the break).
+1. Open the `inlist_project` and include the following commands in the `&binary_job` region
     ```
        change_initial_point_mass_i = .true.
        new_point_mass_i = 1
     ```
 Above the index "1" refers to the primary star. These lines set the primary star to a point mass.
-1\. We will have to make a minor addition to the `run_binary_extras.f90` file. Op    en this file which is located in the `src` directory. Scroll to the end of the file, where you will find the function named `extras_binary_startup`. After the line `call test_suite_startup(b, restart, ierr)` in the function, include the following line
+1. We will have to make a minor addition to the `run_binary_extras.f90` file. Op    en this file which is located in the `src` directory. Scroll to the end of the file, where you will find the function named `extras_binary_startup`. After the line `call test_suite_startup(b, restart, ierr)` in the function, include the following line
     ```
        b% eq_initial_bh_mass = b% m(1)
     ```
     This lets the code know the birth mass of the point object. 
-1\. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass. 
+1. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass. 
    |:question: QUESTION|
    |:--|
    |Can you find the mass and period of the binary as they were at the end of Minilab1?|
@@ -202,9 +202,9 @@ Above the index "1" refers to the primary star. These lines set the primary star
     ```
        initial_period_in_days = 6d0  ! Period of the binary at the end of Minilab1
     ```
-1\. As our goal is to evolve the spin of the black hole, we would like to save this spin evolution into the history file. To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
+1. As our goal is to evolve the spin of the black hole, we would like to save this spin evolution into the history file. To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
 
-1\. Next, we will have to tell the code what data we want to write in this column. For this go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function include the following 
+1. Next, we will have to tell the code what data we want to write in this column. For this go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function include the following 
     ```fortran    
        names(1) = 'abh'
        ! Set the spin of the black hole at the beginning of mass transfer to zero
@@ -214,7 +214,7 @@ Above the index "1" refers to the primary star. These lines set the primary star
     ```
     Here `names(1) = 'abh'` is the name of the extra column that will be saved in the `binary_history.data` file and `val(1)` contains the data of the same column, i.e., the value of the spin of the black hole `abh`. As you can see, we till the black hole does not accrete any mass, we set this to zero.
 
-1\. Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition. After this, you are all set.
+1. Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition. After this, you are all set.
     ```fortran
        call  calc_black_hole_spin(b% eq_initial_bh_mass, b% m(1), vals(1))
       
