@@ -15,16 +15,8 @@ credit: ESO/L. Calçada
 [Link to Lab Solutions](https://drive.google.com/drive/folders/11WEpwn17_XuxKugH0B57OHMjby-jomUj?usp=share_link)
 
 
-
-To begin, we make a copy of a desired pre-setup directory from the location `$MESA_DIR/binary/test_suite/evolve_both_stars`.
-
-To make a copy, type the following in your terminal (or you can do it using the graphical user interface):
-
-```plaintext
-cp -r $MESA_DIR/binary/test_suite/evolve_both_stars Lab1_binary
-cd my_thursday_lab
-tree
-```
+To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1I6MnPMCoP70sHlNo4NWNYZYrRpX5UzUm/view?usp=share_link) MESA work directory.
+This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
 To get an idea of what is inside `Lab1_binary` we can use the `tree` command.
 
@@ -66,7 +58,7 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 
 
 
-All other files are briefly described in the table below
+All files are briefly described in the table below
 
 ### MESA BINARY work directory
 
@@ -111,8 +103,8 @@ The `inlist_project` - which is relevant for binary parameters -  will look some
 &binary_controls
 
    m1 = 15d0  ! donor mass in Msun
-   m2 = 11d0 ! companion mass in Msun
-   initial_period_in_days = 2d0
+   m2 = 12d0 ! companion mass in Msun
+   initial_period_in_days = 6d0
 
 / ! end of binary_controls namelist
 ```
@@ -140,7 +132,7 @@ Any (non-default) values for the parameters of the individual stars will be set 
 
       show_log_description_at_start = .false.
       save_model_when_terminate = .true.
-      save_model_filename = 'final1.mod'
+      save_model_filename = 'donar_final.mod'
 
 / ! end of star_job namelist
 
@@ -149,22 +141,67 @@ Any (non-default) values for the parameters of the individual stars will be set 
 / ! end of eos namelist
 
 &kap
-
-      Zbase = 0.02
+Zbase = 0.02
 
 / ! end of kap namelist
 
 
 &controls
-      profile_interval = 50
-      history_interval = 10
-      terminal_interval = 1
-      write_header_frequency = 10
+       max_model_number = 3500
+
+      ! convection 
+      use_ledoux_criterion = .true.
+      alpha_semiconvection = 1d0
       
       ! reduce resolution and solver tolerance to make runs faster
-      mesh_delta_coeff = 3d0
-      time_delta_coeff = 3d0
-      varcontrol_target = 1d-2
+      mesh_delta_coeff = 2.5d0
+      time_delta_coeff = 2.5d0
+      varcontrol_target = 1d-3
+      use_gold2_tolerances = .true.
+      use_gold_tolerances = .true.
+
+      ! stopping condition
+      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit(1) = 1d-4
+
+
+      ! help the envelope carry energy to 
+      ! the surface for solar metallicity
+      use_superad_reduction = .true.
+      superad_reduction_Gamma_limit = 0.5d0
+      superad_reduction_Gamma_limit_scale = 5d0
+      superad_reduction_Gamma_inv_scale = 5d0
+      superad_reduction_diff_grads_limit = 1d-2
+      superad_reduction_limit = -1d0
+
+      ! we use step overshooting
+      overshoot_scheme(1) = 'step'
+      overshoot_zone_type(1) = 'burn_H'
+      overshoot_zone_loc(1) = 'core'
+      overshoot_bdy_loc(1) = 'top'
+      overshoot_f(1) = 0.345
+      overshoot_f0(1) = 0.01
+
+      ! a bit of exponential overshooting for convective core during He burn
+      overshoot_scheme(2) = 'exponential'
+      overshoot_zone_type(2) = 'burn_He'
+      overshoot_zone_loc(2) = 'core'
+      overshoot_bdy_loc(2) = 'top'
+      overshoot_f(2) = 0.01
+      overshoot_f0(2) = 0.005
+
+      !output
+      extra_terminal_output_file = 'log1' 
+      log_directory = 'LOGS1'
+
+      ! output frequency section:
+       photo_interval         = 50
+       photo_digits           = 6
+       profile_interval       = 200 ! 
+       max_num_profile_models = 400000
+       history_interval       = 1
+       terminal_interval      = 10
+       write_header_frequency = 10
 
 / ! end of controls namelist
 
@@ -174,6 +211,7 @@ Any (non-default) values for the parameters of the individual stars will be set 
    extra_pgstar_inlist_name(1)= 'inlist_pgstar'
 
 / ! end of pgstar namelist
+
 ```
 
 Many other (default) parameters which are not modified in the above inlist can be found in the directory
