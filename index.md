@@ -366,6 +366,6 @@ Now let's navigate back into our Lab1_binary directory, recompile MESA star, and
 ./rn
 ```
 
-pgbinary should no longer crash!
+pgbinary should no longer crash! You can now continue on to [Lab1](./Lab1), where we will continue using and modifying this same `Lab1_binary` directory.
 
 
