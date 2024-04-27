@@ -92,12 +92,12 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 
 **CATCH UP:If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).**
 
-**Below are some questions to discuss at your table and answer while your model evolves**
-
-1. What is the mass ratio of your system
-2. What type of mass transfer does your system undergo? Case A, B, C?
-3. Is the mass transfer in your system stable or unstable?
-4. What is the approximate mass of your primary when the mass transfer phase ends?
+| :question: Below are some questions to discuss at your table and answer while your model evolves | 
+| :--- |
+| 1. What type of mass transfer does your system undergo? Case A, B, C? |
+| 2. Is the mass transfer in your system stable or unstable?|
+| 3. What is the approximate mass of the primary when the mass transfer phase ends?|
+| 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 
 
 In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
