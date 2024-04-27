@@ -10,7 +10,7 @@ title: Lab2
 
 ### Science goal
 
-In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure, and future evolution of the mass gainer. We will mainly discuss how mass accretion could impact the surface composition and internal structure of the accretor star. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see \cite{renzo2021evolution} for more information). In the main lab, we will mostly ignore the impact of the angular momentum carried by the accreted material on the mass gainer. % and leave this as a bonus exercise. 
+In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure, and future evolution of the mass gainer. We will mainly discuss how mass accretion could impact the surface composition and internal structure of the accretor star. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In the main lab, we will mostly ignore the impact of the angular momentum carried by the accreted material on the mass gainer. % and leave this as a bonus exercise. 
 
 
 #### Bonus goal
@@ -163,7 +163,7 @@ Using $M, J$ we can define another parameter called the *dimensionless Kerr spin
 $$
     a = \frac{Jc}{GM^2}
 $$
-where $c, G$ is the speed of light and Newton's gravitational constant, respectively. The usefulness of this parameter is evident from the fact that for astrophysical black holes $a \in [0, 1)$ (e.g., \cite{Thorne_1974}). A value of $a \geq 1$ implies the violation of the *cosmic censorship principle* (Penrose 1969).
+where $c, G$ is the speed of light and Newton's gravitational constant, respectively. The usefulness of this parameter is evident from the fact that for astrophysical black holes $a \in [0, 1)$ (e.g., Thorne 1974). A value of $a \geq 1$ implies the violation of the *cosmic censorship principle* (Penrose 1969).
 
 
 Let us assume that the infalling matter has sufficient AM to at least circularise outside the (innermost stable circular orbit) ISCO of the black hole from where it is directly accreted. Then the change in $J$ of the mass accreting black hole is $dJ/dm = j_{\rm isco}$ where $dm$ is the rest mass of the matter being accreted.
