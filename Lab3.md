@@ -6,20 +6,20 @@ title: Lab3
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-## Lab3 - Exploring the Stability of Mass Transfer
+# Lab3 - Exploring the Stability of Mass Transfer
 
-### Science goal
+## Science goal
 
 The goal of this lab is to explore the impact of different initial periods and mass ratios **m1/m2** on the evolution of our binary system. 
 
-#### Bonus goal
+### Bonus goal
 
 Our bonus goal is to explore the impact of nonconservative mass transfer on the mass transfer stability.
 
 
 
 
-### Exploring a grid of mass transfer models with varying mass ratios
+## Exploring a grid of mass transfer models with varying mass ratios
 This lab will continue using the downloaded `Lab1_binary` directory, we will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
 
 
@@ -50,7 +50,7 @@ For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, 
 | 30       |
 | 50       |
 | 100       |
-| 200        | 
+| 200        |
 
 Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
 
@@ -72,16 +72,16 @@ In `inlist1`, set a stopping condition such that the model terminates when the p
 
 
 ```plaintext
-      xa_central_lower_limit_species(1) = 'he4'
-      xa_central_lower_limit(1) = 1d-4
+   xa_central_lower_limit_species(1) = 'he4'
+   xa_central_lower_limit(1) = 1d-4
 ```
 
 
 Now, we will run the model. As before, for this, we need to execute the below commands in the terminal
 
-```
-./mk
-./rn
+```shell-session
+$ ./mk
+$ ./rn
 ```
 
 
@@ -109,33 +109,11 @@ In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.co
 
 | M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
 |:-----------------------------------------|:-------------------------|:-------------------------|:----------------------------------|:--------------------|:---------------------|
+|||||||
 
 
 
 
-
-
-
-
-
-
-
-
-## What kind of outcomes to expect
-
-
-Mass transfer in binary systems are often classified based on which burning stage the donor star is in. This is because stars have very different structures depending on the burning stage and therefore respond to mass loss in completely different ways.
-
-<dl>
-  <dt> Case A mass transfer </dt>
-       <dd> Mass transfer from a core hydrogen burning star (main sequence star). It often starts off with a rapid phase (thermal timescale) and followed by a slower phase (nuclear timescale).</dd>
-  <dt> Case B mass transfer </dt>
-       <dd> Mass transfer from a core hydrogen depleted star (post-main sequence star).  </dd>
-  <dt> Case C mass transfer </dt>
-       <dd> Mass transfer from a core helium depleted star. </dd>
-</dl>
-
-How do we know which type of mass transfer occurs? This can be done by simply comparing the size of the star during various burning stages to the size of its  Roche lobe.
 
 
 
