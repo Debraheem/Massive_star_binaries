@@ -179,5 +179,4 @@ Run the same model as you did in Lab1 but now with
 
 ```
    evolve_both_stars = .true.
-
 ```

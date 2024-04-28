@@ -6,21 +6,21 @@ title: Lab2
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-## Lab2 -  Modeling The Mass Gainer
+# Lab2 -  Modeling The Mass Gainer
 
-### Science goal
+## Science goal
 
 In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure, and future evolution of the mass gainer. We will mainly discuss how mass accretion could impact the surface composition and internal structure of the accretor star. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In the main lab, we will mostly ignore the impact of the angular momentum carried by the accreted material on the mass gainer and leave this as a bonus exercise. 
 
 
-#### Bonus goal
+### Bonus goal
 
 As a homework exercise, you may also like to study the evolution of the binary once the primary turns into a compact object, which we assume to be a black hole. In such a case, the secondary could subsequently expand and dump its matter onto the black hole. This inflences the properties of the black hole, like its mass and spin. In the bonus exercise, we will explore how these properties evolve as a function of the mass accretion rate.
 
 
 
 
-### Evolving the mass gainer as a single star
+## Evolving the mass gainer as a single star
 For computational ease, we will load the _saved accretor model_ from the last (Minilab1) run and then evolve this model _as a single star_. To begin, first copy the necessary files required for Minilab2 from the following link.
 
    [Click here to access Minilab2](https://drive.google.com/file/d/1kuKGSnNPDEjx45ahGyltGhIJtdvJF_jC/view?usp=share_link)
@@ -39,7 +39,7 @@ $ cp -r ./Minilab1/accretor_final.mod ./Minilab2
 | :--- |
 | Can you tell where in `inlist_accretor` is the pre-evolved accretor model being loaded? |
 
-## Evolution of the mass gainer
+### Evolution of the mass gainer
 
 Now, let us continue the evolution of the accretor star from where we left it in Minilab1. For this, you will need to execute the below commands in your terminal (given that you are already present in the Minilab2 directory)
 ```shell-session
@@ -64,7 +64,7 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
 |While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
 
 
-## Single star versus binary star directory
+### Single star versus binary star directory
 
 Before we proceed further, it would be worthwhile to explore the primary differences between the contents of the previous lab directory and this lab. In the last lab, we evolved both stars. As such, we had two `inlists` (one each for the primary and the secondary star). These inlists contained the parameters that were relevant for each star. In addition, there was an inlist called `inlist_project`, which contained the binary parameters, e.g., the period of the binary and the initial mass of each star in the binary, etc.  Meanwhile, the files contained in the directory of Minilab2 are shown below.
 
@@ -76,7 +76,7 @@ As mentioned earlier, to see the above files in your terminal, you need to run t
 
 
 
-## Making a movie from the `pgstar` output
+### Making a movie from the `pgstar` output
 
 The `pgstar` output shows the evolution of the star in real time. But what if we would like to see the evolution of the model at a later time? The `pgstar` output is also saved in the `Minilab2_png` directory. Perhaps the best way to access the information contained in these `png` files is to make a movie out of them. The MESA SDK includes an ffmpeg encoder and a script named `images_to_movie.sh` that allows users to create movies from `png` files. To do this, execute the following command in your terminal from within the Minilab2 directory
 ```shell-session
