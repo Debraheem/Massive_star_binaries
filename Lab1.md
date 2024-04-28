@@ -108,8 +108,9 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 |:--|
 | If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).|
 
+Below are some questions to discuss at your table and answer while your model evolves
 
-| :question: Below are some questions to discuss at your table and answer while your model evolves | 
+| :question: QUESTIONS | 
 | :--- |
 | 1. What type of mass transfer does your system undergo? Case A, B, C? |
 | 2. Is the mass transfer in your system stable or unstable?|
