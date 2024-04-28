@@ -10,7 +10,7 @@ title: Lab2
 
 ### Science goal
 
-In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure, and future evolution of the mass gainer. We will mainly discuss how mass accretion could impact the surface composition and internal structure of the accretor star. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In the main lab, we will mostly ignore the impact of the angular momentum carried by the accreted material on the mass gainer. % and leave this as a bonus exercise. 
+In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure, and future evolution of the mass gainer. We will mainly discuss how mass accretion could impact the surface composition and internal structure of the accretor star. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In the main lab, we will mostly ignore the impact of the angular momentum carried by the accreted material on the mass gainer and leave this as a bonus exercise. 
 
 
 #### Bonus goal
@@ -72,10 +72,7 @@ Before we proceed further, it would be worthwhile to explore the primary differe
    *<br>The contents of the `evolve_accretor_star` directory*
 
 
-As mentioned earlier, to see the above files in your terminal, you need to run the `tree` command. You will notice that here, we only have one main inlist named `inlist_accretor`, which contains the parameters we need to set for evolving the accretor star. Although we would stress that this is not necessary, and you are free to break this one inlist into many sub-inlists. As an example, see the files located in the directory `\$MESA_DIR/star/test_suite/ccsn_IIp` \,. Additionally, you will see that the `src` directory for the accretor star (i.e., evolved as a single star) no longer contains the `run_binary_extras.f90` file - as we are not evolving a binary model anymore.
-
-
-
+As mentioned earlier, to see the above files in your terminal, you need to run the `tree` command. You will notice that here, we only have one main inlist named `inlist_accretor`, which contains the parameters we need to set for evolving the accretor star. Although we would stress that this is not necessary, and you are free to break this one inlist into many sub-inlists. As an example, see the files located in the directory `$MESA_DIR/star/test_suite/ccsn_IIp`. Additionally, you will see that the `src` directory for the accretor star (i.e., evolved as a single star) no longer contains the `run_binary_extras.f90` file - as we are not evolving a binary model anymore.
 
 
 
