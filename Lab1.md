@@ -58,12 +58,12 @@ Now, let's explore the different types of mass transfer and the impact of noncon
 
 For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 15d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different masses and mass ratios later on in Lab3. In this lab we will explore the binary evolution of our system with varying periods and and a fixed initial mass ratio *12/15* by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting a different value for $\beta$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
 
-| Case |Primary (Donor) Mass ( $M_{\odot}$ ) | Period (days)| $\beta$ |
-|:-----|:--------------|:--------------|:----------------|:--------------|:--------------|:--------------|
-| 1| 15        | 4        | 0   |
-| 2| 15        | 15       | 0   |
-| 3| 15        | 200      | 0   |
-| 4| 15        | 4        | 0.5 |
+| Case |Donor Mass ($M_{\odot}$) | Accretor Mass (M$_\odot$)|Period (days)| $\beta$ |
+|:-----|:--------------|:--------------|:----------------|:--------------|
+| 1| 15  | 12  | 4        | 0   |
+| 2| 15  | 12  | 15       | 0   |
+| 3| 15  | 12  | 200      | 0   |
+| 4| 15  | 12  | 4        | 0.5 |
 
 Now choose a value for the initial mass and period of the binary system from this table.
 
