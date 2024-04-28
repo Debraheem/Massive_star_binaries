@@ -144,7 +144,11 @@ $$
 
 Here, $R_\mathrm{rl}$ is the volume equivalent Roche lobe radius of the donor, $a$ is the orbital semimajor axis and $q\equiv M_\mathrm{d}/M_\mathrm{a}$ is the mass ratio of the donor to accretor. Mass transfer occurs when the stellar radius exceeds the Roche lobe radius $R_\mathrm{d}>R_\mathrm{rl}$.
 
-### Q. Calculate the orbital period ranges for Case A/B/C mass transfer for a 12+11$M_\odot$ binary. The radius evolution of our 12$M_\odot$ star looks like this:
+|:question: QUESTION |
+|:--|
+|Calculate the orbital period ranges for Case A/B/C mass transfer for a 12+11$M_\odot$ binary. |
+
+The radius evolution of our 12$M_\odot$ star looks like this:
 
 ![Radius evolution of a 12$M_\odot$ star](Figures/Radius_evo.png)
 
