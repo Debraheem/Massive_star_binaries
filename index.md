@@ -15,16 +15,8 @@ credit: ESO/L. Calçada
 [Link to Lab Solutions](https://drive.google.com/drive/folders/11WEpwn17_XuxKugH0B57OHMjby-jomUj?usp=share_link)
 
 
-
-To begin, we make a copy of a desired pre-setup directory from the location `$MESA_DIR/binary/test_suite/evolve_both_stars`.
-
-To make a copy, type the following in your terminal (or you can do it using the graphical user interface):
-
-```plaintext
-cp -r $MESA_DIR/binary/test_suite/evolve_both_stars Lab1_binary
-cd my_thursday_lab
-tree
-```
+To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1I6MnPMCoP70sHlNo4NWNYZYrRpX5UzUm/view?usp=share_link) MESA work directory.
+This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
 To get an idea of what is inside `Lab1_binary` we can use the `tree` command.
 
@@ -66,29 +58,29 @@ It's alright if you don't have `tree` or cannot download it, `ls` should suffice
 
 
 
-All other files are briefly described in the table below
+All files are briefly described in the table below
 
 ### MESA BINARY work directory
 
 | Filename                | Description       |
 |:------------------------|:------------------|
-| `clean`                 | description       |
-| `inlist`                | description |
-| `inlist1`               | description   |
-| `inlist2`               | description     |
-| `inlist_pgbinary`       | description      |
-| `inlist_pgstar`         | description      |
-| `inlist_project`        | description |
-| `make/`                  | description   |
-| `mk`                    | description      |
-| `history_columns.list`  | description |
-| `profile_columns.list`       | description     |
-| `re`                    | description      |
-| `rn`                    | description      |
-| `src/`                   | description      |
-| `binary_run.f90`        | description      |
-| `run_binary_extras.f90` | description      |
-| `run_star_extras.f90`   | description      |
+| `clean`                 | A bash file for cleaning the model directory.       |
+| `inlist`                | The header inlist which points to all other inlists to determine which inlists are read and in what order. |
+| `inlist1`               | The main inlist which contains controls for the stellar evolution of the `m1`  |
+| `inlist2`               | The main inlist which contains controls for the stellar evolution of the `m2`     |
+| `inlist_pgbinary`       | The inlist which controls the pgstar output for the binary evolution.      |
+| `inlist_pgstar`         | The inlist which controls the pgstar output for each single star.      |
+| `inlist_project`        | The main inlist which contains controls for the evolution of the binary |
+| `make/`                  | A directory containing the makefile.   |
+| `mk`                    | A bash file for compiling MESA binary and Star in the model directory.      |
+| `history_columns.list`  | A log file which determines which history values are saved in data files as a function of model timestep. |
+| `profile_columns.list`       | A log file which determines which profiles values are saved in data files as a function of Mass/radius.     |
+| `re`                    | A bash file for restarting the binary/star model executable from photos      |
+| `rn`                    | A bash file for running the binary/star model executable.      |
+| `src/`                   | A directory containing the three files listed below.      |
+| `binary_run.f90`        | A fortran file for running the binary model.      |
+| `run_binary_extras.f90` | A fortran file which can be modified to agument the binary evolution routines.      |
+| `run_star_extras.f90`   | A fortran file which can be modified to agument the stellar evolution routines.     |
 
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
@@ -111,8 +103,8 @@ The `inlist_project` - which is relevant for binary parameters -  will look some
 &binary_controls
 
    m1 = 15d0  ! donor mass in Msun
-   m2 = 11d0 ! companion mass in Msun
-   initial_period_in_days = 2d0
+   m2 = 12d0 ! companion mass in Msun
+   initial_period_in_days = 6d0
 
 / ! end of binary_controls namelist
 ```
@@ -140,7 +132,7 @@ Any (non-default) values for the parameters of the individual stars will be set 
 
       show_log_description_at_start = .false.
       save_model_when_terminate = .true.
-      save_model_filename = 'final1.mod'
+      save_model_filename = 'donar_final.mod'
 
 / ! end of star_job namelist
 
@@ -149,22 +141,67 @@ Any (non-default) values for the parameters of the individual stars will be set 
 / ! end of eos namelist
 
 &kap
-
-      Zbase = 0.02
+Zbase = 0.02
 
 / ! end of kap namelist
 
 
 &controls
-      profile_interval = 50
-      history_interval = 10
-      terminal_interval = 1
-      write_header_frequency = 10
+       max_model_number = 3500
+
+      ! convection 
+      use_ledoux_criterion = .true.
+      alpha_semiconvection = 1d0
       
       ! reduce resolution and solver tolerance to make runs faster
-      mesh_delta_coeff = 3d0
-      time_delta_coeff = 3d0
-      varcontrol_target = 1d-2
+      mesh_delta_coeff = 2.5d0
+      time_delta_coeff = 2.5d0
+      varcontrol_target = 1d-3
+      use_gold2_tolerances = .true.
+      use_gold_tolerances = .true.
+
+      ! stopping condition
+      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit(1) = 1d-4
+
+
+      ! help the envelope carry energy to 
+      ! the surface for solar metallicity
+      use_superad_reduction = .true.
+      superad_reduction_Gamma_limit = 0.5d0
+      superad_reduction_Gamma_limit_scale = 5d0
+      superad_reduction_Gamma_inv_scale = 5d0
+      superad_reduction_diff_grads_limit = 1d-2
+      superad_reduction_limit = -1d0
+
+      ! we use step overshooting
+      overshoot_scheme(1) = 'step'
+      overshoot_zone_type(1) = 'burn_H'
+      overshoot_zone_loc(1) = 'core'
+      overshoot_bdy_loc(1) = 'top'
+      overshoot_f(1) = 0.345
+      overshoot_f0(1) = 0.01
+
+      ! a bit of exponential overshooting for convective core during He burn
+      overshoot_scheme(2) = 'exponential'
+      overshoot_zone_type(2) = 'burn_He'
+      overshoot_zone_loc(2) = 'core'
+      overshoot_bdy_loc(2) = 'top'
+      overshoot_f(2) = 0.01
+      overshoot_f0(2) = 0.005
+
+      !output
+      extra_terminal_output_file = 'log1' 
+      log_directory = 'LOGS1'
+
+      ! output frequency section:
+       photo_interval         = 50
+       photo_digits           = 6
+       profile_interval       = 200 ! 
+       max_num_profile_models = 400000
+       history_interval       = 1
+       terminal_interval      = 10
+       write_header_frequency = 10
 
 / ! end of controls namelist
 
@@ -174,6 +211,7 @@ Any (non-default) values for the parameters of the individual stars will be set 
    extra_pgstar_inlist_name(1)= 'inlist_pgstar'
 
 / ! end of pgstar namelist
+
 ```
 
 Many other (default) parameters which are not modified in the above inlist can be found in the directory
@@ -205,21 +243,23 @@ A picture is worth a thousand words
 
 , so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 
-We can turn on the `pgbinary` plots by uncommenting the following line in `&starjob`. followed by `./rn`
+We can turn on the `pgbinary` plots by uncommenting the following line in `&starjob`. 
 
 ```
 !   pgbinary_flag = .true.
 ```
+we also want to try running this model in the single star mode, so open so let's ensure `evolve_both_stars = .false.` as well.
 
-This run should return a nice pgbinary plot showing the evolution of both primary and secondary in one panel, with a nice orbital seperation diagram in the top right corner.
+Now we can  `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass.
 
-![pgstar](Figures/grid1_000040.png)
+This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panle on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appears in the top right corner followed by other plots of the orbital evolution of both stars.
+
+![pgstar](Figures/grid1_000080.png)
 
 
 
 #### Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
-Let's try running this model in the single star mode, so open `inlist_project` and set `evolve_both_stars = .false.`.
 
 Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
 
@@ -326,6 +366,6 @@ Now let's navigate back into our Lab1_binary directory, recompile MESA star, and
 ./rn
 ```
 
-pgbinary should no longer crash!
+pgbinary should no longer crash! You can now continue on to [Lab1](./Lab1), where we will continue using and modifying this same `Lab1_binary` directory.
 
 
