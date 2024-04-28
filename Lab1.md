@@ -37,30 +37,8 @@ In the `&binary_controls`, you should see the following lines:
    m2 = 12d0 ! companion mass in Msun
    initial_period_in_days = 6d0
 ```
-<<<<<<< HEAD
 
-To focus on how the orbit influences how the donor star evolves, we will keep the masses of the stars fixed ($M_1=15~\mathrm{M}_\odot, M_2=12~\mathrm{M}_\odot$) in this lab. Instead, we will vary the orbital period (`initial_period_in_days`) and the mass transfer efficiency $\beta\equiv1-|\dot{M}_2/\dot{M}_1|$ (`mass_transfer_beta`).
-
-<!-- Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
-
-For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m1`. We will explore the following mass range $M_{1} = 12.5 - 30 M_{\odot}$ and periods $Period = 2 - 200$ days. We've descritized this parameter space in the following two tables:
--->
-
-
-| Period (days) | $\beta$ |
-|:--------------|:--------|
-| 6             | 0.0     |
-| 10            | 0.0     |
-| 1000          | 0.0     |
-| 10            | 0.5     |
-
-Choose a combination of one of the parameters in the table above, and make sure each person in your group chooses a different parameter set.
-
-<!-- Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet. -->
-
-=======
-
-A range of parameters to adjust the mass transfer efficiency are also available in `inlist_project`. Below is an example of a fully conservative mass transfer scheme where all the mass lost by the primary is assumed to be accreted onto the secondary.
+A range of parameters to adjust the mass transfer efficiency are also available in `inlist_project`. Below is an example of a fully conservative mass transfer scheme where all the mass lost by the primary is assumed to be accreted onto the secondary ($\dot{M}_2=-\dot{M}_1$).
 
 ```
    ! Mass transfer efficiency controls
@@ -70,30 +48,25 @@ A range of parameters to adjust the mass transfer efficiency are also available 
    mass_transfer_gamma = 0d0    ! radius of the circumbinary coplanar toroid is ``gamma**2 * orbital_separation``
 ```
 
-and here is an example of a nonconservative mass transfer model in which some fraction of the mass to be accreted onto the secondary is lost to winds. When we refer to the nonconservative mass transfer model, these are the controls we are referring to.
+For non-conservative mass transfer, part of the mass that is transferred to the accretor escapes the system. The lost mass can take away some angular momentum from the binary, and the amount of angular momentum it takes away depends on the details of the mass transfer flow. Each of the mass transfer parameters corresponds to a different angular momentum loss mode, as described in the comments. Here, we will assume that the non-accreted mass takes away the specific angular momentum of the accretor (Jeans mode mass loss). For example if half of the transferred mass is lost from the system, we set the parameters like this
 
 ```
-   ! Mass transfer efficiency controls
-!   defaults are 0
-   mass_transfer_alpha = 0d0      ! fraction of mass lost from the vicinity of donor as fast wind
-   mass_transfer_beta = 0.6d0     ! fraction of mass lost from the vicinity of accretor as fast wind
-   mass_transfer_delta = 0.1d0    ! fraction of mass lost from circumbinary coplanar toroid
-   mass_transfer_gamma = 1.2d0    ! radius of the circumbinary coplanar toroid is ``gamma**2 * orbital_separation``
+   mass_transfer_beta = 0.5d0     ! fraction of mass lost from the vicinity of accretor as fast wind
 ```
 
 Now, let's explore the different types of mass transfer and the impact of nonconservative mass transfer on the evolution of our binary system.
 
-For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 12d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different mass ratios later on in Lab3. In this lab we will explore the binary evolution of our system with varying periods and and a fixed initial mass ratio *15/12* by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting different values for $\alpha, \beta, \delta, \gamma$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
+For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 15d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different masses and mass ratios later on in Lab3. In this lab we will explore the binary evolution of our system with varying periods and and a fixed initial mass ratio *12/15* by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting a different value for $\beta$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
 
-| Case |Primary (Donor) Mass ( $M_{\odot}$ ) | Period (days)| $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
+| Case |Primary (Donor) Mass ( $M_{\odot}$ ) | Period (days)| $\beta$ |
 |:-----|:--------------|:--------------|:----------------|:--------------|:--------------|:--------------|
-| 1| 15        | 4        | 0 | 0 | 0 | 0 |
-| 2| 15        | 15       | 0 | 0 | 0 | 0 |
-| 3| 15        | 200      | 0 | 0 | 0 | 0 | 
-| 4| 15        | 4        | 0 | 0.6 | 0.1 | 1.2 |
+| 1| 15        | 4        | 0   |
+| 2| 15        | 15       | 0   |
+| 3| 15        | 200      | 0   |
+| 4| 15        | 4        | 0.5 |
 
 Now choose a value for the initial mass and period of the binary system from this table.
->>>>>>> b5693a470d1d638597b86ad606c6aa9a081b39a2
+
 
 Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary` plots. 
 
