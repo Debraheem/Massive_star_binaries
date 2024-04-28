@@ -10,19 +10,19 @@ Here is a downloadable copy of the desired [Lab1_binary](https://drive.google.co
 This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
 
-## Lab1 - Modeling a star through envelope stripping
+# Lab1 - Modeling a star through envelope stripping
 
 
-### Science goal
+## Science goal
 
 In this lab, we will look at how stars stripped by binary interactions evolve compared to their single star counterparts. We will look at how the appearance (e.g. luminosity, temperature), structure (e.g. core mass) of the *donor star* changes depending on the binary orbital parameters and mass transfer efficiency. These properties are very important when we compare stellar models to observed pre-supernova progenitors.
 
-#### Bonus goal
+### Bonus goal
 
 In order to smoothly lead into Lab2, we will start running a simulation with both stars to be left over lunch.
 
 
-### The evolution of the primary star
+## The evolution of the primary star
 
 Assume that we have a binary star system where the components are close enough to undergo Roche Lobe overflow (RLOF) from the inner L1 Lagrangian point. Additionally, assume that both components do not have the same mass so that the evolution of one star slightly lags the other star. In the lab, we would like to explore how the primary - more massive - star evolves in such a binary.
 
@@ -60,11 +60,11 @@ Now, let's explore the different types of mass transfer and the impact of noncon
 For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 15d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different masses and mass ratios later on in Lab3. In this lab we will explore the binary evolution of our system with varying periods by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting a different value for $\beta$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
 
 | Case |Donor Mass ($M_{\odot}$) | Accretor Mass (M$_\odot$)|Period (days)| $\beta$ |
-|:-----|:--------------|:--------------|:----------------|:--------------|
-| 1| 15  | 12  | 4        | 0   |
-| 2| 15  | 12  | 15       | 0   |
-| 3| 15  | 12  | 200      | 0   |
-| 4| 15  | 12  | 4        | 0.5 |
+|:--|:---|:---|:----|:----|
+| 1 | 15 | 12 | 4   | 0   |
+| 2 | 15 | 12 | 15  | 0   |
+| 3 | 15 | 12 | 200 | 0   |
+| 4 | 15 | 12 | 4   | 0.5 |
 
 Now choose a value for the initial mass and period of the binary system from this table.
 
@@ -120,7 +120,7 @@ Below are some questions to discuss at your table and answer while your model ev
 
 
 
-## What are the different types of mass transfer?
+### What are the different types of mass transfer?
 
 
 Mass transfer in binary systems are often classified based on which burning stage the donor star is in. This is because stars have very different structures depending on the burning stage and therefore respond to mass loss in completely different ways.
@@ -171,6 +171,13 @@ Discussion point: What are the ratios of Case A vs Case B vs Case C mass transfe
 </details>
 
 
+## Evolving both stars
 
+In the next lab, we will be exploring how the accretor star can evolve differently from single stars of the same mass. For this, we need to run the evolution with both stars without assuming the secondary star is a point source. This typically takes much more time than the point source case, so let's keep a model running before you leave for lunch.
 
+Run the same model as you did in Lab1 but now with
 
+```
+   evolve_both_stars = .true.
+
+```
