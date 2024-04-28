@@ -146,11 +146,11 @@ Here, $R_\mathrm{rl}$ is the volume equivalent Roche lobe radius of the donor, $
 
 |:question: QUESTION |
 |:--|
-|Calculate the orbital period ranges for Case A/B/C mass transfer for a 12+11$M_\odot$ binary. |
+|Calculate the orbital period ranges for Case A/B/C mass transfer for a 15+12$M_\odot$ binary. |
 
-The radius evolution of our 12$M_\odot$ star looks like this:
+The radius evolution of our 15$M_\odot$ star looks like this:
 
-![Radius evolution of a 12$M_\odot$ star](Figures/Radius_evo.png)
+![Radius evolution of a 15$M_\odot$ star](Figures/Radius_evo.png)
 
 <details><summary>Answers</summary>
 
