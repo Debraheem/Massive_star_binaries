@@ -135,7 +135,7 @@ Below are some questions to discuss at your table and answer while your model ev
 | :--- |
 | 1. What type of mass transfer does your system undergo? Case A, B, C? |
 | 2. Is the mass transfer in your system stable or unstable?|
-| 3. What is the mass transfer timescale (e.g. $\tau_\mathrm{mt}\equiv |M_1/\dot{M}_1|$)?|
+| 3. What is the mass transfer timescale (e.g. $\tau_\mathrm{mt}\equiv \|M_1/\dot{M}_1\|$)?|
 
 
 ### What are the different types of mass transfer?
