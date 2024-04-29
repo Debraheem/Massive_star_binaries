@@ -120,16 +120,26 @@ In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.co
 | 2. How does the mass ratio influence the stability of mass transfer and their outcome? |
 | 3. We have ignored the effect of winds here. How do you think the evolution would change if we added winds on top of binary effects? |
 
+## Bonus1 : Evolving to Core-Carbon Depletion
 
-## Bonus: Nonconservative Mass Transfer
+As in Lab1, let's try extending our stopping condiiton to when the primary reaches core-Carbon depletion, and look for a second mass transfer phase. Then fill in the last column in the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) .
 
-As in Lab1, try adopting the following nonconservative Mass transfer controls and re run your model. When your model is finished. In the [Day 4 Massive Binaries Lab3_nonconservative tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
+| :question: Below are some questions to discuss at your table and answer while your model evolves | 
+| :--- |
+| 1. Does your system undergo a second mass transfer phase?|
+| 2. Is your primary a BSG, YSG, or RSG when it reaches core-Carbon depletion?|
+| 3. What type of observation supernova will your primary result in?|
+| 4. Is the mass transfer in your system stable or unstable?|
+
+
+## Bonus 2: Nonconservative Mass Transfer
+
+As in Lab1, try adopting the following nonconservative Mass transfer controls and re run your model.
 
 | $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
 |:-----|:--------------|:--------------|:----------------|
 | 0 | 0.5 | 0 | 0 |
 
-|:information_source: CATCH UP|
-|:--|
-|If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).|
+
+Do your answers to any of the aforementioned questions change? Disucss with your group.
 
