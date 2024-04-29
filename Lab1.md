@@ -214,7 +214,7 @@ Now that we know all of our models were either case A or case B mass transfer, l
 We want our binary evolution to terminate when the mass transfer phase is complete. Both case A and B mass transfer phases are typically complete by the time the primary has reached core-Helium depletion. This is because the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime, and both case A and B occur before core-Helium depletion by definition.
 -->
 
-In `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+First, remove the stopping condition we applied earlier. Then in `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
 
 ```plaintext
       xa_central_lower_limit_species(1) = 'he4'
@@ -242,10 +242,10 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 
 | :question: QUESTIONS | 
 | :--- |
-| 1. What is the approximate mass of the primary when the mass transfer phase ends?|
-| 2. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
-| 3. How does the final mass of the primary and secondary compare to before?|
-| 4. Could there be another mass transfer phase (Case AB/BB mass transfer)? |
+| 1. How much of the envelope has the donor lost? |
+| 2. Is the appearance of the donor (luminosity and temperature) different from what you would expect for a normal core He depleted star?|
+| 3. Is there another mass transfer phase following the first one (Case AB/BB)?|
+| 4. What kind of supernova would the star explode as? |
 
 ## Bonus 2: Evolving both stars
 
