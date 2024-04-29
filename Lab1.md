@@ -245,7 +245,7 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 | 1. How much of the envelope has the donor lost? |
 | 2. Is the appearance of the donor (luminosity and temperature) different from what you would expect for a normal core He depleted star?|
 | 3. Is there another mass transfer phase following the first one (Case AB/BB)?|
-| 4. What kind of supernova would the star explode as? |
+| 4. What kind of observational supernova would the primary star explode as?|
 
 ## Bonus 2: Evolving both stars
 
