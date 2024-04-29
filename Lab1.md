@@ -49,7 +49,7 @@ A range of parameters to adjust the mass transfer efficiency are also available 
    mass_transfer_gamma = 0d0    ! radius of the circumbinary coplanar toroid is ``gamma**2 * orbital_separation``
 ```
 
-For non-conservative mass transfer, part of the mass that is transferred to the accretor escapes the system ($\dot{M}_2=-(1-\alpha-\beta-\delta-\gamma)\dot{M}_1$). The lost mass can take away some angular momentum from the binary, and the amount of angular momentum it takes away depends on the details of the mass transfer flow. Each of the mass transfer parameters corresponds to a different angular momentum loss mode, as described in the comments. Here, we will assume that the non-accreted mass takes away the specific angular momentum of the accretor (Jeans mode mass loss). For example if half of the transferred mass is lost from the system, we set the parameters like this
+For non-conservative mass transfer, part of the mass that is transferred to the accretor escapes the system ($\dot{M}_2=-(1-\alpha-\beta-\delta)\dot{M}_1$). The lost mass can take away some angular momentum from the binary, and the amount of angular momentum it takes away depends on the details of the mass transfer flow. Each of the mass transfer parameters corresponds to a different angular momentum loss mode, as described in the comments. Here, we will assume that the non-accreted mass takes away the specific angular momentum of the accretor (Jeans mode mass loss). For example if half of the transferred mass is lost from the system, we set the parameters like this
 
 ```
    mass_transfer_beta = 0.5d0     ! fraction of mass lost from the vicinity of accretor as fast wind
