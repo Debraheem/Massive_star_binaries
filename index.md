@@ -378,7 +378,7 @@ pgbinary should no longer crash! You can now continue on to [Lab1](./Lab1), wher
 The bug fix above is crucial for many of you, as the simulation won't even run with pgbinary switched on. There is another small bug that prevents the mass of the secondary to be outputted when it is treated as a point mass. That can be fixed by changing the output formatting style. In line 225 of `pgbinary_star.f90`, change the formatting to something like this.
 
 
-```diff_fortran
+```diff
    if (b% point_mass_i /= 2) then
 
       call read_pgstar_inlist(b% s2, b% job% inlist_names(2), ierr)
