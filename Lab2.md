@@ -6,11 +6,13 @@ title: Lab2
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
+
+
 # Lab2 -  Modeling The Mass Gainer
 
 ## Science goal
 
-In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure, and future evolution of the mass gainer. We will mainly discuss how mass accretion could impact the surface composition and internal structure of the accretor star. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In the main lab, we will mostly ignore the impact of the angular momentum carried by the accreted material on the mass gainer and leave this as a bonus exercise. 
+In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure (both surface and internal), and future evolution of the mass gainer. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In this lab, we will ignore the impact of the angular momentum carried by the accreted material on the mass gainer. 
 
 
 ### Bonus goal
@@ -25,11 +27,11 @@ For computational ease, we will load the _saved accretor model_ from the last (M
 
    [Click here to access Minilab2](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link)
 
-
+You will have to download Minilab2 and extract the contents of the `evolve_accretor_star.zip` directory.
 Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the Minilab2 directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab2 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
 
 ```shell-session
-$ cp -r ./Minilab1/accretor_final.mod ./Minilab2
+$ cp -r ./Minilab1/accretor_final.mod ./Minilab2/Evolve_accretor_star
 ```
 
  If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
@@ -41,7 +43,8 @@ $ cp -r ./Minilab1/accretor_final.mod ./Minilab2
 
 ### Evolution of the mass gainer
 
-Now, let us continue the evolution of the accretor star from where we left it in Minilab1. For this, you will need to execute the below commands in your terminal (given that you are already present in the Minilab2 directory)
+Now, let us continue the evolution of the accretor star from where we left it in Minilab1. For this, you will need to execute the below commands in your terminal (given that you are already present in the `Evolve_accretor_star` directory)
+
 ```shell-session
 $ ./mk 
 $ ./rn
@@ -63,6 +66,11 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
 |:--|
 |While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
 
+#### Abundance-Power-Mixing plot
+As the name suggests, the top subplot in the plot shows the abundance of various chemical species within the star. The middle subplot shows the regions where nuclear fusion is taking place. It also shows what element is being fused in these regions. The bottom subplot shows the various types of diffusive mixing processes taking place within the star.
+
+#### Kippenhahn plot
+This diagram is used to visualize the internal structure and evolution of a star. It displays information such as convective borders, sites of nuclear energy generation, and sites of shell burning. The $\textcolor{cyan}{\mathrm{cyan}}$ regions indicate convective areas, and the $\textcolor{red}{\mathrm{red}}$ regions indicate the regions where nuclear burning is taking place. The white regions show the convective regions where overshooting is taking place, and the $\textcolor{gray}{\mathrm{grey}}$ regions indicate semi-convection. The latter occurs in regions where neither pure convection nor pure radiation is efficient enough to transport energy effectively. The $\textcolor{blue}{\mathrm{cooling}}$ region refers to a region where the temperature is decreasing over time. The $\textcolor{gray}{\mathrm{grey}}$ line shows the total mass boundary of the star $M_{\rm total}$, while the $\textcolor{teal}{\mathrm{green}}$ line shows the mass boundary of the helium core $M_{\rm He}$. 
 
 ### Single star versus binary star directory
 
@@ -96,16 +104,17 @@ Intuitively, we know that the accretor star gained mass through Roche Lobe overf
 In this section, the goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer). Then, we will compare the structure and evolution of the accretor with that of a single star.
 To begin, download the necessary files required to evolve a single star from the below link
 
-   [Click here to access the single star model for Minilab2](https://drive.google.com/file/d/1kuKGSnNPDEjx45ahGyltGhIJtdvJF_jC/view?usp=share_link)
+   [Click here to access the single star model for Minilab2](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm)
 
- This directory has the same structure as the previously used directory in Minilab2. However, the names of the `inlists` have been modified to show that we are now evolving a single star explicitly. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
+Download the `evolve_single_star` directory, extract its content in the Minilab2 directory. You will notice that this directory has the same structure as the `Evolve_accretor_star` directory in Minilab2. However, the names of the `inlists` have been modified to show that we are now evolving a single star explicitly. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
+
 
 |:question: QUESTION |
 |:--|
 | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
 
 
- To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. In the downloaded directory, this has already been done.
+ To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. 
  
 To run the model, you will need to execute the below commands in your terminal (given that you are already present in the right directory)
  
@@ -125,14 +134,16 @@ $ ./rn
 |What difference do you notice between the accretor's evolution versus that of a single star?|
 
 
-|:information_source: TIP|
+|:information_source: HINT|
 |:--|
-|Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. In case you were not able to make a movie, then you can access made movies by clicking on this [link](some_link.html).|
+|Perhaps the easiest way is to first make a movie of the output for both the stars using the previously explained method. Once you have the movie for both the stars, run them side by side and compare. |
 
 
 
-<details><summary>Answer</summary>
-\comment{Jan do you have a preferred answer here apart from the surface composition and the internal composition plus the Kippenhahn diagram?}
+<details><summary>Answer: Pre-computed movie</summary>
+
+In case you were not able to make a movie, then you can access made movies by clicking on this [Minilab2 directory](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). During the initial stages, you should be able to see that the accretor has a much larger helium abundance on its surface compared to the single star. Over time, this composition evolves, and in the end, both stars have similar surface compositions.  There is also a considerable difference between the internal evolution of the two stars, as seen in the Kippenhahn diagram. During the initial phase, the burning zones of the single star extend to larger mass coordinates than that of the accretor. 
+
 </details>
 
 
