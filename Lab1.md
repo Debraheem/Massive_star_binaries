@@ -313,6 +313,7 @@ Run the same model as you did in Lab1 but now with
 ```
    evolve_both_stars = .true.
 ```
+
 |:information_source: CATCH UP|
 |:--|
 | If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1y-zGeKdwQ3mJL0QT-mJLx2IFLSAW1fXi?usp=share_link).|
