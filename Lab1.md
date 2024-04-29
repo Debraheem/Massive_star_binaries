@@ -69,36 +69,42 @@ For this lab we will keep the primary and companion/accretor mass fixed at **`m1
 Now choose a value for the initial mass and period of the binary system from this table.
 
 
-
-Since binary evolution models take quite a long time to run, we will simplify our calculation by terminating the model when 
-
+Since this lab is focused on envelope stripping and mass transfer physics,  we'd like to save some computation and terminate our models before the mass transfer phase ends. Evolving trhough the mass transfer phase for the default case happens around model number 370 (and takes 11 mins). We'll try to reduce this computation time by terminating our model once it loses 50% of its mass. 
 
 
+Let's add a stopping condition to our model such that it terminates when the Primary loses 50% of its initial mass. 
 
 
+|:information_source: Tips|
+|:--|
+|This can by done by modifying the `run_binary_extras.f90` file.|
+|Specifically, you're looking to modify the `extras_binary_finish_step` function.|
 
 
+<details><summary>Answers</summary>
 
 
+</details>
 
+```fortran
+ ! terminate when the accretor star depletes hydrogen
+ if (b% point_mass_i == 1) then
+    if (b% s2% center_h1 < 1d-3) then
+       extras_binary_finish_step = terminate
+       write(*,*) "Terminate due to accretor star at TAMS"
+       return
+    end if
+ end if
+```
 
-
-
-
-
-
-
-
-
-Now, let's run the model. As before, for this, we need to execute the below commands in the terminal
+Now, let's run the model. We need to execute the below commands in the terminal to compile our `run_binary_extras.f90` file and run the calculation.
 
 ```shell-session
 $ ./mk
 $ ./rn
 ```
 
-
-The model should take roughly 7 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
+The model should take roughly 4 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
 
 When your model has finished running, try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
 
