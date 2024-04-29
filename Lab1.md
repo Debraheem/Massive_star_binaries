@@ -241,9 +241,10 @@ Run the same model as you did in Lab1 but now with
    evolve_both_stars = .true.
 ```
 
-You will now see both stars being evolved in the `&pgbinary` plots.
+You will now see both stars being evolved in the `&pgbinary` plots that looks like this.
 
 ![Example of pgbinary with `evolve_both_stars=.true.`](Figures/pgbinary_evolve_both.png)
+*<br> Example of pgbinary with `evolve_both_stars=.true.`*
 
 
 <details>
