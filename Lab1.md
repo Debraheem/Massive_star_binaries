@@ -218,12 +218,14 @@ We want our binary evolution to terminate when the mass transfer phase is comple
 
 First, remove the stopping condition we applied earlier. Then in `run_star_extras.f90`, let's add a new stopping condition so that our model terminates when the primary reaches core Carbon depletion. Let's terminate the model when $X(^{12}\mathrm{C})\leq10^{-4}$:
 
-Note that just adding an control like the following will will no work for all cases.
+Note that just adding a control like the following will not work for all cases. But why?
 ```plaintext
       xa_central_lower_limit_species(1) = 'c12'
       xa_central_lower_limit(1) = 1d-4
 ```
-This is because a ZAMS model typically has little to no Carbon, and most of the Carbon present at the onset of Carbon burning is produces via the $3-\alpha$ and $^{12}\mathrm{C}-\alpha-\gamma$ reaction rates during Helium burning. To prevent our models from prematurely terminating, we need to add a custom stopping condition in our `run_star_extras.f90`.
+This is because a most of the initial $^{12}\textrm{C}$ present at ZAMS is converted into $^{14}\textrm{N}$ during core-Hydrogen burning. The $^{12}\textrm{C}$ present in the core at the onset of Carbon burning is produced via the $3-\alpha$ and $^{12}\mathrm{C}-\alpha-\gamma$ reaction rates during core-Helium burning. To prevent our models from prematurely terminating, we need to add a custom stopping condition in our `run_star_extras.f90`.
+
+1. Add a custom stopping condition that will terminate your model when $X(^{12}\mathrm{C})\leq10^{-4}$ and $X(^{4}\mathrm{He})\leq10^{-4}$ are both true.
 
 
 |:information_source: Tips|
@@ -245,7 +247,7 @@ integer function extras_finish_step(id)
    if (ierr /= 0) return
    extras_finish_step = keep_going
 
-   if (s% xa(s% net_iso(ic12),s% nz) < 1d-3 .and. s% xa(s% net_iso(ihe4),s% nz) < 1d-4) then
+   if (s% xa(s% net_iso(ic12),s% nz) < 1d-4 .and. s% xa(s% net_iso(ihe4),s% nz) < 1d-4) then
       extras_finish_step = terminate
       write(*,*) 'Reached Core Carbon depletion, Model finished evolution.'
    end if
