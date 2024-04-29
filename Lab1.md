@@ -135,8 +135,7 @@ Below are some questions to discuss at your table and answer while your model ev
 | :--- |
 | 1. What type of mass transfer does your system undergo? Case A, B, C? |
 | 2. Is the mass transfer in your system stable or unstable?|
-| 3. what is the approximate mass of the primary when the simulation ends?|
-| 4. how much mass did the secondary accrete from the total mass that the primary lost.|
+| 3. What is the mass transfer timescale (e.g. $\tau_\mathrm{mt}\equiv |M_1/\dot{M}_1|$)?|
 
 
 ### What are the different types of mass transfer?
