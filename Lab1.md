@@ -77,12 +77,13 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 
 |:information_source: Tips|
 |:--|
-|This can by done by modifying the `run_binary_extras.f90` file.|
+|This can be done by modifying the `run_binary_extras.f90` file.|
 |Specifically, you're looking to modify the `extras_binary_finish_step` function.|
 
 
 <details>
 <summary>Answers</summary>
+
 
 ```fortran
  ! terminate when the accretor star depletes hydrogen
