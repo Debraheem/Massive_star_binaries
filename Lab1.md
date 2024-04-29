@@ -116,7 +116,7 @@ $ images_to_movie "png/*.png" movie.mp4
 <details>
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
    
-<video width="1280" height="720" controls>
+<video width="640" height="480" controls>
   <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -218,7 +218,7 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 <details>
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
 
-<video width="1280" height="720" controls>
+<video width="640" height="480" controls>
   <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
