@@ -10,7 +10,7 @@ title: Lab3
 
 ## Science goal
 
-The goal of this lab is to explore the impact of different initial periods and mass ratios **m1/m2** on the evolution of our binary system. 
+The goal of this lab is to explore how binaries evolve depending on the primary mass and mass ratios $q\equiv M_2/M_1$. The aim is to see the diversity of stellar evolution when the star is in a binary.
 
 ### Bonus goal
 
