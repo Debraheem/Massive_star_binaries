@@ -81,10 +81,8 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 |Specifically, you're looking to modify the `extras_binary_finish_step` function.|
 
 
-<details><summary>Answers</summary>
-
-
-</details>
+<details>
+<summary>Answers</summary>
 
 ```fortran
  ! terminate when the accretor star depletes hydrogen
@@ -96,6 +94,9 @@ Let's add a stopping condition to our model such that it terminates when the Pri
     end if
  end if
 ```
+
+</details>
+
 
 Now, let's run the model. We need to execute the below commands in the terminal to compile our `run_binary_extras.f90` file and run the calculation.
 
@@ -111,7 +112,8 @@ When your model has finished running, try to make a movie of your `&pgbinary` di
 ```shell-session
 $ images_to_movie "png/*.png" movie.mp4
 ```
-<details><summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+<details>
+<summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
    
 ![Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion](Figures/4days_15M_primary.mp4)
 
