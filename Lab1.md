@@ -81,8 +81,8 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 |Specifically, you're looking to modify the `extras_binary_finish_step` function.|
 
 
-<details>
-<summary>Answers</summary>
+<details markdown="block">
+<summary>Answers: Example code</summary>
 <br>
 
 ```fortran
