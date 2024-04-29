@@ -83,6 +83,9 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 
 <details><summary>Answers</summary>
 
+
+</details>
+
 ```fortran
  ! terminate when the accretor star depletes hydrogen
  if (b% point_mass_i == 1) then
@@ -93,10 +96,6 @@ Let's add a stopping condition to our model such that it terminates when the Pri
     end if
  end if
 ```
-
-</details>
-
-
 
 Now, let's run the model. We need to execute the below commands in the terminal to compile our `run_binary_extras.f90` file and run the calculation.
 
