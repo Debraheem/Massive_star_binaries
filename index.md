@@ -387,7 +387,7 @@ The bug fix above is crucial for many of you, as the simulation won't even run w
       call update_pgstar_history_file(b% s2, ierr)
    else
 -     write(mass, '(f3.2)') b% m(2) / Msun
-+     write(mass, '(f6.2)') b% m(2) / Msun
++     write(mass, '(f0.2)') b% m(2) / Msun
       call pgmtxt('T', -2.0, 0.5, 0.5, 'Star 2 not simulated')
       call pgmtxt('T', -3.0, 0.5, 0.5, 'point mass of ' // trim(adjustl(mass)) // ' M\d\(2281)')
    end if
