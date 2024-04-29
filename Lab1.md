@@ -297,7 +297,7 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 | 4. What do your supernova progenitor look like, is it a Blue, Yellow, or Red Supergiant?|
 | 5. What kind of observational supernova would the primary star explode as?|
 
-Here are some rough characteristic effective temperatures for massive stars (adopted from Drout et al. 2009):
+Here are some rough characteristic effective temperatures for massive stars (adopted from [Drout et al. 2009](https://ui.adsabs.harvard.edu/abs/2009ApJ...703..441D/abstract)):
 
 Blue Supergiant (BSG): > 7,500 K
 
