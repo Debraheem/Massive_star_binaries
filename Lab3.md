@@ -26,7 +26,7 @@ This lab will continue using the downloaded `Lab1_binary` directory, we will beg
 To explore the stability of mass transfer across various mass ratios and orbital periods, we have crafted a grid o
 
 
-Let's start by assuming fully conservative mass transfer, i.e. ($\beta$ == 1).
+Let's start by assuming fully conservative mass transfer, i.e. ($\beta=1$).
 
 For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m1`. We will explore the following mass range $M_{1} = 12.5 - 30 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 200$ days. We've descritized this parameter space in the following two tables:
 
