@@ -240,3 +240,10 @@ Run the same model as you did in Lab1 but now with
 ```
    evolve_both_stars = .true.
 ```
+
+<details>
+<summary>There's something we need to tell you...</summary>
+
+You may notice that during the calculation, the secondary star can greatly exceed its own Roche lobe size. This is because we have relaxed the stopping condition so that the calculation won't stop even though the binary has become an overcontact binary. In reality, the overcontact binary could lose mass through the second Lagrangian point or through winds, or simply merge into a single object. Given that we don't really know what should happen in nature, we will simply focus on how the accretor star evolves within our MESA models in Lab2.
+
+</details>
