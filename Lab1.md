@@ -115,10 +115,8 @@ $ images_to_movie "png/*.png" movie.mp4
 
 <details>
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
-
-Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion
    
-<video width="320" height="240" controls>
+<video width="1280" height="720" controls>
   <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -220,9 +218,7 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 <details>
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
 
-Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion
-   
-<video width="320" height="240" controls>
+<video width="1280" height="720" controls>
   <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
