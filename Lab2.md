@@ -6,7 +6,9 @@ title: Lab2
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-
+|:exclamation: TEMPORARY|
+|:--|
+|The content of Lab 2 has been ported over from [this PDF version](MESA_Lab2.pdf). See PDF in case you find anything is missing from the website.|
 
 # Lab2 -  Modeling The Mass Gainer
 
