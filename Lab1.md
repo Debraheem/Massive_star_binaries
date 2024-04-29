@@ -143,7 +143,7 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).|
+| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/141zIE0F86UDTk3ZmR5aKN6GkDOnoGuP1?usp=share_link).|
 
 Below are some questions to discuss at your table and answer while your model evolves
 
@@ -275,6 +275,10 @@ $ ./re x000353
 
 Again, you can make `&pgbinary` movie of your run and use it with your terminal output to answer the following questions!
 
+|:information_source: CATCH UP|
+|:--|
+| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/15ZZN-SQOiDLfuvV1eugfkNQqfUy6Stmw?usp=share_link).|
+
 <details>
 <summary>Answers: An example pgstar produced from the case 3 in the table above</summary>
 
@@ -309,13 +313,19 @@ Run the same model as you did in Lab1 but now with
 ```
    evolve_both_stars = .true.
 ```
-
+|:information_source: CATCH UP|
+|:--|
+| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1y-zGeKdwQ3mJL0QT-mJLx2IFLSAW1fXi?usp=share_link).|
 You will now see both stars being evolved in the `&pgbinary` plots that looks like this.
 
 ![Example of pgbinary with `evolve_both_stars=.true.`](Figures/pgbinary_evolve_both.png)
 *<br> Example of pgbinary with `evolve_both_stars=.true.`*
 
 Remember you'll be using your `accretor_final.mod` from this bonus in Lab2, but don't worry if you don't get this far as we will provide a copy of `accretor_final.mod` for you if you run out of time before generating one yourself.
+
+|:information_source: CATCH UP|
+|:--|
+| If you are having issues generating the `accretor_final.mod` file for Lab2, we have provided precomputed mod files [available for download here](https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link).|
 
 <details>
 <summary>There's something we need to tell you...</summary>
