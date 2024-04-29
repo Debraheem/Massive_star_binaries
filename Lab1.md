@@ -211,19 +211,60 @@ Discussion point: What are the ratios of Case A vs Case B vs Case C mass transfe
 
 ## Bonus 1: Evolving through the whole mass transfer phase 
 
-Now that we know all of our models were either case A or case B mass transfer, let's extend the our stopping condition further until core-Helium depletion.
+Now that we know all of our models were either case A or case B mass transfer, let's extend the our stopping condition further until core-Carbon depletion. This will allow us to determine whether our models undergo a second mass transfer phase, and whether or not they end their lives a Blue, Yellow, or Red Supergiant (BSG,YSG,RSG).
 <!-- 
 We want our binary evolution to terminate when the mass transfer phase is complete. Both case A and B mass transfer phases are typically complete by the time the primary has reached core-Helium depletion. This is because the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime, and both case A and B occur before core-Helium depletion by definition.
 -->
 
-First, remove the stopping condition we applied earlier. Then in `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+First, remove the stopping condition we applied earlier. Then in `run_star_extras.f90`, let's add a new stopping condition so that our model terminates when the primary reaches core Carbon depletion. Let's terminate the model when $X(^{12}\mathrm{C})\leq10^{-4}$:
 
+Note that just adding an control like the following will will no work for all cases.
 ```plaintext
-      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit_species(1) = 'c12'
       xa_central_lower_limit(1) = 1d-4
 ```
+This is because a ZAMS model typically has little to no Carbon, and most of the Carbon present at the onset of Carbon burning is produces via the $3-\alpha$ and $^{12}\mathrm{C}-\alpha-\gamma$ reaction rates during Helium burning. To prevent our models from prematurely terminating, we need to add a custom stopping condition in our `run_star_extras.f90`.
 
-To save computation time, you instead restart your binary mass transfer model from photo created at the end of your previous run.
+
+|:information_source: Tips|
+|:--|
+|Specifically, you're looking to modify the `extras_finish_step` function.|
+
+
+<details markdown="block">
+<summary>Answers: Example c12 stopping condition</summary>
+
+```fortran
+integer function extras_finish_step(id)
+   use chem_def , only: ihe4, ic12
+   integer, intent(in) :: id
+   integer :: ierr
+   type (star_info), pointer :: s
+   ierr = 0
+   call star_ptr(id, s, ierr)
+   if (ierr /= 0) return
+   extras_finish_step = keep_going
+
+   if (s% xa(s% net_iso(ic12),s% nz) < 1d-3 .and. s% xa(s% net_iso(ihe4),s% nz) < 1d-4) then
+      extras_finish_step = terminate
+      write(*,*) 'Reached Core Carbon depletion, Model finished evolution.'
+   end if
+
+end function extras_finish_step
+```
+-->
+
+</details>
+
+When you're finished modifying the `run_star_extras.f90` file, be sure to check that your code compiles by running the following and terminating your model after a few timesteps.
+
+```shell-session
+$ ./clean
+$ ./mk
+```
+
+
+Now that we've added our new stopping condition, save yourself some computation time by restarting your binary mass transfer model from photo created at the end of your previous run.
 This can be done by executing the following example command in the terminal for a model that terminated at timestep 353.
 
 ```shell-session
@@ -233,10 +274,10 @@ $ ./re x000353
 Again, you can make `&pgbinary` movie of your run and use it with your terminal output to answer the following questions!
 
 <details>
-<summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+<summary>Answers: An example pgstar produced from the case 3 in the table above</summary>
 
 <video width="640" height="480" controls>
-  <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
+  <source src="Figures/4days_15M_primary_c_deplete.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
