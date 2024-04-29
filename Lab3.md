@@ -114,7 +114,11 @@ In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.co
 |||||||
 
 
-
+|:question: DISCUSSION|
+|:--|
+| 1. What are the qualitative differences between Case A vs B mass transfer? |
+| 2. How does the mass ratio influence the stability of mass transfer and their outcome? |
+| 3. We have ignored the effect of winds here. How do you think the evolution would change if we added winds on top of binary effects? |
 
 
 ## Bonus: Nonconservative Mass Transfer
@@ -123,7 +127,7 @@ As in Lab1, try adopting the following nonconservative Mass transfer controls an
 
 | $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
 |:-----|:--------------|:--------------|:----------------|
-| 0 | 0.6 | 0.1 | 1.2 |
+| 0 | 0.5 | 0 | 0 |
 
 |:information_source: CATCH UP|
 |:--|
