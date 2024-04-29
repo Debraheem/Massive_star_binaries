@@ -83,17 +83,15 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 
 <details markdown="block">
 <summary>Answers: Example code</summary>
-<br>
+
+Add this into the `extras_binary_finish_step` subroutine in `run_binary_extras.f90`.
 
 ```fortran
- ! terminate when the accretor star depletes hydrogen
- if (b% point_mass_i == 1) then
-    if (b% s2% center_h1 < 1d-3) then
-       extras_binary_finish_step = terminate
-       write(*,*) "Terminate due to accretor star at TAMS"
-       return
-    end if
- end if
+if (b% m(2) > 1.5d0 * b% eq_initial_bh_mass) then
+   extras_binary_finish_step = terminate
+   write(*,*) "Terminate due to m2 > 1.5 x m2_iniital"
+   return
+end if
 ```
 
 
