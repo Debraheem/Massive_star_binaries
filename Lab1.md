@@ -83,7 +83,7 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 
 <details>
 <summary>Answers</summary>
-
+<br>
 
 ```fortran
  ! terminate when the accretor star depletes hydrogen
@@ -95,6 +95,7 @@ Let's add a stopping condition to our model such that it terminates when the Pri
     end if
  end if
 ```
+
 
 </details>
 
