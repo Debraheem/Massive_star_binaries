@@ -277,7 +277,7 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 <summary>Answers: An example pgstar produced from the case 3 in the table above</summary>
 
 <video width="640" height="480" controls>
-  <source src="Figures/4days_15M_primary_c_deplete.mp4" type="video/mp4">
+  <source src="Figures/200days_15M_primary_c_deplete.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
