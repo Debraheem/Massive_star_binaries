@@ -312,7 +312,7 @@ TIME: 12:48:18
 finished 
 ```
 
-How do we fix this bug? 
+#### How do we fix this bug? 
 
 Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
 
@@ -320,9 +320,9 @@ Notice that the fortran backtrace error we are recieving points to `../private/p
 call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
 ```
 
-What seems to be happening?
+#### What seems to be happening?
 
-When MESA binary runs in single star mode, it appears that X2s_RL and y2s_RL are unset in the `pgbinary_orbit` panel.
+When MESA binary runs in single star mode, it appears that `x2s_RL` and `y2s_RL` are unset in the `pgbinary_orbit` panel.
 To solve this issue, we can set these variables by adding the following just below line 205 in `pgbinary_orbit.f90`.
 
 ```fortran
@@ -373,3 +373,24 @@ $ ./rn
 pgbinary should no longer crash! You can now continue on to [Lab1](./Lab1), where we will continue using and modifying this same `Lab1_binary` directory.
 
 
+#### Another bug fix while you're on it
+
+The bug fix above is crucial for many of you, as the simulation won't even run with pgbinary switched on. There is another small bug that prevents the mass of the secondary to be outputted when it is treated as a point mass. That can be fixed by changing the output formatting style. In line 225 of `pgbinary_star.f90`, change the formatting to something like this.
+
+
+```diff_fortran
+   if (b% point_mass_i /= 2) then
+
+      call read_pgstar_inlist(b% s2, b% job% inlist_names(2), ierr)
+      call update_pgstar_data(b% s2, ierr)
+      call plot_case(b% s2, b% star_ids(2))
+      call update_pgstar_history_file(b% s2, ierr)
+   else
+-     write(mass, '(f3.2)') b% m(2) / Msun
++     write(mass, '(f6.2)') b% m(2) / Msun
+      call pgmtxt('T', -2.0, 0.5, 0.5, 'Star 2 not simulated')
+      call pgmtxt('T', -3.0, 0.5, 0.5, 'point mass of ' // trim(adjustl(mass)) // ' M\d\(2281)')
+   end if
+```
+
+With this fix, the secondary mass should also be outputted appropriately.
