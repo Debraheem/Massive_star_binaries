@@ -85,7 +85,7 @@ Try to apply a stopping condition so that the calculation finishes when 80% of t
 |Specifically, you're looking to modify the `extras_binary_finish_step` function.|
 -->
 
-|:information_source: TIPS|
+|:information_source: HINT|
 |:--|
 |This can be done by setting a stopping condition in `inlist1`.|
 
