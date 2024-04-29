@@ -250,11 +250,11 @@ We can turn on the `pgbinary` plots by uncommenting the following line in `&star
 ```
 !   pgbinary_flag = .true.
 ```
-we also want to try running this model in the single star mode, so open so let's ensure `evolve_both_stars = .false.` as well.
+we also want to try running this model in the single star mode, so let's ensure `evolve_both_stars = .false.` as well.
 
 Now we can  `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass.
 
-This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panle on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appears in the top right corner followed by other plots of the orbital evolution of both stars.
+This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appears in the top right corner followed by other plots of the orbital evolution of both stars.
 
 ![pgstar](Figures/grid1_000080.png)
 
