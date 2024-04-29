@@ -14,7 +14,7 @@ The goal of this lab is to explore how binaries evolve depending on the primary 
 
 ### Bonus goal
 
-Our bonus goal is to explore the impact of nonconservative mass transfer on the mass transfer stability.
+Our bonus goal is to explore the impact of nonconservative mass transfer.
 
 
 
@@ -23,7 +23,7 @@ Our bonus goal is to explore the impact of nonconservative mass transfer on the 
 This lab will continue using the downloaded `Lab1_binary` directory, modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
 
 
-To explore the stability of mass transfer across various mass ratios and orbital periods, we have crafted a grid o
+To explore the stability of mass transfer across various mass ratios and orbital periods.
 
 
 Let's start by assuming fully conservative mass transfer, i.e. ($\beta=0$).
