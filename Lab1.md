@@ -133,7 +133,7 @@ $ images_to_movie "png/*.png" movie.mp4
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
    
 <video width="640" height="480" controls>
-  <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
+  <source src="Figures/case_1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -280,10 +280,10 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 | If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/15ZZN-SQOiDLfuvV1eugfkNQqfUy6Stmw?usp=share_link).|
 
 <details>
-<summary>Answers: An example pgstar produced from the case 3 in the table above</summary>
+<summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
 
 <video width="640" height="480" controls>
-  <source src="Figures/200days_15M_primary_c_deplete.mp4" type="video/mp4">
+  <source src="Figures/case_1_bonus1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -318,8 +318,13 @@ Run the same model as you did in Lab1 but now with
 | If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1y-zGeKdwQ3mJL0QT-mJLx2IFLSAW1fXi?usp=share_link).|
 You will now see both stars being evolved in the `&pgbinary` plots that looks like this.
 
-![Example of pgbinary with `evolve_both_stars=.true.`](Figures/pgbinary_evolve_both.png)
+<!--- ![Example of pgbinary with `evolve_both_stars=.true.`](Figures/pgbinary_evolve_both.png)
 *<br> Example of pgbinary with `evolve_both_stars=.true.`*
+--->
+<video width="640" height="480" controls>
+  <source src="Figures/case_1_bonus2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 Remember you'll be using your `accretor_final.mod` from this bonus in Lab2, but don't worry if you don't get this far as we will provide a copy of `accretor_final.mod` for you if you run out of time before generating one yourself.
 
