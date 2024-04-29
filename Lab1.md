@@ -229,7 +229,7 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 | 1. What is the approximate mass of the primary when the mass transfer phase ends?|
 | 2. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 | 3. How does the final mass of the primary and secondary compare to before?|
-
+| 4. Could there be another mass transfer phase (Case AB/BB mass transfer)? |
 
 ## Bonus 2: Evolving both stars
 
