@@ -64,26 +64,42 @@ For this lab we will keep the primary and companion/accretor mass fixed at **`m1
 | 1 | 15 | 12 | 4   | 0   |
 | 2 | 15 | 12 | 15  | 0   |
 | 3 | 15 | 12 | 200 | 0   |
-| 4 | 15 | 12 | 4   | 0.5 |
+| 4 | 15 | 12 | 15  | 0.5 |
 
 Now choose a value for the initial mass and period of the binary system from this table.
 
+<!-- 
+Since this lab is focused on envelope stripping and mass transfer physics,  we'd like to save some computation and terminate our models before the mass transfer phase ends. Evolving trhough the mass transfer phase for the default case happens around model number 370 (and takes 11 mins). We'll try to reduce this computation time by terminating our model once it loses 50% of its mass.
 
-Since this lab is focused on envelope stripping and mass transfer physics,  we'd like to save some computation and terminate our models before the mass transfer phase ends. Evolving trhough the mass transfer phase for the default case happens around model number 370 (and takes 11 mins). We'll try to reduce this computation time by terminating our model once it loses 50% of its mass. 
+Let's add a stopping condition to our model such that it terminates when the Primary loses 50% of its initial mass.
+-->
 
+For solar metallicity stars, it is known that mass transfer processes will strip most of the hydrogen envelope over relatively short timescales. However, the computational cost ramps up as the remaining envelope mass decreases, so we could end up spending most of our computation time trying to strip off the last bit of envelope, even though it may not be long in physical time. In the first half of this lab, we will focus on examining the stability and timescale of mass transfer, so let's apply a stopping condition to terminate the calculation before the computation slows down.
 
-Let's add a stopping condition to our model such that it terminates when the Primary loses 50% of its initial mass. 
+Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost.
 
-
+<!--
 |:information_source: Tips|
 |:--|
 |This can be done by modifying the `run_binary_extras.f90` file.|
 |Specifically, you're looking to modify the `extras_binary_finish_step` function.|
+-->
+
+|:information_source: TIPS|
+|:--|
+|This can be done by setting a stopping condition in `inlist1`.|
 
 
 <details markdown="block">
 <summary>Answers: Example code</summary>
 
+Add this to `&controls` in `inlist1`
+
+```
+   envelope_fraction_left_limit = 0.2
+```
+
+<!--
 Add this into the `extras_binary_finish_step` subroutine in `run_binary_extras.f90`.
 
 ```fortran
@@ -93,7 +109,7 @@ if (b% m(2) > 1.5d0 * b% eq_initial_bh_mass) then
    return
 end if
 ```
-
+-->
 
 </details>
 
