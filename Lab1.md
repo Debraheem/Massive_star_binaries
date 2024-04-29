@@ -296,6 +296,14 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 
 In the next lab, we will be exploring how the accretor star can evolve differently from single stars of the same mass. For this, we need to run the evolution with both stars without assuming the secondary star is a point source. This typically takes much more time than the point source case, so let's keep a model running before you leave for lunch.
 
+We'd like to save the final .mod file from the accretor (secondary) for use in Lab2, so let's remove all the stopping conditions we applied earlier. Then in `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+
+We can do this by adding the following stopping condition.
+```plaintext
+      xa_central_lower_limit_species(1) = 'c12'
+      xa_central_lower_limit(1) = 1d-4
+```
+
 Run the same model as you did in Lab1 but now with
 
 ```
