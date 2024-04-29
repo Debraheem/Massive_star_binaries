@@ -23,7 +23,7 @@ As a homework exercise, you may also like to study the evolution of the binary o
 ## Evolving the mass gainer as a single star
 For computational ease, we will load the _saved accretor model_ from the last (Minilab1) run and then evolve this model _as a single star_. To begin, first copy the necessary files required for Minilab2 from the following link.
 
-   [Click here to access Minilab2](https://drive.google.com/file/d/1kuKGSnNPDEjx45ahGyltGhIJtdvJF_jC/view?usp=share_link)
+   [Click here to access Minilab2](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link)
 
 
 Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the Minilab2 directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab2 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
@@ -90,7 +90,7 @@ This will create a movie out of the `png` files and save it with the name `movie
 
 
 Although we have evolved the accretor as a single star, it would be instructive to check how this differs from the evolution of a single star that never interacted with a companion. 
-Intuitively, we know that the accretor star gained mass through Roche Lobe overflow and that this mass had a somewhat different chemical composition than the accretor star's surface. This is because the primary already has substantial helium on its surface during the later stage of mass transfer.
+Intuitively, we know that the accretor star gained mass through Roche Lobe overflow and that this material had a somewhat different chemical composition than the accretor star's surface. This is because the primary already has substantial helium on its surface during the later stage of mass transfer.
 
 
 In this section, the goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer). Then, we will compare the structure and evolution of the accretor with that of a single star.
@@ -147,7 +147,7 @@ This section is devoted to that.
 
 
 
-While initially, there would not be much difference in the evolution, once the accretor begins to expand, it might fill its Roche Lobe and initiate a phase of mass transfer on what was earlier a primary star. This will strip the secondary of its surface material and expose its inner core. Moreover, the primary star would have long disappeared and only a compact remnant would be left behind. As such, we will approximate the primary star as a point mass, i.e. only the gravitational influence of the primary would be important to us. The primary star - which is now model as a black hole - would feed on the mass dumped by the secondary and *would act as a source of strong X-ray radiation*.
+While initially, there would not be much difference in the evolution, once the accretor begins to expand, it might fill its Roche Lobe and initiate a phase of mass transfer on what was earlier a primary star. This will strip the secondary of its surface material and expose its inner core. Moreover, the primary star would have long disappeared and only a compact remnant would be left behind. As such, we will approximate the primary star as a point mass, i.e. only the gravitational influence of the primary would be important to us. The primary star - which is now modelled as a black hole - would feed on the mass dumped by the secondary and *would act as a source of strong X-ray radiation*.
 
 
 
