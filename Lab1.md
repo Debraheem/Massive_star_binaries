@@ -168,6 +168,8 @@ Mass transfer in binary systems are often classified based on which burning stag
        <dd> Mass transfer from a core helium depleted star. </dd>
 </dl>
 
+We sometimes combine the different types if multiple mass transfer phases occur in the same system. For example, if Case A mass transfer is followed by Case B mass transfer, we call it Case AB mass transfer.
+
 How do we know which type of mass transfer occurs? This can be done by simply comparing the size of the star during various burning stages to the size of its  Roche lobe.
 
 
