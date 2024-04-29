@@ -28,29 +28,27 @@ To explore the stability of mass transfer across various mass ratios and orbital
 
 Let's start by assuming fully conservative mass transfer, i.e. ($\beta=0$).
 
-For this lab we will keep the companion/accretor mass fixed at **`m2 = 12d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m1`. We will explore the following mass range $M_{1} = 12.5 - 30 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 200$ days. We've descritized this parameter space in the following two tables:
+For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1.5 - 12 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 512$ days. We've descritized this parameter space in the following two tables:
 
-| Primary (Donor) Mass ( $M_{\odot}$ ) |   
+| Companion (accretor) Mass ( $M_{\odot}$ ) |   
 |:------------------------|
-| 12.5      |
-| 15        |
-| 20        |
-| 25        |
-| 30        |
+| 1.5      |
+| 3        |
+| 6        |
+| 9        |
+| 12        |
 
 | Period (days) |     
 |:--------------|
 | 2        | 
 | 4        | 
-| 6        | 
-| 8        |
-| 15       |
-| 20       |
-| 25       |
-| 30       |
-| 50       |
-| 100       |
-| 200        |
+| 8        | 
+| 16        |
+| 32       |
+| 64       |
+| 128       |
+| 256       |
+| 512       |
 
 Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
 
