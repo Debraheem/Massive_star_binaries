@@ -112,10 +112,16 @@ When your model has finished running, try to make a movie of your `&pgbinary` di
 ```shell-session
 $ images_to_movie "png/*.png" movie.mp4
 ```
+
 <details>
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+
+Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion
    
-![Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion](Figures/4days_15M_primary.mp4)
+<video width="320" height="240" controls>
+  <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 </details>
 
@@ -211,9 +217,15 @@ $ ./re x000353
 
 Again, you can make `&pgbinary` movie of your run and use it with your terminal output to answer the following questions!
 
-<details><summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+<details>
+<summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+
+Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion
    
-![Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion](Figures/4days_15M_primary.mp4)
+<video width="320" height="240" controls>
+  <source src="Figures/4days_15M_primary.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 </details>
 
