@@ -354,14 +354,13 @@ These should appear on lines 206-208, With lines 198-212 shown below, in context
 Save the file and navigate backward into the `$MESA_DIR/binary` directory. Next, let's recompile MESA binary and export our changes with the following commands.
 
 ```shell-session
-$ cd $MESA_DIR/star/
-$ ./mk
-$ ./export
+$ cd $MESA_DIR/binary
+$ ./install
 ```
 
 |:information_source: INFO|
 |:--|
-|If you are having trouble correctly modifying pgbinary.f90, feel free to download the [pgbinary.f90 solution here](https://drive.google.com/file/d/1r-AA9a-MjCdpmw3QaMxfVrqTEMv0NMqK/view?usp=share_link), and replace the file.|
+|If you are having trouble correctly modifying `pgbinary.f90`, feel free to download the [`pgbinary.f90` solution here](https://drive.google.com/file/d/1r-AA9a-MjCdpmw3QaMxfVrqTEMv0NMqK/view?usp=share_link), and replace the file.|
 
 Now let's navigate back into our Lab1_binary directory, recompile MESA star, and run our binary model again.
 
