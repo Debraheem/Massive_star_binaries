@@ -294,7 +294,17 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 | 1. How much of the envelope has the donor lost? |
 | 2. Is the appearance of the donor (luminosity and temperature) different from what you would expect for a normal core He depleted star?|
 | 3. Is there another mass transfer phase following the first one (Case AB/BB)?|
-| 4. What kind of observational supernova would the primary star explode as?|
+| 4. What do your supernova progenitor look like, is it a Blue, Yellow, or Red Supergiant?|
+| 5. What kind of observational supernova would the primary star explode as?|
+
+Here are some rough characteristic effective temperatures for massive stars (adopted from Drout et al. 2009):
+
+Blue Supergiant (BSG): > 7,500 K
+
+Yellow Supergiant (YSG): 4,800 K – 7,500 K
+
+Red Supergiant (RSG): < 4,800 K
+
 
 ## Bonus 2: Evolving both stars
 
