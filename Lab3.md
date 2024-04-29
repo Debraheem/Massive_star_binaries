@@ -20,7 +20,7 @@ Our bonus goal is to explore the impact of nonconservative mass transfer on the 
 
 
 ## Exploring a grid of mass transfer models with varying mass ratios
-This lab will continue using the downloaded `Lab1_binary` directory, we will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
+This lab will continue using the downloaded `Lab1_binary` directory, modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
 
 
 To explore the stability of mass transfer across various mass ratios and orbital periods, we have crafted a grid o
@@ -87,10 +87,10 @@ $ ./rn
 
 The model should take roughly 7 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
 
-When your model is finished running, try to make a movie of your `&pgbianry` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
+When your model is finished running, try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
 
-```
-images_to_movie "png/*.png" movie.mp4
+```shell-session
+$ images_to_movie "png/*.png" movie.mp4
 ```
 
 Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
@@ -112,10 +112,6 @@ In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.co
 | M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
 |:-----------------------------------------|:-------------------------|:-------------------------|:----------------------------------|:--------------------|:---------------------|
 |||||||
-
-
-
-
 
 
 
