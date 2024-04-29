@@ -161,7 +161,7 @@ The radius evolution of our 15$M_\odot$ star looks like this:
 ![Radius evolution of a 15$M_\odot$ star](Figures/Radius_evo.png)
 *<br>Radius evolution of a 15 M$_\odot$ star*
 
-DIfferent colours indicate which burning stage the star is in.
+Different colours indicate which burning stage the star is in.
 
 <details><summary>Answers</summary>
 
