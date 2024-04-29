@@ -24,16 +24,18 @@ The `tree` command shows the files contained in the `Lab1_binary` directory and 
 
 If your terminal does not have `tree` installed, you  can do it by executing
 
+```shell-session
+$ brew install tree (on mac)
 ```
-brew install tree (on mac)
 or
-sudo apt-get install tree (on linux)
+```shell-session
+$ sudo apt-get install tree (on linux)
 ```
 It's alright if you don't have `tree` or cannot download it, `ls` should suffice.
 
 `tree ./Lab1_binary` should return the following.
 
-```shell
+```shell-session
 ├── clean
 ├── inlist
 ├── inlist1
@@ -84,9 +86,9 @@ All files are briefly described in the table below
 
 `inlist_project`, `inlist1`, and `inlist2` are the three main files that contain the microphysics information of our binary stellar evolution simulation.
 
-### Setting the stellar parameters
+## Setting the stellar parameters
 
-#### Binary parameters
+### Binary parameters
 
 The `inlist_project` - which is relevant for binary parameters -  will look something like this
 
@@ -123,7 +125,7 @@ $MESA_DIR/binary/defaults/binary_controls.defaults
 
 If you would like to change any of these default values, just copy them to `inlist_project` and set the new values there.
 
-#### Parameters of the component stars
+### Parameters of the component stars
 
 Any (non-default) values for the parameters of the individual stars will be set in the `inlist1` (for primary star) and `inlist2` (for secondary star) files. The more massive star is considered as the primary star and dictates the initial evolution of the binary system. An example of the contents in `inlist1` is
 
@@ -222,22 +224,22 @@ $MESA_DIR/star/defaults/
 
 As before copy the relevant parameter you wish to change to `inlist1` before making the change. Similarly, `inlist2` contains the parameters of star 2.
 
-#### Setting values for an initial run
+### Setting values for an initial run
 
 Here, we will run our first model. For this, we need to set the masses of the stars in the binary and the binary's orbit period. Choose a desired value and then execute the below commands in your terminal
 
-```
-./mk
-./rn
+```shell-session
+$ ./mk
+$ ./rn
 ```
 
-#### Terminal Output
+### Terminal Output
 
 On executing the above commands, MESA will print the model output on the terminal. After each step the new updated values of the binaries parameters would be printed to the display. An example output is shown in Fig. 2.
 
 ![An example of the output printed on the terminal](Figures/image.png)
 
-#### Pgstar Output
+### Pgstar Output
 
 A picture is worth a thousand words
 
@@ -258,7 +260,7 @@ This run should return a nice pgbinary plot showing the evolution of the primary
 
 
 
-#### Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
+### Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
 
 Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
@@ -351,19 +353,22 @@ These should appear on lines 206-208, With lines 198-212 shown below, in context
 
 Save the file and navigate backward into the `$MESA_DIR/binary` directory. Next, let's recompile MESA binary and export our changes with the following commands.
 
+```shell-session
+$ cd $MESA_DIR/star/
+$ ./mk
+$ ./export
 ```
-cd $MESA_DIR/star/
-./mk
-./export
-```
-**If you are having trouble correctly modifying pgbinary.f90, feel free to download the [pgbinary.f90 solution here](https://drive.google.com/file/d/1r-AA9a-MjCdpmw3QaMxfVrqTEMv0NMqK/view?usp=share_link), and replace the file.**
+
+|:information_source: INFO|
+|:--|
+|If you are having trouble correctly modifying pgbinary.f90, feel free to download the [pgbinary.f90 solution here](https://drive.google.com/file/d/1r-AA9a-MjCdpmw3QaMxfVrqTEMv0NMqK/view?usp=share_link), and replace the file.|
 
 Now let's navigate back into our Lab1_binary directory, recompile MESA star, and run our binary model again.
 
-```
-./clean
-./mk
-./rn
+```shell-session
+$ ./clean
+$ ./mk
+$ ./rn
 ```
 
 pgbinary should no longer crash! You can now continue on to [Lab1](./Lab1), where we will continue using and modifying this same `Lab1_binary` directory.
