@@ -69,19 +69,25 @@ For this lab we will keep the primary and companion/accretor mass fixed at **`m1
 Now choose a value for the initial mass and period of the binary system from this table.
 
 
-Before running our model, let's uncomment some values from the `history_columns.list` and `profile_columns.list` so we can plot in our `&pgbinary` plots. 
 
-<!-- 
-We want our binary evolution to terminate when the mass transfer phase is complete. All forms of mass transfer A, B, and C are typically complete by the time the primary has reached core-Helium depletion, as the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime.
--->
-
-In `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+Since binary evolution models take quite a long time to run, we will simplify our calculation by terminating the model when 
 
 
-```plaintext
-      xa_central_lower_limit_species(1) = 'he4'
-      xa_central_lower_limit(1) = 1d-4
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Now, let's run the model. As before, for this, we need to execute the below commands in the terminal
@@ -100,7 +106,9 @@ When your model has finished running, try to make a movie of your `&pgbinary` di
 $ images_to_movie "png/*.png" movie.mp4
 ```
 <details><summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+   
 ![Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion](Figures/4days_15M_primary.mp4)
+
 </details>
 
 Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
@@ -115,9 +123,8 @@ Below are some questions to discuss at your table and answer while your model ev
 | :--- |
 | 1. What type of mass transfer does your system undergo? Case A, B, C? |
 | 2. Is the mass transfer in your system stable or unstable?|
-| 3. What is the approximate mass of the primary when the mass transfer phase ends?|
-| 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
-
+| 3. what is the approximate mass of the primary when the simulation ends?|
+| 4. how much mass did the secondary accrete from the total mass that the primary lost.|
 
 
 ### What are the different types of mass transfer?
@@ -170,8 +177,43 @@ Discussion point: What are the ratios of Case A vs Case B vs Case C mass transfe
 
 </details>
 
+## Bonus 1: Evolving through the whole mass transfer phase 
 
-## Evolving both stars
+Now that we know all of our models were either case A or case B mass transfer, let's extend the our stopping condition further until core-Helium depletion.
+<!-- 
+We want our binary evolution to terminate when the mass transfer phase is complete. Both case A and B mass transfer phases are typically complete by the time the primary has reached core-Helium depletion. This is because the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime, and both case A and B occur before core-Helium depletion by definition.
+-->
+
+In `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+
+```plaintext
+      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit(1) = 1d-4
+```
+
+To save computation time, you instead restart your binary mass transfer model from photo created at the end of your previous run.
+This can be done by executing the following example command in the terminal for a model that terminated at timestep 353.
+
+```shell-session
+$ ./re x000353
+```
+
+Again, you can make `&pgbinary` movie of your run and use it with your terminal output to answer the following questions!
+
+<details><summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+   
+![Evolution of a 15$M_\odot$ star with a 12$M_\odot$ companion](Figures/4days_15M_primary.mp4)
+
+</details>
+
+| :question: QUESTIONS | 
+| :--- |
+| 1. What is the approximate mass of the primary when the mass transfer phase ends?|
+| 2. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
+| 3. How does the final mass of the primary and secondary compare to before?|
+
+
+## Bonus 2: Evolving both stars
 
 In the next lab, we will be exploring how the accretor star can evolve differently from single stars of the same mass. For this, we need to run the evolution with both stars without assuming the secondary star is a point source. This typically takes much more time than the point source case, so let's keep a model running before you leave for lunch.
 
