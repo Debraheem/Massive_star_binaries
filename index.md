@@ -334,21 +334,21 @@ To solve this issue, we can set these variables by adding the following just bel
 These should appear on lines 206-208, With lines 198-212 shown below, in context.
 
 ```fortran
-            do i = 1, num_points  ! displace the xs
-               x2s_RL(i) = -(x2s_RL(i) - a2 * (1 - e))  ! flip x for 2nd star!
-               x2s_RL(2 * num_points - i + 1) = x2s_RL(i)
-            end do
-            x2s_RL(2 * num_points + 1) = x2s_RL(1)
-             y2s_RL(2 * num_points + 1) = y2s_RL(1)
-             x2max = maxval(abs(x2s_RL))
-             xmax = max(x2max, xmax)
-          else
-             x2s_RL = 0d0
-             y2s_RL = 0d0
-          end if
-       else if (b% pg% Orbit_show_RL .and. abs(log10(q)) > 2) then
-          write(*, 1) "pgbinary: Not plotting RL, q too extreme: abs(log(q)) = ", abs(log10(q))
-      end if
+    	   do i = 1, num_points	 ! displace the xs
+	      x2s_RL(i) = -(x2s_RL(i) - a2 * (1 - e))  ! flip x for 2nd star!
+	      x2s_RL(2 * num_points - i + 1) = x2s_RL(i)
+	   end do
+	   x2s_RL(2 * num_points + 1) = x2s_RL(1)
+           y2s_RL(2 * num_points + 1) = y2s_RL(1)
+           x2max = maxval(abs(x2s_RL))
+           xmax = max(x2max, xmax)
+        else
+           x2s_RL = 0d0
+           y2s_RL = 0d0
+        end if
+     else if (b% pg% Orbit_show_RL .and. abs(log10(q)) > 2) then
+        write(*, 1) "pgbinary: Not plotting RL, q too extreme: abs(log(q)) = ", abs(log10(q))
+     end if
 ```
 
 Save the file and navigate backward into the `$MESA_DIR/binary` directory. Next, let's recompile MESA binary and export our changes with the following commands.
