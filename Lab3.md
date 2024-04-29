@@ -97,7 +97,7 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/u/2/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9).|
+| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9?usp=share_link).|
 
 | :question: Below are some questions to discuss at your table and answer while your model evolves | 
 | :--- |
