@@ -76,14 +76,10 @@ Let's add a stopping condition to our model such that it terminates when the Pri
 
 For solar metallicity stars, it is known that mass transfer processes will strip most of the hydrogen envelope over relatively short timescales. However, the computational cost ramps up as the remaining envelope mass decreases, so we could end up spending most of our computation time trying to strip off the last bit of envelope, even though it may not be long in physical time. In the first half of this lab, we will focus on examining the stability and timescale of mass transfer, so let's apply a stopping condition to terminate the calculation before the computation slows down.
 
-Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost.
-
-<!--
-|:information_source: Tips|
+|:clipboard: TASK|
 |:--|
-|This can be done by modifying the `run_binary_extras.f90` file.|
-|Specifically, you're looking to modify the `extras_binary_finish_step` function.|
--->
+|Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost.|
+
 
 |:information_source: HINT|
 |:--|
@@ -98,18 +94,6 @@ Add this to `&controls` in `inlist1`
 ```
    envelope_fraction_left_limit = 0.2
 ```
-
-<!--
-Add this into the `extras_binary_finish_step` subroutine in `run_binary_extras.f90`.
-
-```fortran
-if (b% m(2) > 1.5d0 * b% eq_initial_bh_mass) then
-   extras_binary_finish_step = terminate
-   write(*,*) "Terminate due to m2 > 1.5 x m2_iniital"
-   return
-end if
-```
--->
 
 </details>
 
@@ -212,9 +196,7 @@ Discussion point: What are the ratios of Case A vs Case B vs Case C mass transfe
 ## Bonus 1: Evolving through the whole mass transfer phase 
 
 Now that we know all of our models were either case A or case B mass transfer, let's extend the our stopping condition further until core-Carbon depletion. This will allow us to determine whether our models undergo a second mass transfer phase, and whether or not they end their lives a Blue, Yellow, or Red Supergiant (BSG,YSG,RSG).
-<!-- 
-We want our binary evolution to terminate when the mass transfer phase is complete. Both case A and B mass transfer phases are typically complete by the time the primary has reached core-Helium depletion. This is because the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime, and both case A and B occur before core-Helium depletion by definition.
--->
+
 
 First, remove the stopping condition we applied earlier. Then in `run_star_extras.f90`, let's add a new stopping condition so that our model terminates when the primary reaches core Carbon depletion. Let's terminate the model when $X(^{12}\mathrm{C})\leq10^{-4}$:
 
@@ -225,7 +207,9 @@ Note that just adding a control like the following will not work for all cases. 
 ```
 This is because a most of the initial $^{12}\textrm{C}$ present at ZAMS is converted into $^{14}\textrm{N}$ via the CNO cycle during core-Hydrogen burning. The $^{12}\textrm{C}$ present in the core at the onset of Carbon burning is produced via the $3\alpha$ and $^{12}\mathrm{C}(\alpha,\gamma)^{16}\mathrm{O}$ reaction rates during core-Helium burning. To prevent our models from prematurely terminating, we need to add a custom stopping condition in our `run_star_extras.f90`.
 
-1. Add a custom stopping condition that will terminate your model when $X(^{12}\mathrm{C})\leq10^{-4}$ and $X(^{4}\mathrm{He})\leq10^{-4}$ are both true.
+|:clipboard: TASK|
+|:--|
+| Add a custom stopping condition that will terminate your model when $X(^{12}\mathrm{C})\leq10^{-4}$ and $X(^{4}\mathrm{He})\leq10^{-4}$ are both true.|
 
 
 |:information_source: Tips|

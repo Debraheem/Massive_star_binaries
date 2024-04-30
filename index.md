@@ -134,7 +134,7 @@ Any (non-default) values for the parameters of the individual stars will be set 
 
       show_log_description_at_start = .false.
       save_model_when_terminate = .true.
-      save_model_filename = 'donar_final.mod'
+      save_model_filename = 'donor_final.mod'
 
 / ! end of star_job namelist
 
