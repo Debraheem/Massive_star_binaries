@@ -61,11 +61,6 @@ In the `&binary_controls`, you should see the following lines:
    initial_period_in_days = 6d0
 ```
 
-
-
-
-We want our binary evolution to terminate when the mass transfer phase is complete. All forms of mass transfer A, B, and C are typically complete by the time the primary has reached core-Helium depletion, as the timescale for stable mass transfer is significantly shorter than either the H or He burning lifetime.
-
 In `inlist1`, set a stopping condition such that the model terminates when the primary reaches helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
 
 
@@ -95,7 +90,7 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1gk5se7bKHbzZtfEEamj8Cr3iKzNCN7L9?usp=share_link).|
+| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1yubo5s121aMKaxUs690oLAcAwxqOcm52?usp=share_link).|
 
 | :question: Below are some questions to discuss at your table and answer while your model evolves | 
 | :--- |
