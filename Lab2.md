@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lab2
+title: Lab3
 ---
 
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
@@ -10,7 +10,7 @@ title: Lab2
 |:--|
 |The content of Lab 2 has been ported over from [this PDF version](MESA_Lab2.pdf). See PDF in case you find anything is missing from the website.|
 
-# Lab2 -  Modeling The Mass Gainer
+# Lab3 -  Modeling The Mass Gainer
 
 ## Science goal
 
