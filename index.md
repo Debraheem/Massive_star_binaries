@@ -321,7 +321,7 @@ finished
 
 ### How do we fix this bug? 
 
-Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
+Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line near line 240, which should read
 
 ```fortran
 call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
@@ -351,6 +351,13 @@ To solve this issue, we can set these variables by adding the following few line
 ```
 
 Save the file and navigate backward into the `$MESA_DIR/binary` directory. Next, let's recompile MESA binary and export our changes with the following commands.
+
+```shell-session
+$ cd $MESA_DIR/binary
+$ ./mk
+$ ./export
+```
+or
 
 ```shell-session
 $ cd $MESA_DIR/binary
