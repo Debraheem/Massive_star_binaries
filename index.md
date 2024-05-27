@@ -379,18 +379,47 @@ The bug fix above is crucial for many of you, as the simulation won't even run w
 
 
 ```diff
-   if (b% point_mass_i /= 2) then
+      select case(star_number)
+      case(1)
+         if (b% pg% do_star1_box) then
+            call pgsvp(xleft + b% pg% Star1_box_pad_left, &
+               xright + b% pg% Star1_box_pad_right, &
+               ybot + b% pg% Star1_box_pad_bot, ytop + b% pg% Star1_box_pad_top)
+            call draw_rect()
+            call pgsvp(xleft, xright, ybot, ytop)
+         end if
+         if (b% point_mass_i /= 1) then
+            call read_pgstar_inlist(b% s1, b% job% inlist_names(1), ierr)
+            call update_pgstar_data(b% s1, ierr)
+            call plot_case(b% s1, b% star_ids(1))
+            call update_pgstar_history_file(b% s1, ierr)
+         else
+-            write(mass, '(f3.2)') b% m(1) / Msun
++            write(mass, '(f0.2)') b% m(1) / Msun
+            call pgmtxt('T', -2.0, 0.5, 0.5, 'Star 1 not simulated')
+            call pgmtxt('T', -3.0, 0.5, 0.5, 'point mass of ' // trim(adjustl(mass)) // ' M\d\(2281)')
+         end if
+      case(2)
+         if (b% pg% do_star2_box) then
+            call pgsvp(xleft + b% pg% Star2_box_pad_left, &
+               xright + b% pg% Star2_box_pad_right, &
+               ybot + b% pg% Star2_box_pad_bot, ytop + b% pg% Star2_box_pad_top)
+            call draw_rect()
+            call pgsvp(xleft, xright, ybot, ytop)
+         end if
+         if (b% point_mass_i /= 2) then
 
-      call read_pgstar_inlist(b% s2, b% job% inlist_names(2), ierr)
-      call update_pgstar_data(b% s2, ierr)
-      call plot_case(b% s2, b% star_ids(2))
-      call update_pgstar_history_file(b% s2, ierr)
-   else
--     write(mass, '(f3.2)') b% m(2) / Msun
-+     write(mass, '(f0.2)') b% m(2) / Msun
-      call pgmtxt('T', -2.0, 0.5, 0.5, 'Star 2 not simulated')
-      call pgmtxt('T', -3.0, 0.5, 0.5, 'point mass of ' // trim(adjustl(mass)) // ' M\d\(2281)')
-   end if
+            call read_pgstar_inlist(b% s2, b% job% inlist_names(2), ierr)
+            call update_pgstar_data(b% s2, ierr)
+            call plot_case(b% s2, b% star_ids(2))
+            call update_pgstar_history_file(b% s2, ierr)
+         else
+-            write(mass, '(f3.2)') b% m(2) / Msun
++            write(mass, '(f0.2)') b% m(2) / Msun
+            call pgmtxt('T', -2.0, 0.5, 0.5, 'Star 2 not simulated')
+            call pgmtxt('T', -3.0, 0.5, 0.5, 'point mass of ' // trim(adjustl(mass)) // ' M\d\(2281)')
+         end if
+      end select
 ```
 
 After editing, make sure to compile the code again.
