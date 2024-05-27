@@ -281,11 +281,10 @@ Compile the above code and run it. You will see something like the figure below 
 <summary> Answer: </summary>
 See the below figure for a detailed answer for a detailed answer.
    
-![Accretor and point mass](Figures/spin_vs_mass_BH.png)
+![Spin vs BH mass](Figures/spin_vs_mass_of_black_hole.jpg)
 *The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$.*
 
 </details>
-
 
 
 We will run this model till it begins to fail due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie [here](https://drive.google.com/file/d/1_HkbkMIGPxyHKUxGJKrK8gf1ClqNX_ep/view?usp=drive_link) with name `black_hole_mass_and_spin_evolution.mp4`.
