@@ -20,7 +20,7 @@ There is a crucial bug in the `pgbinary` module that disrupts the simulation in 
 
 ## Setting up a MESA binary run
 
-To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory.
+To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1p7A4C0r1Be3CPxPLLIVNXZTVtVWccvze/view?usp=share_link) MESA work directory.
 This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
 Once downloaded, you can decompress the file by
@@ -100,7 +100,7 @@ All files are briefly described in the table below
 
 ### Binary parameters
 
-The `inlist_project` - which is relevant for binary parameters -  will look something like this
+The primary file you while be modifying is `inlist_project` - which is relevant for binary parameters -  will look something like this
 
 ```plaintext
 &binary_job
@@ -121,7 +121,7 @@ The `inlist_project` - which is relevant for binary parameters -  will look some
 / ! end of binary_controls namelist
 ```
 
-and will allow us to set the binary parameters, e.g., the initial mass of the stars and their orbital period. The full list of available parameter for `&binary_job` can be found in the directory
+and will allow us to set the binary parameters, e.g., the initial mass of the stars and their orbital period. The full list of available parameters for `&binary_job` can be found in the directory
 
 ```
 $MESA_DIR/binary/defaults/binary_job.defaults
@@ -234,7 +234,7 @@ $MESA_DIR/star/defaults/
 
 As before copy the relevant parameter you wish to change to `inlist1` before making the change. Similarly, `inlist2` contains the parameters of star 2.
 
-## Setting values for an initial run
+# Setting values for an initial run
 
 Here, we will run our first model. For this, we need to set the masses of the stars in the binary and the binary's orbit period. Choose a desired value and then execute the below commands in your terminal
 
@@ -251,7 +251,7 @@ On executing the above commands, MESA will print the model output on the termina
 
 ### Pgstar Output
 
-A picture is worth a thousand words, so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
+A picture is worth a thousand words! Rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 
 The `pgbinary` plots are switched on via the following flag in `&starjob` in the file `inlist_project`.
 
@@ -260,18 +260,17 @@ The `pgbinary` plots are switched on via the following flag in `&starjob` in the
 ```
 We also want to try running this model in single star mode, so we have set `evolve_both_stars = .false.` as well.
 
-Now we can  `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass.
-
-This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
+This model directory "should" return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
 
 ![pgstar](Figures/grid1_000080.png)
 
+Now let's try to reproduce a similar pgbinary plot. We can `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass. Run your model and take note of what happens to your model and/or the models of the others at your table. Only run your model for a several tens of timesteps to see what happens. 
+
+Discuss what happened with the the others at your table. Take note of what kind of computer are each of you using.
 
 
-## Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
+# Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
-
-Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
 
 If you're running on an apple arm cpu (e.g. M1), there should be no issue.
 However, if you're running using the intel cpus, chances are that pgbinary probably crashed your simulation with the following error:
@@ -322,7 +321,7 @@ finished
 
 ### How do we fix this bug? 
 
-Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
+Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line near line 240, which should read
 
 ```fortran
 call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
@@ -352,6 +351,13 @@ To solve this issue, we can set these variables by adding the following few line
 ```
 
 Save the file and navigate backward into the `$MESA_DIR/binary` directory. Next, let's recompile MESA binary and export our changes with the following commands.
+
+```shell-session
+$ cd $MESA_DIR/binary
+$ ./mk
+$ ./export
+```
+or
 
 ```shell-session
 $ cd $MESA_DIR/binary

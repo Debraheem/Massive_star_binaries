@@ -6,8 +6,7 @@ title: Lab1
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-Here is a downloadable copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory.
-This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
+In this section, you will continue with the `Lab1_binary` directory from the introduction. You can also re-download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory, but make sure `pgstar_flag` is uncommented in `inlist_project` as we did in the introduction.
 
 
 # Lab1 - Modeling a star through envelope stripping
@@ -26,7 +25,7 @@ In order to smoothly lead into Lab2, we will start running a simulation with bot
 
 Assume that we have a binary star system where the components are close enough to undergo Roche Lobe overflow (RLOF) from the inner L1 Lagrangian point. Additionally, assume that both components do not have the same mass so that the evolution of one star slightly lags the other star. In the lab, we would like to explore how the primary - more massive - star evolves in such a binary.
 
-Since here we are primarily interested in the evolution of the primary, to save some computation time we are going to approximate the secondary as a point mass further. In other words, we are not going to model the evolution of the secondary. Then, later in Lab2, we will switch to treating the primary as a point mass and focus on evolving the secondary mass gainer (accretor).
+Since here we are primarily interested in the evolution of the primary, to save some computation time we are going to approximate the secondary as a point mass. In other words, we are not going to model the evolution of the secondary. Then, later in Lab2, we will switch to treating the primary as a point mass and focus on evolving the secondary mass gainer (accretor).
 
 
 Let's begin by using the downloaded `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
@@ -49,7 +48,7 @@ A range of parameters to adjust the mass transfer efficiency are also available 
    mass_transfer_gamma = 0d0    ! radius of the circumbinary coplanar toroid is ``gamma**2 * orbital_separation``
 ```
 
-For non-conservative mass transfer, part of the mass that is transferred to the accretor escapes the system ($\dot{M}_2=-(1-\alpha-\beta-\delta)\dot{M}_1$). The lost mass can take away some angular momentum from the binary, and the amount of angular momentum it takes away depends on the details of the mass transfer flow. Each of the mass transfer parameters corresponds to a different angular momentum loss mode, as described in the comments. Here, we will assume that the non-accreted mass takes away the specific angular momentum of the accretor (Jeans mode mass loss). For example if half of the transferred mass is lost from the system, we set the parameters like this
+For non-conservative mass transfer, part of the mass that is transferred to the accretor escapes the system ($\dot{M}_2=-(1-\alpha-\beta-\delta)\dot{M}_1$). The lost mass can take away some angular momentum from the binary, and the amount of angular momentum it takes away depends on the details of the mass transfer flow. Each of the mass transfer parameters corresponds to a different angular momentum loss mode, as described in the comments. Here, we will assume that the non-accreted mass takes away the specific angular momentum of the accretor (Jeans mode mass loss). For example, if half of the transferred mass is lost from the system, we set the parameters like this
 
 ```
    mass_transfer_beta = 0.5d0     ! fraction of mass lost from the vicinity of accretor as fast wind
@@ -66,7 +65,7 @@ For this lab we will keep the primary and companion/accretor mass fixed at **`m1
 | 3 | 15 | 12 | 200 | 0   |
 | 4 | 15 | 12 | 15  | 0.5 |
 
-Now choose a value for the initial mass and period of the binary system from this table.
+Now choose a value for the initial period and $\beta$ of the binary system from this table. 
 
 <!-- 
 Since this lab is focused on envelope stripping and mass transfer physics,  we'd like to save some computation and terminate our models before the mass transfer phase ends. Evolving trhough the mass transfer phase for the default case happens around model number 370 (and takes 11 mins). We'll try to reduce this computation time by terminating our model once it loses 50% of its mass.
@@ -78,13 +77,13 @@ For solar metallicity stars, it is known that mass transfer processes will strip
 
 |:clipboard: TASK|
 |:--|
-|Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost.|
+|Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost. See [MESA &controls documentation: When to stop](https://docs.mesastar.org/en/release-r24.03.1/reference/controls.html#when-to-stop).|
 
 
 |:information_source: HINT|
 |:--|
 |This can be done by setting a stopping condition in `inlist1`.|
-
+|Don’t forget to uncomment the mass transfer parameters by deleting the `!` in front of them.|
 
 <details markdown="block">
 <summary>Answers: Example code</summary>
@@ -253,12 +252,13 @@ $ ./mk
 ```
 
 
-Now that we've added our new stopping condition, save yourself some computation time by restarting your binary mass transfer model from photo created at the end of your previous run.
+Now that we've added our new stopping condition, you can save yourself some computation time by restarting your binary mass transfer model from the photo created at the end of your previous run.
 This can be done by executing the following example command in the terminal for a model that terminated at timestep 353.
 
 ```shell-session
 $ ./re x000353
 ```
+
 
 Again, you can make `&pgbinary` movie of your run and use it with your terminal output to answer the following questions!
 
