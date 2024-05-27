@@ -21,9 +21,8 @@ As a bonus exercise, you may also like to study the evolution of the binary once
 
 
 ## Evolving the mass gainer as a single star
-For computational ease, we will load the _saved accretor model_ from the last (Minilab1) run and then evolve this model _as a single star_. To begin, first copy the necessary files required for Minilab2 from the following link.
 
-For computational ease, we will load the \textit{saved accretor model} from the last (Minilab1) run and then evolve this model _as a single star_. 
+For computational ease, we will load the _saved accretor model_ from the last (Minilab1) run and then evolve this model _as a single star_. 
 
 **Task:** To begin, first copy the necessary files required for Minilab3 from the following link 
 
@@ -36,7 +35,7 @@ You will have to download and extract the contents of the `evolve_accretor_star.
 $ cp -r ./Minilab1/accretor_final.mod ./Minilab3/Evolve_accretor_star
 ```
 
-If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
+If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab3 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
 If, for some reason, your Minilab1 run was not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the `evolve_accretor_star` directory with the name `accretor_final_1.mod` (note that this model may not be of the same mass as you would have got from Minilab1, but that is OK). If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
@@ -68,7 +67,7 @@ $ ./rn
 If all went as planned, then you should see a terminal window that should be similar to the one shown below.
  
 ![Terminal output Minilab 2](Figures/terminal_ouput_Minilab2.png)
-   *<br>An example of the terminal output for Minilab2*
+   *<br>An example of the terminal output for Minilab3*
 
  
 Additionally, you should see a `pgstar` plot (similar to the image below) popping up on your screen that shows the real-time evolution of the star. The output shown in this plot depends on the user's requirements and can be modified at will. These modifications can be performed by changing the file `inlist_pgstar`
@@ -109,7 +108,7 @@ Intuitively, we know that the accretor star gained mass through Roche lobe overf
 
 **Task:** In this section, the goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer). Then, we will compare the structure and evolution of the accretor with that of a single star. To begin, download the necessary files required to evolve a single star from the following link
 
-   [Click here to access the single star model for Minilab2](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm)
+   [Click here to access the single star model for Minilab3](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm)
 
 
 From the above link, download the `evolve_single_star` directory and extract its content in the Minilab3 directory. You will notice that this directory has the same structure as the earlier `evolve_accretor_star` directory. However, the names of the `inlists` have been modified to show that we are now explicitly evolving a single star. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
@@ -152,14 +151,14 @@ Like the last run, you should again see similar activity on your monitor. As an 
 
 <details markdown="block"><summary>Answer: Pre-computed movie</summary>
 
-In case you were not able to make a movie, then you can access made movies by clicking on this [Minilab2 directory](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). During the initial stages, you should be able to see that the accretor has a much larger helium abundance on its surface compared to the single star. Over time, this composition evolves, and in the end, both stars have similar surface compositions.  There is also a considerable difference between the internal evolution of the two stars, as seen in the Kippenhahn diagram. During the initial phase, the burning zones of the single star extend to larger mass coordinates than that of the accretor. 
+In case you were not able to make a movie, then you can access made movies by clicking on this [Minilab3 directory](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). During the initial stages, you should be able to see that the accretor has a much larger helium abundance on its surface compared to the single star. Over time, this composition evolves, and in the end, both stars have similar surface compositions.  There is also a considerable difference between the internal evolution of the two stars, as seen in the Kippenhahn diagram. During the initial phase, the burning zones of the single star extend to larger mass coordinates than that of the accretor. 
 
 </details>
 
 
 
 
-## Lab extension - Evolving the secondary alongside a black hole
+## Bonus task - Evolving the secondary alongside a black hole
 
 Although to save computation we approximated the accretor's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. This section is devoted to that.
 
@@ -240,7 +239,7 @@ Also note that we have approximately matched the period to that from the Minilab
       
        contains
        
-       ! include the below file in you Minilab2 directory. It contains one more function
+       ! include the below file in you Minilab3 directory. It contains one more function
        include '../black_hole_spin.f90'
     ```
 
