@@ -15,3 +15,6 @@ kramdown:
 
 plugins:
   - jemoji
+
+markdown_extensions:
+  - sane_lists
