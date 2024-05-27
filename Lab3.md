@@ -120,7 +120,9 @@ From the above link, download the `evolve_single_star` directory and extract its
    
 If you have `vim` installed on your terminal, a quick way to see these differences is by running the following command
 
-`vimdiff ./evolve_accretor_star/inlist_accretor ./evolve_single_star/inlist_single_star`
+```
+vimdiff ./evolve_accretor_star/inlist_accretor ./evolve_single_star/inlist_single_star
+```
 
 This will show an output similar to the below image (Note that you will need to be in the Minilab3 directory for the above command to execute successfully)
 
