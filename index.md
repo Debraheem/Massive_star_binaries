@@ -20,7 +20,7 @@ There is a crucial bug in the `pgbinary` module that disrupts the simulation in 
 
 ## Setting up a MESA binary run
 
-To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory.
+To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1p7A4C0r1Be3CPxPLLIVNXZTVtVWccvze/view?usp=share_link) MESA work directory.
 This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
 Once downloaded, you can decompress the file by
@@ -100,7 +100,7 @@ All files are briefly described in the table below
 
 ### Binary parameters
 
-The `inlist_project` - which is relevant for binary parameters -  will look something like this
+The primary file you while be modifying is `inlist_project` - which is relevant for binary parameters -  will look something like this
 
 ```plaintext
 &binary_job
@@ -121,7 +121,7 @@ The `inlist_project` - which is relevant for binary parameters -  will look some
 / ! end of binary_controls namelist
 ```
 
-and will allow us to set the binary parameters, e.g., the initial mass of the stars and their orbital period. The full list of available parameter for `&binary_job` can be found in the directory
+and will allow us to set the binary parameters, e.g., the initial mass of the stars and their orbital period. The full list of available parameters for `&binary_job` can be found in the directory
 
 ```
 $MESA_DIR/binary/defaults/binary_job.defaults
@@ -234,7 +234,7 @@ $MESA_DIR/star/defaults/
 
 As before copy the relevant parameter you wish to change to `inlist1` before making the change. Similarly, `inlist2` contains the parameters of star 2.
 
-## Setting values for an initial run
+# Setting values for an initial run
 
 Here, we will run our first model. For this, we need to set the masses of the stars in the binary and the binary's orbit period. Choose a desired value and then execute the below commands in your terminal
 
@@ -268,10 +268,10 @@ This run should return a nice pgbinary plot showing the evolution of the primary
 
 
 
-## Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
+# Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
 
-Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
+Now, run your model again and take note of what happens to you or the people around you. Only run your model for a several timesteps to see what happens. What computer are you using?
 
 If you're running on an apple arm cpu (e.g. M1), there should be no issue.
 However, if you're running using the intel cpus, chances are that pgbinary probably crashed your simulation with the following error:
