@@ -28,26 +28,37 @@ For computational ease, we will load the \textit{saved accretor model} from the 
 **Task:** To begin, first copy the necessary files required for Minilab3 from the following link 
 
    [Click here to access Minilab3](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link)
+   
 
-You will have to download Minilab2 and extract the contents of the `evolve_accretor_star.zip` directory.
-Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the Minilab2 directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab2 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
-
-You will have to download and extract the contents of the \texttt{evolve\_accretor\_star.zip} directory. We recommend that you store them in a parent directory called Minilab3. Now go to the directory of Minilab1, and from there, copy the file named \texttt{accretor\_final.mod} into the \texttt{Minilab3/evolve\_accretor\_star} directory. This file contains the accretor's information from the previous run and will act as \textit{an initial condition for the present run}. If your Minilab1 and Minilab3 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
+You will have to download and extract the contents of the `evolve_accretor_star.zip` directory. We recommend that you store them in a parent directory called Minilab3. Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the `Minilab3/evolve_accretor_star` directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab3 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
 
 ```shell-session
-$ cp -r ./Minilab1/accretor_final.mod ./Minilab2/Evolve_accretor_star
+$ cp -r ./Minilab1/accretor_final.mod ./Minilab3/Evolve_accretor_star
 ```
 
- If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
+If, for some reason, you were not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the Minilab2 directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
+
+If, for some reason, your Minilab1 run was not able to finish, then do not worry; we have already provided a pre-evolved copy of the accretor model in the `evolve_accretor_star` directory with the name `accretor_final_1.mod` (note that this model may not be of the same mass as you would have got from Minilab1, but that is OK). If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
  
 | :question: QUESTION | 
 | :--- |
 | Can you tell where in `inlist_accretor` is the pre-evolved accretor model being loaded? |
 
+
+###  Single star versus binary star directory
+
+Before we proceed further, it would be worthwhile to explore the primary differences between the contents of the Minilab1 directory and this lab. In Minilab1, we evolved both stars. As such, we had two `inlists` (one each for the primary and the secondary star). These inlists contained the parameters that were relevant for each star. In addition, there was an inlist called `inlist_project`, which contained the binary parameters, e.g., the period of the binary and the initial mass of each star in the binary, etc.  Meanwhile, the files contained in the Minilab3 directory are shown below.
+
+<img src="Figures/output-onlinepngtools.png" width="200">
+   *<br>The contents of the `evolve_accretor_star` directory*
+
+As mentioned in Minilab1, to see the above files in your terminal, you need to run the \texttt{tree} command. You will notice that here, we only have one main inlist named `inlist_accretor`, which contains the parameters we need to set for evolving the accretor star. Although we would stress that this is not necessary, and you are free to break this one inlist into many sub-inlists. As an example, see the files located in the directory `$MESA_DIR/star/test_suite/ccsn_IIp`. Additionally, you will see that the `src` directory for the accretor star (i.e., evolved as a single star) no longer contains the `run_binary_extras.f90` file - as we are not evolving a binary model anymore.
+
+
 ### Evolution of the mass gainer
 
-Now, let us continue the evolution of the accretor star from where we left it in Minilab1. For this, you will need to execute the below commands in your terminal (given that you are already present in the `Evolve_accretor_star` directory)
+Now, let us continue the evolution of the accretor star from where we left it in Minilab1. For this, you will need to execute the below commands in your terminal, given that you are already present in the `Evolve_accretor_star` directory
 
 ```shell-session
 $ ./mk 
@@ -60,7 +71,7 @@ If all went as planned, then you should see a terminal window that should be sim
    *<br>An example of the terminal output for Minilab2*
 
  
-Additionally, you should see a `pgstar` plot (similar to the screen below) popping up on your screen that shows the real-time evolution of the star. What output is shown on this plot depends on the user's requirement and can be modified at will. These modifications can be performed by modifying the file `inlist_pgstar`
+Additionally, you should see a `pgstar` plot (similar to the image below) popping up on your screen that shows the real-time evolution of the star. The output shown in this plot depends on the user's requirements and can be modified at will. These modifications can be performed by changing the file `inlist_pgstar`
 
 ![Accretor plot](Figures/accretor_plot.png)
    *<br>A sample plot showing a snapshot of the evolution of the accretor star.*
@@ -71,26 +82,18 @@ Additionally, you should see a `pgstar` plot (similar to the screen below) poppi
 |While the model evolves: Carefully watch the evolution of the accretor star (especially the `Abundance-Power-Mixing` subplot and the Kippenhahn diagram. We will later compare this model to that of a single star to explore key differences between the two.|
 
 #### Abundance-Power-Mixing plot
-As the name suggests, the top subplot in the plot shows the abundance of various chemical species within the star. The middle subplot shows the regions where nuclear fusion is taking place. It also shows what element is being fused in these regions. The bottom subplot shows the various types of diffusive mixing processes taking place within the star.
+As the name suggests, the top subplot in the Abundance-Power-Mixing plot shows the abundance of various chemical species within the star, with the total abundance normalized to one. The middle subplot shows the regions where nuclear fusion is taking place within the star. It also shows what elements are being fused in these regions. The bottom subplot shows the various types of diffusive mixing processes taking place within the star. 
 
 #### Kippenhahn plot
 This diagram is used to visualize the internal structure and evolution of a star. It displays information such as convective borders, sites of nuclear energy generation, and sites of shell burning. The cyan regions indicate convective areas, and the red regions indicate the regions where nuclear burning is taking place. The white regions show the convective regions where overshooting is taking place, and the grey regions indicate semi-convection. The latter occurs in regions where neither pure convection nor pure radiation is efficient enough to transport energy effectively. The cooling (blue) region refers to a region where the temperature is decreasing over time. The grey line shows the total mass boundary of the star $M_{\rm total}$, while the green line shows the mass boundary of the helium core $M_{\rm He}$. 
 
-### Single star versus binary star directory
-
-Before we proceed further, it would be worthwhile to explore the primary differences between the contents of the previous lab directory and this lab. In the last lab, we evolved both stars. As such, we had two `inlists` (one each for the primary and the secondary star). These inlists contained the parameters that were relevant for each star. In addition, there was an inlist called `inlist_project`, which contained the binary parameters, e.g., the period of the binary and the initial mass of each star in the binary, etc.  Meanwhile, the files contained in the directory of Minilab2 are shown below.
-
-<img src="Figures/output-onlinepngtools.png" width="200">
-   *<br>The contents of the `evolve_accretor_star` directory*
-
-
-As mentioned earlier, to see the above files in your terminal, you need to run the `tree` command. You will notice that here, we only have one main inlist named `inlist_accretor`, which contains the parameters we need to set for evolving the accretor star. Although we would stress that this is not necessary, and you are free to break this one inlist into many sub-inlists. As an example, see the files located in the directory `$MESA_DIR/star/test_suite/ccsn_IIp`. Additionally, you will see that the `src` directory for the accretor star (i.e., evolved as a single star) no longer contains the `run_binary_extras.f90` file - as we are not evolving a binary model anymore.
-
-
 
 ### Making a movie from the `pgstar` output
 
-The `pgstar` output shows the evolution of the star in real time. But what if we would like to see the evolution of the model at a later time? The `pgstar` output is also saved in the `Minilab2_png` directory. Perhaps the best way to access the information contained in these `png` files is to make a movie out of them. The MESA SDK includes an ffmpeg encoder and a script named `images_to_movie.sh` that allows users to create movies from `png` files. To do this, execute the following command in your terminal from within the Minilab2 directory
+The `pgstar` output shows the evolution of the star in real time. But  we would like to see the evolution of the model at a later time, particularly when we compare it to that of a single star.
+
+**Task:** Perhaps the best way to access the information contained in these `png` files is to make a movie out of them. As instructed in Minilab1, to do this, execute the following command in your terminal from within the Minilab3 directory
+
 ```shell-session
 $ images_to_movie 'png/*.png' movie_accretor_star.mp4
 ```
@@ -100,34 +103,37 @@ This will create a movie out of the `png` files and save it with the name `movie
 
 ## Does the accretor evolve differently than a single star with same initial mass?
 
-
 Although we have evolved the accretor as a single star, it would be instructive to check how this differs from the evolution of a single star that never interacted with a companion. 
-Intuitively, we know that the accretor star gained mass through Roche Lobe overflow and that this material had a somewhat different chemical composition than the accretor star's surface. This is because the primary already has substantial helium on its surface during the later stage of mass transfer.
+Intuitively, we know that the accretor star gained mass through Roche lobe overflow and that this mass had a somewhat different chemical composition than the accretor star's surface. This is because the primary already contained substantial helium on its surface before the mass was transferred. Now we would like to explicitly this claim. 
 
 
-In this section, the goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer). Then, we will compare the structure and evolution of the accretor with that of a single star.
-To begin, download the necessary files required to evolve a single star from the below link
+**Task:** In this section, the goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer). Then, we will compare the structure and evolution of the accretor with that of a single star. To begin, download the necessary files required to evolve a single star from the following link
 
    [Click here to access the single star model for Minilab2](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm)
 
-Download the `evolve_single_star` directory, extract its content in the Minilab2 directory. You will notice that this directory has the same structure as the `Evolve_accretor_star` directory in Minilab2. However, the names of the `inlists` have been modified to show that we are now evolving a single star explicitly. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
+
+From the above link, download the `evolve_single_star` directory and extract its content in the Minilab3 directory. You will notice that this directory has the same structure as the earlier `evolve_accretor_star` directory. However, the names of the `inlists` have been modified to show that we are now explicitly evolving a single star. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
 
 
 |:question: QUESTION |
 |:--|
 | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
 
+<details>
+<summary> <bold> Answers: </bold> </summary>
+Your answer will depend on the initial mass and binary period you choose in Minilab1. To guess the approximate mass, go to the `png` directory in Minilab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $21.92 M_\odot$. 
+</details>
 
- To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. 
- 
-To run the model, you will need to execute the below commands in your terminal (given that you are already present in the right directory)
- 
+
+
+To evolve the single star, first, you will need to set the mass of the single star equal to the mass of the accretor star. This has already been done in the downloaded directory. To run the model, you will need to execute the following commands in your terminal (given that you are already present in the right directory).
+
 ```shell-session
 $ ./mk
 $ ./rn
 ```
 
- Like the last run, you should again see similar activity on your monitor. For example, we show below a snapshot of the star's evolution plotted using `pgstar`. 
+Like the last run, you should again see similar activity on your monitor. As an example, we show below a snapshot of the star's evolution plotted using `pgstar`. 
 
 ![Single star plot](Figures/single_star_plot.png)
    *<br>A snapshot of the single star's evolution.*
@@ -155,23 +161,15 @@ In case you were not able to make a movie, then you can access made movies by cl
 
 ## Lab extension - Evolving the secondary alongside a black hole
 
-Although to save computation we approximated the accretor's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. 
+Although to save computation we approximated the accretor's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. This section is devoted to that.
 
-This section is devoted to that.
-
-
-
-
-While initially, there would not be much difference in the evolution, once the accretor begins to expand, it might fill its Roche Lobe and initiate a phase of mass transfer on what was earlier a primary star. This will strip the secondary of its surface material and expose its inner core. Moreover, the primary star would have long disappeared and only a compact remnant would be left behind. As such, we will approximate the primary star as a point mass, i.e. only the gravitational influence of the primary would be important to us. The primary star - which is now modelled as a black hole - would feed on the mass dumped by the secondary and *would act as a source of strong X-ray radiation*.
-
+While initially, there would not be much difference in the evolution, once the accretor begins to expand, it might fill its Roche Lobe and initiate a phase of mass transfer on what was earlier the primary star. This will strip the secondary of its surface material and expose its inner core. Moreover, the primary star would have long disappeared, and only a compact remnant would be left behind. As such, we will approximate the primary star as a point mass, i.e., only the gravitational influence of the primary will be important to us. The primary star - which is now modeled as a black hole - would feed on the mass dumped by the secondary and *would act as a source of strong electromagnetic radiation*. 
 
 
 
 ### The black hole's evolution
 
-The accreted mass would cause the properties of the black hole to change. The no-hair theorems suggest that the only relevant parameters of an astrophysical black hole that fully determine its property are its mass $M$ and angular momentum $J$. 
-So our task is to see how $M$ and $J$ evolve with time. 
-Using $M, J$ we can define another parameter called the *dimensionless Kerr spin parameter* of the black hole as 
+The accreted mass would cause the properties of the black hole to change. The no-hair theorems suggest that the only relevant parameters of an astrophysical black hole that fully determine its property are its mass $M$ and angular momentum $J$. So, our task is to see how $M$ and $J$ evolve with time. Using $M, J$, we can define another parameter called the \textit{dimensionless Kerr spin parameter} of the black hole as 
 $$
     a = \frac{Jc}{GM^2}
 $$
@@ -191,31 +189,39 @@ $$
 
 ### Task
 
-To set the evolved primary as a point mass source, we will reuse Minilab1. *Here are the steps* that you would need to follow before we can evolve the binary:
+Now we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Minilab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star from Minilab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
 
 
-1. Make a fresh copy of Minilab1 bonus exercise (you should have left it running during the break).
-1. Open the `inlist_project` and include the following commands in the `&binary_job` region
+1. Download the `evolve_accretor_plus_point_mass` directory from [this URL](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
+2. In this directory, open `inlist1` and there in the `\&star_jobs` region, uncomment the following lines
     ```
-       change_initial_point_mass_i = .true.
-       new_point_mass_i = 1
+     load_saved_model = .true.
+     load_model_filename = 'accretor_final.mod'  
     ```
-Above the index "1" refers to the primary star. These lines set the primary star to a point mass.
-1. We will have to make a minor addition to the `run_binary_extras.f90` file. Op    en this file which is located in the `src` directory. Scroll to the end of the file, where you will find the function named `extras_binary_startup`. After the line `call test_suite_startup(b, restart, ierr)` in the function, include the following line
-    ```
-       b% eq_initial_bh_mass = b% m(1)
-    ```
-    This lets the code know the birth mass of the point object. 
-1. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass. 
+    These lines instruct \textsc{Mesa} to use the final profile of the accretor star from Minilab1 as the initial state of the current star in the `evolve_accretor_plus_point_mass` directory.
+3. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass. 
 
    |:question: QUESTION|
    |:--|
    |Can you find the mass and period of the binary as they were at the end of Minilab1?|
+   <details> <summary> Answer: </summary> 
+   You could have got different answers based on what you chose as the initial mass and period of the binary. In the case when the initial parameters were chosen as 
+```
+      m1 = 15d0  ! donor mass in Msun
+      m2 = 12d0 ! companion mass in Msun
+      initial_period_in_days = 6d0
+```
+
+then the mass of the primary star would be $\approx 5M_\odot$, while the mass of the secondary star is $\approx 22 M_\odot$. In addition, the period is $\approx 25$ days. This is a larger period than what we started with (6 days), implying that the binary widened during the mass transfer process.  </details>
    
-    Take the above value for the period (say 6 days( and set it accordingly in the `inist_project` as shown below
-    ```
-       initial_period_in_days = 6d0  ! Period of the binary at the end of Minilab1
-    ```
+The primary, which is now a black hole, is much lighter than the companion star. For the subsequent evolution (to bypass model convergence issues), we will _ad hocly_ set the mass of the black hole to the following value in the `inist_project` file 
+```
+    m2 = 20d0 ! black hole mass in Msun
+    initial_period_in_days = 25d0 ! The period of the binary at the end of Minilab1
+```
+Also note that we have approximately matched the period to that from the Minilab1 run.
+
+
 1. As our goal is to evolve the spin of the black hole, we would like to save this spin evolution into the history file. To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
 
 1. Next, we will have to tell the code what data we want to write in this column. For this go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function include the following 
@@ -261,14 +267,30 @@ Above the index "1" refers to the primary star. These lines set the primary star
     ```
 
 
-Compile the above code and run it. You will see something like the figure below in the `pgstar` output. While the model runs you can see that the file `binary_history.data`  file should start population the column named `abh` with the black hole spin data. At the end of the run, you can also plot this spin evolution as a function of time to see how it evolved.
+Compile the above code and run it. You will see something like the figure below in the `pgstar` output. While the model runs you can see that the file `binary_history.data`  file should start population the column named `abh` with the black hole spin data.  On the bottom RHS of the `pgstar` plot shown below, you should be able to see how the spin $a$ evolves with time.
+
+![Accretor and point mass](Figures/accretor_and_point_mass.png)
+*A snapshot of a star being evolved next to a black hole. The bottom RHS subplot shows the mass and spin evolution of the black hole.*
+
 
 |:information_source: NOTE|
 |:--|
-|If for some reason the model fails to evolve due to convergence issue, then instead of steps 2. and 3. you may want to set instead the flag `evolve_both_stars = .false.` which would make the secondary into a point mass (and omit step 2 and 3). If you do this, then you would accordingly have to set all `m(1)` to `m(2)` in steps 5 and 7.|
+| From the $a_BH$ evolution equation, can you calculate how much mass a nonrotating black hole has to accrete to spin up to $a_{\rm BH} = 0.6$, $a_{\rm BH} = 0.75$ and $a_{\rm BH} = 0.99$? You will find that a black hole has to accrete increasingly more mass to spin up to larger values of $a_{\rm BH}$.|
+
+<details> 
+<summary> Answer: </summary>
+See the below figure for a detailed answer for a detailed answer.
+   
+![Accretor and point mass](Figures/spin_vs_mass_BH.png)
+*The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$.*
+
+</details>
 
 
-![Accretor and point mass](Figures/accretor_and_point_mass.png)
-*A snapshot of the accretor star being evolved next to a point mass.*
+
+We will run this model till it begins to fail due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie [here](https://drive.google.com/file/d/1_HkbkMIGPxyHKUxGJKrK8gf1ClqNX_ep/view?usp=drive_link) with name `black_hole_mass_and_spin_evolution.mp4`.
+
+**Solution:**  In case you got stuck while running this bonus exercise, [here](https://drive.google.com/file/d/1ERyllUDPNKkmxHD-SBlVCW5olhmJi1tz/view?usp=drive_link) is the solved version of the  `run_binary_extras.f90` file.
+
 
 
