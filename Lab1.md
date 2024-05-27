@@ -112,6 +112,9 @@ When your model has finished running, try to make a movie of your `&pgbinary` di
 ```shell-session
 $ images_to_movie "png/*.png" movie.mp4
 ```
+|:information_source: INFO |
+|:--|
+|If the command doesn't work, make sure to update your MESA SDK. |
 
 <details>
 <summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
