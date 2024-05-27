@@ -393,4 +393,15 @@ The bug fix above is crucial for many of you, as the simulation won't even run w
    end if
 ```
 
+After editing, make sure to compile the code again.
+
+```shell-session
+$ cd $MESA_DIR/binary
+$ ./install
+$ cd [working_directory]/Lab1_binary
+$ ./clean
+$ ./mk
+$ ./rn
+```
+
 With this fix, the secondary mass should also be outputted appropriately.
