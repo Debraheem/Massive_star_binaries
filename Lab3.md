@@ -180,7 +180,7 @@ Similarly, the change in $M$ is $dM/dm = E_{\rm isco}/c^2$, where $E_{\rm isco}$
 $$
     \frac{d a}{d \ln m}=\frac{c}{r_{\mathrm{g}}} \frac{j_{\mathrm{isco}}}{E_{\mathrm{isco}}}-2 a .
 $$
-One can then solve this for $a$. For an initially non rotating black hole with mass $M_{0}$ and final mass $M$ this solution can be found by integrating the above and is given by (Bardeen_1970, Thorne_1974)
+One can then solve this for $a$. For an initially non-rotating black hole with mass $M_{0}$ and final mass $M$, this solution can be found by integrating the above and is given by (Bardeen_1970, Thorne_1974)
 $$
     a = \begin{cases}\sqrt{\frac{2}{3}} \frac{M_0}{M}\left[4-\sqrt{18 \frac{M_0^2}{M^2}-2}\right] & \text { if } M \leq \sqrt{6} M_0 \,,\\ 1 & \text { if } M>\sqrt{6} M_0 \,.\end{cases} 
 $$
@@ -188,7 +188,7 @@ $$
 
 ### Task
 
-Now we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Minilab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star from Minilab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
+Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Minilab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star from Minilab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
 
 
 1. Download the `evolve_accretor_plus_point_mass` directory from [this URL](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
@@ -225,9 +225,9 @@ The primary, which is now a black hole, is much lighter than the companion star.
 Also note that we have approximately matched the period to that from the Minilab1 run.
 
 
-4. As our goal is to evolve the spin of the black hole, we would like to save this spin evolution into the history file. To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
+4. As our goal is to evolve the spin of the black hole, we would like to save this spin evolution in the `binary_history.data` file. To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
 
-5. Next, we will have to tell the code what data we want to write in this column. For this go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function include the following 
+5. Next, we will have to tell the code what data we want to write in this column. For this, go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function, include the following 
     ```fortran    
        names(1) = 'abh'
        ! Set the spin of the black hole at the beginning of mass transfer to zero
@@ -235,7 +235,7 @@ Also note that we have approximately matched the period to that from the Minilab
           vals(1) = 0
        endif
     ```
-    Here `names(1) = 'abh'` is the name of the extra column that will be saved in the `binary_history.data` file and `val(1)` contains the data of the same column, i.e., the value of the spin of the black hole `abh`. As you can see, we till the black hole does not accrete any mass, we set this to zero.
+    Here `names(1) = 'abh'` is the name of the extra column that will be saved in the `binary_history.data` file and `val(1)` contains the data of the same column, i.e., the value of the spin of the black hole `abh`. As you can see, we set this to zero until the black hole begins to accrete mass.
 
 6. Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition. After this, you are all set.
     ```fortran
@@ -270,7 +270,7 @@ Also note that we have approximately matched the period to that from the Minilab
     ```
 
 
-Compile the above code and run it. You will see something like the figure below in the `pgstar` output. While the model runs you can see that the file `binary_history.data`  file should start population the column named `abh` with the black hole spin data.  On the bottom RHS of the `pgstar` plot shown below, you should be able to see how the spin $a$ evolves with time.
+Compile the above code and run it. You will see something like the figure below in the `pgstar` output. While the model runs you can see that the file `binary_history.data`  file should start populating the column named `abh` with the black hole spin data.  On the bottom RHS of the `pgstar` plot shown below, you should be able to see how the spin $a$ evolves with time.
 
 ![Accretor and point mass](Figures/accretor_and_point_mass.png)
 *A snapshot of a star being evolved next to a black hole. The bottom RHS subplot shows the mass and spin evolution of the black hole.*
@@ -286,11 +286,12 @@ See the below figure for a detailed answer for a detailed answer.
 
 <img width="60%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/spin_vs_mass_of_black_hole.jpg" />
 
+
 *The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$.*
 </details>
 
 
-We will run this model till it begins to fail due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie [here](https://drive.google.com/file/d/1_HkbkMIGPxyHKUxGJKrK8gf1ClqNX_ep/view?usp=drive_link) with name `black_hole_mass_and_spin_evolution.mp4`.
+We will run this model until it fails due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie [here](https://drive.google.com/file/d/1_HkbkMIGPxyHKUxGJKrK8gf1ClqNX_ep/view?usp=drive_link) with name `black_hole_mass_and_spin_evolution.mp4`.
 
 **Solution:**  In case you got stuck while running this bonus exercise, [here](https://drive.google.com/file/d/1ERyllUDPNKkmxHD-SBlVCW5olhmJi1tz/view?usp=drive_link) is the solved version of the  `run_binary_extras.f90` file.
 
