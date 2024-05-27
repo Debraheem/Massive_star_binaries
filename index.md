@@ -14,14 +14,18 @@ credit: ESO/L. Calçada
 
 [Link to Lab Solutions](https://drive.google.com/drive/folders/11WEpwn17_XuxKugH0B57OHMjby-jomUj?usp=share_link)
 
+## Goal of this introduction
+
+There is a crucial bug in the `pgbinary` module that disrupts the simulation in some machines when plotting things on the fly. Before we start our labs, we will fix this bug in the source code to make sure we can run the following labs smoothly.
+
+## Setting up a MESA binary run
 
 To begin, please download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory.
 This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
 
 Once downloaded, you can decompress the file by
-```console
+```shell-session
 $ unzip Lab1_binary.zip
-$ unzip aaa # comment
 ```
 
 To get an idea of what is inside `Lab1_binary` we can use the `tree` command.
@@ -230,7 +234,7 @@ $MESA_DIR/star/defaults/
 
 As before copy the relevant parameter you wish to change to `inlist1` before making the change. Similarly, `inlist2` contains the parameters of star 2.
 
-### Setting values for an initial run
+## Setting values for an initial run
 
 Here, we will run our first model. For this, we need to set the masses of the stars in the binary and the binary's orbit period. Choose a desired value and then execute the below commands in your terminal
 
@@ -247,32 +251,30 @@ On executing the above commands, MESA will print the model output on the termina
 
 ### Pgstar Output
 
-A picture is worth a thousand words
+A picture is worth a thousand words, so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 
-, so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
-
-We can turn on the `pgbinary` plots by uncommenting the following line in `&starjob`. 
+The `pgbinary` plots are switched on via the following flag in `&starjob` in the file `inlist_project`.
 
 ```
-!   pgbinary_flag = .true.
+   pgbinary_flag = .true.
 ```
-we also want to try running this model in the single star mode, so let's ensure `evolve_both_stars = .false.` as well.
+We also want to try running this model in single star mode, so we have set `evolve_both_stars = .false.` as well.
 
 Now we can  `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass.
 
-This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appears in the top right corner followed by other plots of the orbital evolution of both stars.
+This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
 
 ![pgstar](Figures/grid1_000080.png)
 
 
 
-### Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
+## Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
 
 Now, run your model again and take note of what happens to you or the people around you. What computer are you using?
 
 If you're running on an apple arm cpu (e.g. M1), there should be no issue.
-However, if you're running using the intel fortran compilers, chances are pgbinary probably crashed your simulation with the following error:
+However, if you're running using the intel cpus, chances are that pgbinary probably crashed your simulation with the following error:
 
 ```
 Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
@@ -318,7 +320,7 @@ TIME: 12:48:18
 finished 
 ```
 
-#### How do we fix this bug? 
+### How do we fix this bug? 
 
 Notice that the fortran backtrace error we are recieving points to `../private/pgbinary_orbit.f90:240`. Using this information open `$MESA_DIR/binary/private/pgbinary_orbit.f90` with your favorate text editor and find line 240, which should read
 
@@ -326,10 +328,10 @@ Notice that the fortran backtrace error we are recieving points to `../private/p
 call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
 ```
 
-#### What seems to be happening?
+### What seems to be happening?
 
 When MESA binary runs in single star mode, it appears that `x2s_RL` and `y2s_RL` are unset in the `pgbinary_orbit` panel.
-To solve this issue, we can set these variables by adding the following just below line 205 in `pgbinary_orbit.f90`.
+To solve this issue, we can set these variables by adding the following few lines just below line 205 in `pgbinary_orbit.f90`.
 
 ```fortran
  else
@@ -379,7 +381,7 @@ $ ./rn
 pgbinary should no longer crash! You can now continue on to [Lab1](./Lab1), where we will continue using and modifying this same `Lab1_binary` directory.
 
 
-#### Another bug fix while you're on it
+### Bonus: Another bug fix while you're on it
 
 The bug fix above is crucial for many of you, as the simulation won't even run with pgbinary switched on. There is another small bug that prevents the mass of the secondary to be outputted when it is treated as a point mass. That can be fixed by changing the output formatting style. In line 206 and 225 of `pgbinary_star.f90`, change the formatting to something like this.
 
