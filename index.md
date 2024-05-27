@@ -333,15 +333,7 @@ call pgline(2 * num_points + 1, x2s_RL, y2s_RL)
 When MESA binary runs in single star mode, it appears that `x2s_RL` and `y2s_RL` are unset in the `pgbinary_orbit` panel.
 To solve this issue, we can set these variables by adding the following few lines just below line 205 in `pgbinary_orbit.f90`.
 
-```fortran
- else
-     x2s_RL = 0d0
-     y2s_RL = 0d0
-```
-
-These should appear on lines 206-208, With lines 198-212 shown below, in context.
-
-```fortran
+```diff
        do i = 1, num_points	 ! displace the xs
           x2s_RL(i) = -(x2s_RL(i) - a2 * (1 - e))  ! flip x for 2nd star!
           x2s_RL(2 * num_points - i + 1) = x2s_RL(i)
@@ -350,9 +342,9 @@ These should appear on lines 206-208, With lines 198-212 shown below, in context
        y2s_RL(2 * num_points + 1) = y2s_RL(1)
        x2max = maxval(abs(x2s_RL))
        xmax = max(x2max, xmax)
-    else
-       x2s_RL = 0d0
-       y2s_RL = 0d0
++    else
++       x2s_RL = 0d0
++       y2s_RL = 0d0
     end if
  else if (b% pg% Orbit_show_RL .and. abs(log10(q)) > 2) then
     write(*, 1) "pgbinary: Not plotting RL, q too extreme: abs(log(q)) = ", abs(log10(q))
