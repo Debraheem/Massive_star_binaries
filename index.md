@@ -260,18 +260,17 @@ The `pgbinary` plots are switched on via the following flag in `&starjob` in the
 ```
 We also want to try running this model in single star mode, so we have set `evolve_both_stars = .false.` as well.
 
-Now we can  `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass.
-
-This run should return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
+This model directory "should" return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
 
 ![pgstar](Figures/grid1_000080.png)
 
+Now let's try to reproduce a similar pgbinary plot. We can `./mk` and `./rn` our binary directory to watch the evolution of a 15Msun star orbiting a point mass. Run your model and take note of what happens to your model and/or the models of the others at your table. Only run your model for a several tens of timesteps to see what happens. 
+
+Discuss what happened with the the others at your table. Take note of what kind of computer are each of you using.
 
 
 # Finding and fixing a bug in MESA (see [gh-issue-634](https://github.com/MESAHub/mesa/issues/634))
 
-
-Now, run your model again and take note of what happens to you or the people around you. Only run your model for a several timesteps to see what happens. What computer are you using?
 
 If you're running on an apple arm cpu (e.g. M1), there should be no issue.
 However, if you're running using the intel cpus, chances are that pgbinary probably crashed your simulation with the following error:
