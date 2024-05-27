@@ -251,7 +251,7 @@ On executing the above commands, MESA will print the model output on the termina
 
 ### Pgstar Output
 
-A picture is worth a thousand words, so rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
+A picture is worth a thousand words! Rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 
 The `pgbinary` plots are switched on via the following flag in `&starjob` in the file `inlist_project`.
 
@@ -260,7 +260,7 @@ The `pgbinary` plots are switched on via the following flag in `&starjob` in the
 ```
 We also want to try running this model in single star mode, so we have set `evolve_both_stars = .false.` as well.
 
-This model directory "should" return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main Panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
+This model directory "should" return a nice pgbinary plot showing the evolution of the primary with the secondary treated as a point mass. The main panel on the left for the primary should display a variety of plots for that star, while the second panel for the secondary does not appear as it is not being modeled here. An orbital seperation diagram should appear in the top right corner followed by other plots of the orbital evolution of both stars.
 
 ![pgstar](Figures/grid1_000080.png)
 
