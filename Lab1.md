@@ -77,7 +77,7 @@ For solar metallicity stars, it is known that mass transfer processes will strip
 
 |:clipboard: TASK|
 |:--|
-|Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost.|
+|Try to apply a stopping condition so that the calculation finishes when 80% of the donor's envelope is lost. See [MESA &controls documentation: When to stop](https://docs.mesastar.org/en/release-r24.03.1/reference/controls.html#when-to-stop).|
 
 
 |:information_source: HINT|
