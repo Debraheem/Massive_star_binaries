@@ -6,31 +6,33 @@ title: Lab3
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-|:exclamation: TEMPORARY|
-|:--|
-|The content of Lab 2 has been ported over from [this PDF version](MESA_Lab2.pdf). See PDF in case you find anything is missing from the website.|
 
 # Lab3 -  Modeling The Mass Gainer
 
 ## Science goal
 
-In Minilab1, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure (both surface and internal), and future evolution of the mass gainer. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (e.g., see Renzo et al. 2021 for more information). In this lab, we will ignore the impact of the angular momentum carried by the accreted material on the mass gainer. 
+In Minilab1 and Minilab2, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure (both surface and internal), and future evolution of the mass gainer. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (see, e.g., \cite{renzo2021evolution} for more information). In this lab, we will ignore the impact of the angular momentum carried by the accreted material on the mass gainer.
 
 
 ### Bonus goal
 
-As a homework exercise, you may also like to study the evolution of the binary once the primary turns into a compact object, which we assume to be a black hole. In such a case, the secondary could subsequently expand and dump its matter onto the black hole. This inflences the properties of the black hole, like its mass and spin. In the bonus exercise, we will explore how these properties evolve as a function of the mass accretion rate.
-
+As a bonus exercise, you may also like to study the evolution of the binary once the primary turns into a compact object, which we assume to be a black hole. In such a case, the secondary could subsequently expand and transfer its matter onto the black hole. This influences the properties of the black hole, like its mass and spin. In the bonus exercise, we will explore how these properties evolve as a function of the mass accretion rate.
 
 
 
 ## Evolving the mass gainer as a single star
 For computational ease, we will load the _saved accretor model_ from the last (Minilab1) run and then evolve this model _as a single star_. To begin, first copy the necessary files required for Minilab2 from the following link.
 
-   [Click here to access Minilab2](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link)
+For computational ease, we will load the \textit{saved accretor model} from the last (Minilab1) run and then evolve this model _as a single star_. 
+
+**Task:** To begin, first copy the necessary files required for Minilab3 from the following link 
+
+   [Click here to access Minilab3](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link)
 
 You will have to download Minilab2 and extract the contents of the `evolve_accretor_star.zip` directory.
 Now go to the directory of Minilab1, and from there, copy the file named `accretor_final.mod` into the Minilab2 directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Minilab1 and Minilab2 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
+
+You will have to download and extract the contents of the \texttt{evolve\_accretor\_star.zip} directory. We recommend that you store them in a parent directory called Minilab3. Now go to the directory of Minilab1, and from there, copy the file named \texttt{accretor\_final.mod} into the \texttt{Minilab3/evolve\_accretor\_star} directory. This file contains the accretor's information from the previous run and will act as \textit{an initial condition for the present run}. If your Minilab1 and Minilab3 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
 
 ```shell-session
 $ cp -r ./Minilab1/accretor_final.mod ./Minilab2/Evolve_accretor_star
