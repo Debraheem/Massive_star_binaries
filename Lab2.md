@@ -142,7 +142,8 @@ $ ./rn
 
 
 
-<details markdown="block"><summary>Answer: Pre-computed movie</summary>
+<details markdown="block">
+<summary>Answer: Pre-computed movie</summary>
 
 In case you were not able to make a movie, then you can access made movies by clicking on this [Minilab2 directory](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). During the initial stages, you should be able to see that the accretor has a much larger helium abundance on its surface compared to the single star. Over time, this composition evolves, and in the end, both stars have similar surface compositions.  There is also a considerable difference between the internal evolution of the two stars, as seen in the Kippenhahn diagram. During the initial phase, the burning zones of the single star extend to larger mass coordinates than that of the accretor. 
 
