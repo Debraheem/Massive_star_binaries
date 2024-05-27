@@ -35,11 +35,11 @@ The `tree` command shows the files contained in the `Lab1_binary` directory and 
 If your terminal does not have `tree` installed, you  can do it by executing
 
 ```shell-session
-$ brew install tree (on mac)
+$ brew install tree # on mac
 ```
 or
 ```shell-session
-$ sudo apt-get install tree (on linux)
+$ sudo apt-get install tree # on linux
 ```
 It's alright if you don't have `tree` or cannot download it, `ls` should suffice.
 
