@@ -298,8 +298,8 @@ Compile the above code and run it. You will see something similar to the figure 
 *A snapshot of a star being evolved next to a black hole. The bottom RHS subplot shows the mass and spin evolution of the black hole.*
 
 
-|:information_source: NOTE|
-|:--|
+| :question: QUESTION | 
+| :--- |
 | From the $a_{\rm BH}$ evolution equation, can you calculate how much mass a nonrotating black hole has to accrete to spin up to $a_{\rm BH} = 0.6$, $a_{\rm BH} = 0.75$ and $a_{\rm BH} = 0.99$? You will find that a black hole has to accrete increasingly more mass to spin up to larger values of $a_{\rm BH}$.|
 
 <details> 
