@@ -309,7 +309,9 @@ See the below figure for a detailed answer for a detailed answer.
 <img width="60%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/spin_vs_mass_of_black_hole.jpg" />
 
 
+
 *The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$.*
+
 </details>
 
 
