@@ -116,7 +116,7 @@ In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.co
 
 ## Bonus1 : Evolving to Core-Carbon Depletion
 
-As in Lab1, let's try extending our stopping condiiton to when the primary reaches core-Carbon depletion, and look for a second mass transfer phase. Then fill in the last column in the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) .
+Let's try extending our stopping condiiton to when the primary reaches core-Carbon depletion, and look for a second mass transfer phase. Then fill in the last column in the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) .
 
 | :question: Below are some questions to discuss at your table and answer while your model evolves | 
 | :--- |
