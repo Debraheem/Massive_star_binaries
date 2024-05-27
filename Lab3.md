@@ -231,18 +231,17 @@ These lines instruct MESA to use the final profile of the accretor star from Min
 | :--- |
 | Can you find the mass and period of the binary as they were at the end of Minilab1? |
 
-<details> <summary> Answer: </summary> 
+**Answer:** 
 You could have gotten different answers based on what you chose as the initial mass and period of the binary in Minilab1. In the case when the initial parameters were chosen as 
    
-```bash
-      m1 = 15d0  ! donor mass in Msun
-      m2 = 12d0 ! companion mass in Msun
-      initial_period_in_days = 6d0
 ```
+   m1 = 15d0  ! donor mass in Msun
+   m2 = 12d0 ! companion mass in Msun
+   initial_period_in_days = 6d0
+```
+
 then the mass of the primary star would be $\approx 5M_\odot$, while the mass of the secondary star is $\approx 22 M_\odot$. In addition, the period is $\approx 25$ days. This is a larger period than what we started with (6 days), implying that the binary widened during the mass transfer process.  
 
-</details>
-   
 The primary, which is now a black hole, is much lighter than the companion star. For the subsequent evolution (to bypass model convergence issues), we will _ad hocly_ set the mass of the black hole to the following value in the `inist_project` file 
 ```
     m2 = 20d0 ! black hole mass in Msun
