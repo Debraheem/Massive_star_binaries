@@ -127,7 +127,7 @@ This will show an output similar to the below image (Note that you will need to 
 
 <img width="100%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/vim_diff.png" />
 
-*<be>Comparing the two inlists.*
+*Comparing the two inlists.*
 </details>
 
 |:question: QUESTION |
