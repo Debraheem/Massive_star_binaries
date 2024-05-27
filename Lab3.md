@@ -82,7 +82,7 @@ Additionally, you should see a `pgstar` plot (similar to the image below) poppin
 As the name suggests, the top subplot in the Abundance-Power-Mixing plot shows the abundance of various chemical species within the star, with the total abundance normalized to one. The middle subplot shows the regions where nuclear fusion is taking place within the star. It also shows what elements are being fused in these regions. The bottom subplot shows the various types of diffusive mixing processes taking place within the star. 
 
 #### Kippenhahn plot
-This diagram is used to visualize the internal structure and evolution of a star. It displays information such as convective borders, sites of nuclear energy generation, and sites of shell burning. The cyan regions indicate convective areas, and the ${\color{red}red}$ regions indicate the regions where nuclear burning is taking place. The white regions show the convective regions where overshooting is taking place, and the ${\color{gray}grey}$ regions indicate semi-convection. The latter occurs in regions where neither pure convection nor pure radiation is efficient enough to transport energy effectively. The cooling (${\color{blue}blue}$) region refers to a region where the temperature is decreasing over time. The grey line shows the total mass boundary of the star $M_{\rm total}$, while the ${\color{teal}green}$ line shows the mass boundary of the helium core $M_{\rm He}$. 
+This diagram is used to visualize the internal structure and evolution of a star. It displays information such as convective borders, sites of nuclear energy generation, and sites of shell burning. The cyan regions indicate convective areas, and the $\textcolor{red}{red}$ regions indicate the regions where nuclear burning is taking place. The white regions show the convective regions where overshooting is taking place, and the $\textcolor{gray}{grey}$ regions indicate semi-convection. The latter occurs in regions where neither pure convection nor pure radiation is efficient enough to transport energy effectively. The cooling ($\textcolor{blue}{blue}$) region refers to a region where the temperature is decreasing over time. The grey line shows the total mass boundary of the star $M_{\rm total}$, while the $\textcolor{teal}{green}$ line shows the mass boundary of the helium core $M_{\rm He}$. 
 
 
 ### Making a movie from the `pgstar` output
@@ -233,7 +233,8 @@ These lines instruct MESA to use the final profile of the accretor star from Min
 | :--- |
 | Can you find the mass and period of the binary as they were at the end of Minilab1? |
 
-**Answer:** 
+<details markdown="block"><summary>Answer: </summary>
+   
 You could have gotten different answers based on what you chose as the initial mass and period of the binary in Minilab1. In the case when the initial parameters were chosen as 
    
 ```
@@ -243,6 +244,10 @@ You could have gotten different answers based on what you chose as the initial m
 ```
 
 then the mass of the primary star would be $\approx 5M_\odot$, while the mass of the secondary star is $\approx 22 M_\odot$. In addition, the period is $\approx 25$ days. This is a larger period than what we started with (6 days), implying that the binary widened during the mass transfer process.  
+
+</details>
+
+
 
 The primary, which is now a black hole, is much lighter than the companion star. For the subsequent evolution (to bypass model convergence issues), we will _ad hocly_ set the mass of the black hole to the following value in the `inist_project` file 
 ```
