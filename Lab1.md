@@ -6,8 +6,7 @@ title: Lab1
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-Here is a downloadable copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory.
-This work directory is a slightly modified version of the `$MESA_DIR/binary/test_suite/evolve_both_stars` test_suite.
+In this section, you will continue with the `Lab1_binary` directory from the introduction. You can also re-download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory, but make sure `pgstar_flag` is uncommented in `inlist_project` as we did in the introduction.
 
 
 # Lab1 - Modeling a star through envelope stripping
@@ -66,7 +65,7 @@ For this lab we will keep the primary and companion/accretor mass fixed at **`m1
 | 3 | 15 | 12 | 200 | 0   |
 | 4 | 15 | 12 | 15  | 0.5 |
 
-Now choose a value for the initial mass and period of the binary system from this table.
+Now choose a value for the initial period and $\beta$ of the binary system from this table. 
 
 <!-- 
 Since this lab is focused on envelope stripping and mass transfer physics,  we'd like to save some computation and terminate our models before the mass transfer phase ends. Evolving trhough the mass transfer phase for the default case happens around model number 370 (and takes 11 mins). We'll try to reduce this computation time by terminating our model once it loses 50% of its mass.
@@ -84,7 +83,7 @@ For solar metallicity stars, it is known that mass transfer processes will strip
 |:information_source: HINT|
 |:--|
 |This can be done by setting a stopping condition in `inlist1`.|
-
+|Don’t forget to uncomment the mass transfer parameters by deleting the `!` in front of them.|
 
 <details markdown="block">
 <summary>Answers: Example code</summary>
