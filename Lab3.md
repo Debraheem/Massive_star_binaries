@@ -115,7 +115,7 @@ From the above link, download the `evolve_single_star` directory and extract its
 |:--|
 | What would be a convenient way to compare two files? |
 
-<details>
+<details markdown="block">
 <summary> <bold> Answer: </bold> </summary>
    
 If you have `vim` installed on your terminal, a quick way to see these differences is by running the following command
@@ -133,7 +133,7 @@ This will show an output similar to the below image (Note that you will need to 
 |:--|
 | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
 
-<details>
+<details markdown="block">
 <summary> <bold> Answer: </bold> </summary>
    
 Your answer will depend on the initial mass and binary period you choose in Minilab1. To guess the approximate mass, go to the `png` directory in Minilab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $\approx 21.9 M_\odot$. 
@@ -302,7 +302,7 @@ Compile the above code and run it. You will see something similar to the figure 
 | :--- |
 | From the $a_{\rm BH}$ evolution equation, can you calculate how much mass a nonrotating black hole has to accrete to spin up to $a_{\rm BH} = 0.6$, $a_{\rm BH} = 0.75$ and $a_{\rm BH} = 0.99$? You will find that a black hole has to accrete increasingly more mass to spin up to larger values of $a_{\rm BH}$.|
 
-<details> 
+<details markdown="block">
 <summary> Answer: </summary>
    
 See the below figure for a detailed answer.
