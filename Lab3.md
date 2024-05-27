@@ -198,13 +198,14 @@ Now we are going to evolve the secondary star next to a black hole. Such a confi
      load_model_filename = 'accretor_final.mod'  
     ```
     These lines instruct \textsc{Mesa} to use the final profile of the accretor star from Minilab1 as the initial state of the current star in the `evolve_accretor_plus_point_mass` directory.
-3. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass. 
+3. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass.
 
-   |:question: QUESTION|
-   |:--|
-   |Can you find the mass and period of the binary as they were at the end of Minilab1?|
-   <details> <summary> Answer: </summary> 
-   You could have got different answers based on what you chose as the initial mass and period of the binary. In the case when the initial parameters were chosen as 
+
+| :question: QUESTION | 
+| :--- |
+|Can you find the mass and period of the binary as they were at the end of Minilab1?|
+<details> <summary> Answer: </summary> 
+You could have got different answers based on what you chose as the initial mass and period of the binary. In the case when the initial parameters were chosen as 
 ```
       m1 = 15d0  ! donor mass in Msun
       m2 = 12d0 ! companion mass in Msun
