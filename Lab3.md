@@ -300,16 +300,17 @@ Compile the above code and run it. You will see something similar to the figure 
 
 |:information_source: NOTE|
 |:--|
-| From the $a_BH$ evolution equation, can you calculate how much mass a nonrotating black hole has to accrete to spin up to $a_{\rm BH} = 0.6$, $a_{\rm BH} = 0.75$ and $a_{\rm BH} = 0.99$? You will find that a black hole has to accrete increasingly more mass to spin up to larger values of $a_{\rm BH}$.|
+| From the $a_{\rm BH}$ evolution equation, can you calculate how much mass a nonrotating black hole has to accrete to spin up to $a_{\rm BH} = 0.6$, $a_{\rm BH} = 0.75$ and $a_{\rm BH} = 0.99$? You will find that a black hole has to accrete increasingly more mass to spin up to larger values of $a_{\rm BH}$.|
 
 <details> 
 <summary> Answer: </summary>
    
-See the below figure for a detailed answer for a detailed answer.
+See the below figure for a detailed answer.
 
 <img width="60%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/spin_vs_mass_of_black_hole.jpg" />
 
-*The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$.*
+
+*The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$. $M_{\rm BH, f}$ and $M_{\rm BH, i} represent the current (which is a function of time) and the initial mass of the black hole.*
 </details>
 
 
