@@ -11,7 +11,7 @@ title: Lab3
 
 ## Science goal
 
-In Minilab1 and Minilab2, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure (both surface and internal), and future evolution of the mass gainer. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (see, e.g., \cite{renzo2021evolution} for more information). In this lab, we will ignore the impact of the angular momentum carried by the accreted material on the mass gainer.
+In Minilab1 and Minilab2, we explored the evolution of a stellar binary, with a particular focus on the mass donor (a.k.a the primary - initially more massive star). In this lab, we now turn our attention towards the other component in the binary, i.e., the mass gainer (a.k.a. the secondary - initially less massive star). The aim is to explore how binary interaction changes the appearance, structure (both surface and internal), and future evolution of the mass gainer. This accreted mass should also carry a substantial amount of angular momentum, which could also impact the star's properties (see, e.g., Renzo and Götberg, 2021 for more information). In this lab, we will ignore the impact of the angular momentum carried by the accreted material on the mass gainer.
 
 
 ### Bonus goal
@@ -119,19 +119,15 @@ From the above link, download the `evolve_single_star` directory and extract its
 <summary> <bold> Answers: </bold> </summary>
    
 If you have `vim` installed on your terminal, a quick way to see these differences is by running the following command
-
 ```shell-session
    vimdiff ./evolve_accretor_star/inlist_accretor ./evolve_single_star/inlist_single_star
 ```
 This will show an output similar to the below image (Note that you will need to be in the Minilab3 directory for the above command to execute successfully)
 
-   
 <img width="100%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/vim_diff.png" />
 
 *<be>Comparing the two inlists.*
-
 </details>
-
 
 |:question: QUESTION |
 |:--|
@@ -176,9 +172,6 @@ In case you were not able to make a movie, then you can access pre-made movies b
 
 </details>
 
-
-
-
 ## Bonus task - Evolving the secondary alongside a black hole
 
 Although to save computation, we approximated the accretor's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. This section is devoted to that.
@@ -192,7 +185,7 @@ While initially, there would not be much difference in the evolution, once the a
 The accreted mass would cause the properties of the black hole to change. The no-hair theorems suggest that the only relevant parameters of an astrophysical black hole that fully determine its property are its mass $M$ and angular momentum $J$. So, our task is to see how $M$ and $J$ evolve with time. Using $M, J$, we can define another parameter called the _dimensionless Kerr spin parameter_ of the black hole as 
 
 $$
-    a = \frac{Jc}{GM^2}
+    a = \frac{Jc}{GM^2} ,
 $$
 
 where $c, G$ is the speed of light and Newton's gravitational constant, respectively. The usefulness of this parameter is evident from the fact that for astrophysical black holes $a \in [0, 1)$ (e.g., Thorne 1974). A value of $a \geq 1$ implies the violation of the *cosmic censorship principle* (Penrose 1969).
@@ -200,12 +193,12 @@ where $c, G$ is the speed of light and Newton's gravitational constant, respecti
 
 Let us assume that the infalling matter has sufficient AM to at least circularise outside the (innermost stable circular orbit) ISCO of the black hole from where it is directly accreted. Then the change in $J$ of the mass accreting black hole is 
 
-$$ \frac{dJ}{dm} = j_{\rm isco} \,, $$ 
+$$ \frac{dJ}{dm} = j_{\rm isco} , $$ 
 
 where $dm$ is the rest mass of the matter being accreted.
 Similarly, the change in $M$ is 
 
-$$ \frac{dM}{dm} = \frac{E_{\rm isco}}{c^2} \,, $$
+$$ \frac{dM}{dm} = \frac{E_{\rm isco}}{c^2} , $$
 
 where $E_{\rm isco}$ is the specific energy of a particle at ISCO. The evolution of the spin parameter due to accretion can be obtained by differentiating the above equation w.r.t. $m$, resulting in
 
@@ -216,7 +209,7 @@ $$
 One can then solve this for $a$. For an initially non-rotating black hole with mass $M_{0}$ and final mass $M$, this solution can be found by integrating the above and is given by (Bardeen_1970, Thorne_1974)
 
 $$
-    a = \begin{cases}\sqrt{\frac{2}{3}} \frac{M_0}{M}\left[4-\sqrt{18 \frac{M_0^2}{M^2}-2}\right] & \text { if } M \leq \sqrt{6} M_0 \,,\\ 1 & \text { if } M>\sqrt{6} M_0 \,.\end{cases} 
+    a = \begin{cases}\sqrt{\frac{2}{3}} \frac{M_0}{M}\left[4-\sqrt{18 \frac{M_0^2}{M^2}-2}\right] & \text { if } M \leq \sqrt{6} M_0 \,,\\ 1 & \text { if } M>\sqrt{6} M_0 .\end{cases} 
 $$
 
 
@@ -323,6 +316,18 @@ See the below figure for a detailed answer for a detailed answer.
 We will run this model until it fails due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie [here](https://drive.google.com/file/d/1_HkbkMIGPxyHKUxGJKrK8gf1ClqNX_ep/view?usp=drive_link) with name `black_hole_mass_and_spin_evolution.mp4`.
 
 **Solution:**  In case you got stuck while running this bonus exercise, [here](https://drive.google.com/file/d/1ERyllUDPNKkmxHD-SBlVCW5olhmJi1tz/view?usp=drive_link) is the solved version of the  `run_binary_extras.f90` file.
+
+
+## References
+
+M Renzo and Y Götberg. Evolution of accretor stars in massive binaries: Broader implications from modeling ζ ophiuchi. The Astrophysical Journal, 923(2):277, 2021.
+
+Kip S. Thorne. Disk-Accretion onto a Black Hole. II. Evolution of the Hole. The Astrophysical Journal, 191:507–520, July 1974.
+
+Roger Penrose. Gravitational Collapse: the Role of General Relativity. Nuovo Cimento Rivista Serie, 1:252, January 1969.
+
+James M. Bardeen. Kerr Metric Black Holes. Nature, 226(5240):64–65, April 1970.
+
 
 
 
