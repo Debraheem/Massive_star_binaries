@@ -294,7 +294,7 @@ After this, you are all set. If you are curious about the contents of the `black
 
 Compile the above code and run it. You will see something similar to the figure below in the `pgstar` output. While the model runs, you can see that the file `binary_history.data` should start populating the column named `abh` with the black hole spin data.  On the bottom RHS of the `pgstar` plot shown below, you should be able to see how the spin $a$ evolves with time.
 
-![Accretor and point mass](Figures/accretor_and_point_mass.png)
+![Accretor and point mass](Figures/black_hole_spin_evo.png)
 *A snapshot of a star being evolved next to a black hole. The bottom RHS subplot shows the mass and spin evolution of the black hole.*
 
 
@@ -309,10 +309,7 @@ See the below figure for a detailed answer for a detailed answer.
 
 <img width="60%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/spin_vs_mass_of_black_hole.jpg" />
 
-
-
 *The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$.*
-
 </details>
 
 
