@@ -204,6 +204,7 @@ Now we are going to evolve the secondary star next to a black hole. Such a confi
 | :question: QUESTION | 
 | :--- |
 | Can you find the mass and period of the binary as they were at the end of Minilab1? |
+
 <details> <summary> Answer: </summary> 
 You could have got different answers based on what you chose as the initial mass and period of the binary. In the case when the initial parameters were chosen as 
 ```
@@ -212,7 +213,9 @@ You could have got different answers based on what you chose as the initial mass
       initial_period_in_days = 6d0
 ```
 
-then the mass of the primary star would be $\approx 5M_\odot$, while the mass of the secondary star is $\approx 22 M_\odot$. In addition, the period is $\approx 25$ days. This is a larger period than what we started with (6 days), implying that the binary widened during the mass transfer process.  </details>
+then the mass of the primary star would be $\approx 5M_\odot$, while the mass of the secondary star is $\approx 22 M_\odot$. In addition, the period is $\approx 25$ days. This is a larger period than what we started with (6 days), implying that the binary widened during the mass transfer process.  
+
+</details>
    
 The primary, which is now a black hole, is much lighter than the companion star. For the subsequent evolution (to bypass model convergence issues), we will _ad hocly_ set the mass of the black hole to the following value in the `inist_project` file 
 ```
