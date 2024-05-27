@@ -116,7 +116,7 @@ From the above link, download the `evolve_single_star` directory and extract its
 | What would be a convenient way to compare two files? |
 
 <details>
-<summary> <bold> Answers: </bold> </summary>
+<summary> <bold> Answer: </bold> </summary>
    
 If you have `vim` installed on your terminal, a quick way to see these differences is by running the following command
 
@@ -134,7 +134,7 @@ This will show an output similar to the below image (Note that you will need to 
 | What is the mass of the accretor at the end of the mass transfer phase (or when the model is terminated) in Minilab1?|
 
 <details>
-<summary> <bold> Answers: </bold> </summary>
+<summary> <bold> Answer: </bold> </summary>
    
 Your answer will depend on the initial mass and binary period you choose in Minilab1. To guess the approximate mass, go to the `png` directory in Minilab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $\approx 21.9 M_\odot$. 
 
@@ -206,7 +206,7 @@ $$
     \frac{d a}{d \ln m} =\frac{c}{r_{\mathrm{g}}} \frac{j_{\mathrm{isco}}}{E_{\mathrm{isco}}}-2 a .
 $$
 
-One can then solve this for $a$. For an initially non-rotating black hole with mass $M_{0}$ and final mass $M$, this solution can be found by integrating the above and is given by (Bardeen_1970, Thorne_1974)
+One can then solve this for $a$. For an initially non-rotating black hole with mass $M_{0}$ and final mass $M$, this solution can be found by integrating the above and is given by (Bardeen 1970, Thorne 1974)
 
 $$
     a = \begin{cases}\sqrt{\frac{2}{3}} \frac{M_0}{M}\left[4-\sqrt{18 \frac{M_0^2}{M^2}-2}\right] & \text { if } M \leq \sqrt{6} M_0 \,,\\ 1 & \text { if } M>\sqrt{6} M_0 .\end{cases} 
@@ -304,6 +304,7 @@ Compile the above code and run it. You will see something similar to the figure 
 
 <details> 
 <summary> Answer: </summary>
+   
 See the below figure for a detailed answer for a detailed answer.
 
 <img width="60%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/spin_vs_mass_of_black_hole.jpg" />
