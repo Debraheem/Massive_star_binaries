@@ -252,12 +252,13 @@ $ ./mk
 ```
 
 
-Now that we've added our new stopping condition, save yourself some computation time by restarting your binary mass transfer model from photo created at the end of your previous run.
+Now that we've added our new stopping condition, you can save yourself some computation time by restarting your binary mass transfer model from the photo created at the end of your previous run.
 This can be done by executing the following example command in the terminal for a model that terminated at timestep 353.
 
 ```shell-session
 $ ./re x000353
 ```
+
 
 Again, you can make `&pgbinary` movie of your run and use it with your terminal output to answer the following questions!
 
