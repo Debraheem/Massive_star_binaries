@@ -10,7 +10,7 @@ title: Lab2
 
 This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. In `inlist_project` and make sure you are running in single star mode: `evolve_both_stars = .false.`.
 
-## Science goal
+### Science goal
 
 The goal of this lab is to explore how binaries evolve depending on the companion mass and mass ratios $q\equiv M_2/M_1$. The aim is to see the diversity of stellar evolution when the star is in a binary. This lab will focus on identifying when mass transfer is stable or unstable and estimating the merger time in low and high mass ratio binary systems. This lab closely follows the [2022 MESA Summer School Maxilab provided by Pablo Marchant](https://orlox.github.io/mesa2022_hmxb/).
 
@@ -19,23 +19,7 @@ The goal of this lab is to explore how binaries evolve depending on the companio
 Our bonus goal is to explore the impact of adopting a nonconservative mass transfer prescription on mass transfer stability.
 
 
-
-
-
-### Let's review the different types of mass transfer
-
-Mass transfer in binary systems are often classified based on which burning stage the donor star is in. This is because stars have very different structures depending on the burning stage and therefore respond to mass loss in completely different ways.
-
-<dl>
-  <dt> Case A mass transfer </dt>
-       <dd> Mass transfer from a core hydrogen burning star (main sequence star).</dd>
-  <dt> Case B mass transfer </dt>
-       <dd> Mass transfer from a core hydrogen depleted star (post-main sequence star).  </dd>
-  <dt> Case C mass transfer </dt>
-       <dd> Mass transfer from a core helium depleted star. </dd>
-</dl>
-
-### When is mass transfer stable versus unstable?
+## When is mass transfer stable versus unstable?
 
 Mass transfer in binary systems is often classified as stable or unstable. There is no universal definition for the stability, but it is often understood as follows.
 
@@ -429,11 +413,19 @@ The model should take less than 10 minutes to run on a 4 core machine, you can u
 | 3. What is the approximate mass of the primary when the mass transfer phase ends?|
 | 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 
-
 |:information_source: Tips|
 |:--|
 |To help in analyzing your model, you can try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.|
 |`$ images_to_movie "png/*.png" movie.mp4`|
+
+<dl>
+  <dt> Case A mass transfer </dt>
+       <dd> Mass transfer from a core hydrogen burning star (main sequence star).</dd>
+  <dt> Case B mass transfer </dt>
+       <dd> Mass transfer from a core hydrogen depleted star (post-main sequence star).  </dd>
+  <dt> Case C mass transfer </dt>
+       <dd> Mass transfer from a core helium depleted star. </dd>
+</dl>
 
 <!--
 Now that you have created a wonderful `&pgbinary` movie, you can use this movie in conjuction with our terminal output from our run to answer the following questions!
