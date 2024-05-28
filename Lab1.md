@@ -208,7 +208,7 @@ Note that just adding a control like the following will not work for all cases. 
       xa_central_lower_limit_species(1) = 'c12'
       xa_central_lower_limit(1) = 1d-4
 ```
-This is because a most of the initial $^{12}\textrm{C}$ present at ZAMS is converted into $^{14}\textrm{N}$ via the CNO cycle during core-Hydrogen burning. The $^{12}\textrm{C}$ present in the core at the onset of Carbon burning is produced via the $3\alpha$ and $^{12}\mathrm{C}(\alpha,\gamma)^{16}\mathrm{O}$ reaction rates during core-Helium burning. To prevent our models from prematurely terminating, we need to add a custom stopping condition in our `run_star_extras.f90`.
+This is because most of the initial $^{12}\textrm{C}$ present at ZAMS is converted into $^{14}\textrm{N}$ via the CNO cycle during core-Hydrogen burning. The $^{12}\textrm{C}$ present in the core at the onset of Carbon burning is produced via the $3\alpha$ and $^{12}\mathrm{C}(\alpha,\gamma)^{16}\mathrm{O}$ reactions during core-Helium burning. To prevent our models from prematurely terminating, we need to add a custom stopping condition in our `run_star_extras.f90`.
 
 |:clipboard: TASK|
 |:--|
