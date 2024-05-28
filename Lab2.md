@@ -199,6 +199,7 @@ subroutine extras_binary_after_evolve(binary_id, ierr)
 
 
 The other thing we will need to add is a check on overflow. The Kolb scheme allows stars to overflow, with larger mass transfer rates happening at larger overflow. But if the radius of the star exceeds the orbital separation, there's definitely something fishy happening! 
+
 |:clipboard: TASK 3|
 |:--|
 |Add another termination condition that checks if the radius of the star exceeds the binary separation (use `b%r(1)` and `b% separation`).| 
