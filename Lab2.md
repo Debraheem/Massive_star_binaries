@@ -430,15 +430,19 @@ The model should take less than 10 minutes to run on a 4 core machine, you can u
 | 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 
 
-
-You can try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
-
+|:information_source: Tips|
+|:--|
+|
+To help in analyzing your model, you can try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.|
+|
 ```shell-session
 $ images_to_movie "png/*.png" movie.mp4
 ```
+|
 
-Now that you have created a wonderful `&pgbinary` movie, you can use this movie in conjuction with our terminal output from our run to answer the following questions!
 <!--
+Now that you have created a wonderful `&pgbinary` movie, you can use this movie in conjuction with our terminal output from our run to answer the following questions!
+
 |:information_source: CATCH UP|
 |:--|
 | If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1yubo5s121aMKaxUs690oLAcAwxqOcm52?usp=share_link).|
