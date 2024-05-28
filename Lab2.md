@@ -69,6 +69,10 @@ In `inlist1`, set a stopping condition such that the model terminates when the p
    xa_central_lower_limit(1) = 1d-4
 ```
 
+|:clipboard: NOTE|
+|:--|
+|Not all models in this lab will reach this stopping condition, as they might terminate pre-maturely due to numerical difficulties associated with resolving unstable mass transfer.|
+
 
 ### Let's review the different types of mass transfer
 
@@ -101,9 +105,6 @@ $ ./mk
 $ ./rn
 ```
 
-|:clipboard: NOTE|
-|:--|
-|Not all models in this lab will reach this stopping condition, as they might terminate pre-maturely due to numerical difficulties associated with resolving unstable mass transfer.|
 
 The model should take roughly 11 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
 
