@@ -47,8 +47,33 @@ If, for some reason, your Minilab1 run was not able to finish, then do not worry
 
 Before we proceed further, it would be worthwhile to explore the primary differences between the contents of the Minilab1 directory and this lab. In Minilab1, we evolved both stars. As such, we had two `inlists` (one each for the primary and the secondary star). These inlists contained the parameters that were relevant for each star. In addition, there was an inlist called `inlist_project`, which contained the binary parameters, e.g., the period of the binary and the initial mass of each star in the binary, etc.  Meanwhile, the files contained in the Minilab3 directory are shown below.
 
-<img src="Figures/output-onlinepngtools.png" width="200">
-   *<br>The contents of the `evolve_accretor_star` directory*
+```
+├── LOGS
+├── README.rst
+├── accretor_final_1.mod
+├── ck
+├── clean
+├── docs
+├── history_columns.list
+├── inlist
+├── inlist_accretor
+├── inlist_accretor_header
+├── inlist_pgstar
+├── make
+│   └── makefile
+├── mk
+├── movie_accretor_star.mp4
+├── photos
+├── png
+├── profile_columns.list
+├── re
+├── rn
+├── rn1
+├── src
+│   ├── run.f90
+│   └── run_star_extras.f90
+└── testhub.yml
+```
 
 As mentioned in Minilab1, to see the above files in your terminal, you need to run the `tree` command. You will notice that here, we only have one main inlist named `inlist_accretor`, which contains the parameters we need to set for evolving the accretor star. Although we would stress that this is not necessary, and you are free to break this one inlist into many sub-inlists. As an example, see the files located in the directory `$MESA_DIR/star/test_suite/ccsn_IIp`. Additionally, you will see that the `src` directory for the accretor star (i.e., evolved as a single star) no longer contains the `run_binary_extras.f90` file - as we are not evolving a binary model anymore.
 
