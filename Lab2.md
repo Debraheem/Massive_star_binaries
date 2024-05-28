@@ -128,7 +128,7 @@ end function extras_binary_finish_step
 
 </details>
 
-We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow $(R/R_{\text{Rl}})$. 
+We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So want our run to report the maximum amount of Roche lobe overflow $(R/R_{\text{Rl}})$ when it terminates. 
 
 |:clipboard: TASK 2|
 |:--|
@@ -137,7 +137,7 @@ We will need additional information at the end of a run, as well as an additiona
 
 
 <details markdown="block">
-<summary>Answers: How to store time spent in RL overflow and max R/RL condition</summary>
+<summary>Answers: How to store time spent in RL overflow and max $(R/R_{\text{Rl}})$ condition</summary>
    
 The implementation below also includes the the time spent in Roche lobe overflow and the stopping condition we implemented in the previous task.
 
