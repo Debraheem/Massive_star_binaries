@@ -69,7 +69,7 @@ to terminate our simulation.
 |:clipboard: TASK 1|
 |:--|
 | For stable mass transfer, Ensure the model terminates at Helium depeletion with the stopping condition: $X(^4\mathrm{He})\leq10^{-4}$|
-| For unstable mass transfer, Let's add a stopping condition which terminates the model when $\dot{M}_{\text{transfer}}$ $>$ $100$ $\dot{M}_{\text{thermal}}$.|
+| For unstable mass transfer, Let's add a stopping condition which terminates the model when $$\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}$$.|
 |Implement this check in `extras_binary_finish_step`.|
 
 |:information_source: Tips|
@@ -128,7 +128,7 @@ end function extras_binary_finish_step
 
 </details>
 
-We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow \((R/R_{\text{Rl}})\). 
+We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow $\((R/R_{\text{Rl}})\)$. 
 
 |:clipboard: TASK 2|
 |:--|
