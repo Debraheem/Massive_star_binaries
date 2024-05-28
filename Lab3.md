@@ -238,7 +238,7 @@ While initially, there would not be much difference in the evolution, once the a
 
 ### The black hole's evolution
 
-The accreted mass would cause the properties of the black hole to change. The no-hair theorems suggest that the only relevant parameters of an astrophysical black hole that fully determine its property are its mass $M$ and angular momentum $J$. So, our task is to see how $M$ and $J$ evolve with time. Using $M, J$, we can define another parameter called the _dimensionless Kerr spin parameter_ of the black hole as 
+The accreted mass would cause the properties of the black hole to change. The no-hair theorem suggests that the only relevant parameters of an astrophysical black hole that fully determine its property are its mass $M$ and angular momentum $J$. So, our task is to see how $M$ and $J$ evolve with time. Using $M, J$, we can define another parameter called the _dimensionless Kerr spin parameter_ of the black hole as 
 
 $$
     a = \frac{Jc}{GM^2} ,
@@ -373,7 +373,7 @@ See the below figure for a detailed answer.
 <img width="60%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/spin_vs_mass_of_black_hole.jpg" />
 
   <p><em>The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$. $M_{\rm BH, f}$ and $M_{\rm BH, i}$ represent the current (which is a function of time) and the initial mass of the black hole.</em></p>
-</div>
+
 <!--*The evolution of a black hole's spin as it accretes mass. The initial spin $a_{\rm BH} = 0$. $M_{\rm BH, f}$ and $M_{\rm BH, i}$ represent the current (which is a function of time) and the initial mass of the black hole.* -->
 </details>
 
