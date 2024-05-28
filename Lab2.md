@@ -74,7 +74,7 @@ to terminate our simulation.
 
 |:information_source: Tips|
 |:--|
-|You can use the defined constant `standard_cgrav`. Compute both $$\(\dot{M}_{\text{thermal}}\)$ and $\(\dot{M}_{\text{dynamical}}\)$$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
+|You can use the defined constant `standard_cgrav`. Compute both $$\(\dot{M}_{\text{thermal}}\)$$ and $$\(\dot{M}_{\text{dynamical}}\)$$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
 |The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
 |Setting `extras_binary_finish_step = terminate` within the subroutine will terminate your simulation.|
 |Whenever you terminate a simulation in this way, it is ideal to print a message so the run does not just silently stop.|
@@ -128,12 +128,12 @@ end function extras_binary_finish_step
 
 </details>
 
-We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow $\((R/R_{\text{Rl}})\)$. 
+We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow $(R/R_{\text{Rl}})$. 
 
 |:clipboard: TASK 2|
 |:--|
-|In `extras_binary_finish_step` store the value of $\(R/R_{\text{Rl}}\)$ in `b%xtra(2)` if it exceeds the value of `b%xtra(2)`. By default, `b%xtra(2)` is initiated at zero, so in this way, you will keep its maximum value.|
-|In `extras_binary_after_evolve` include a `write(*,*) "Check maximum R/R_Rl", b%xtra(2)` line to output the maximum value achieved. The `extras_binary_after_evolve` subroutine is called once the simulation finishes.|
+|In `extras_binary_finish_step` store the value of $\(R/R_{\text{Rl}}\)$ in `b% xtra(2)` if it exceeds the value of `b% xtra(2)`. By default, `b% xtra(2)` is initiated at zero, so in this way, you will keep its maximum value.|
+|In `extras_binary_after_evolve` include a `write(*,*) "Check maximum R/R_Rl", b% xtra(2)` line to output the maximum value achieved. The `extras_binary_after_evolve` subroutine is called once the simulation finishes.|
 
 
 <details markdown="block">
