@@ -156,7 +156,7 @@ Let's try extending our stopping condition to when the primary reaches core-Carb
 
 ## Bonus 2: Nonconservative Mass Transfer
 
-As in Lab1, try adopting the following nonconservative Mass transfer controls and re run your model.
+As in Lab1, try adopting the following nonconservative Mass transfer controls and re-run your model.
 
 | $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
 |:-----|:--------------|:--------------|:----------------|
