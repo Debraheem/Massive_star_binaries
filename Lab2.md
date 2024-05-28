@@ -74,7 +74,7 @@ to terminate our simulation.
 
 |:information_source: Tips|
 |:--|
-|You can use the defined constant `standard_cgrav`. Compute both $$\(\dot{M}_{\text{thermal}}\)$$ and $$\(\dot{M}_{\text{dynamical}}\)$$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
+|You can use the defined constant `standard_cgrav`. Compute both $(\dot{M}_{\text{thermal}})$ and $(\dot{M}_{\text{dynamical}})$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
 |The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
 |Setting `extras_binary_finish_step = terminate` within the subroutine will terminate your simulation.|
 |Whenever you terminate a simulation in this way, it is ideal to print a message so the run does not just silently stop.|
