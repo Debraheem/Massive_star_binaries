@@ -432,13 +432,8 @@ The model should take less than 10 minutes to run on a 4 core machine, you can u
 
 |:information_source: Tips|
 |:--|
-|
-To help in analyzing your model, you can try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.|
-|
-```shell-session
-$ images_to_movie "png/*.png" movie.mp4
-```
-|
+|To help in analyzing your model, you can try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.|
+|`$ images_to_movie "png/*.png" movie.mp4`|
 
 <!--
 Now that you have created a wonderful `&pgbinary` movie, you can use this movie in conjuction with our terminal output from our run to answer the following questions!
@@ -450,12 +445,13 @@ Now that you have created a wonderful `&pgbinary` movie, you can use this movie 
 
 
 
-
 |:question: DISCUSSION|
 |:--|
 | 1. What are the qualitative differences between Case A vs B mass transfer? |
 | 2. How does the mass ratio influence the stability of mass transfer and their outcome? |
 | 3. We have ignored the effect of winds here. How do you think the evolution would change if we added winds on top of binary effects? |
+
+If you have arrived here, you can pick another Mass and Period from the table or move on to Bonus 1!
 
 <!-- ## Bonus1 : Evolving to Core-Carbon Depletion
 
