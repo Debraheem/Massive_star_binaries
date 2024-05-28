@@ -58,7 +58,7 @@ $$
 $$ \quad \dot{M}_{\text{dynamical}} = \frac{M}{\tau_{\text{dynamical}}}
 $$
 
-As a criterion to test for unstable mass transfer, we will check at the end of each timestep if the mass transfer rate \(\dot{M}_{\text{transfer}}\) exceeds significantly the thermal rate. This is indicative of the donor approaching a near-adiabatic behavior, leading to runaway overflow. In particular, we will require that 
+As a criterion to test for unstable mass transfer, we will check at the end of each timestep if the mass transfer rate $\(\dot{M}_{\text{transfer}}\)$ exceeds significantly the thermal rate. This is indicative of the donor approaching a near-adiabatic behavior, leading to runaway overflow. In particular, we will require that 
 
 $$
 \dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}
@@ -69,7 +69,7 @@ to terminate our simulation.
 |:clipboard: TASK 1|
 |:--|
 | For stable mass transfer, Ensure the model terminates at Helium depeletion with the stopping condition: $X(^4\mathrm{He})\leq10^{-4}$|
-| For unstable mass transfer, Let's add a stopping condition which terminates the model when $\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}$.|
+| For unstable mass transfer, Let's add a stopping condition which terminates the model when $\dot{M}_{\text{transfer}}$ $>$ $100$ $\dot{M}_{\text{thermal}}$.|
 |Implement this check in `extras_binary_finish_step`.|
 
 |:information_source: Tips|
