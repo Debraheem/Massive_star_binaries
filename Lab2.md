@@ -28,7 +28,7 @@ To explore the stability of mass transfer across various mass ratios and orbital
 
 Let's start by assuming fully conservative mass transfer, i.e. ($\beta=0$).
 
-For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios *m1/m2* by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1.5 - 12 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 512$ days. We've descritized this parameter space in the following two tables:
+For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios `m2/m1` by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1.5 - 12 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 512$ days. We've descritized this parameter space in the following two tables:
 
 | Companion (accretor) Mass ( $M_{\odot}$ ) |   
 |:------------------------|
@@ -89,7 +89,7 @@ Mass transfer in binary systems is often classified as stable or unstable.
 
 Stable Mass transfer: When mass transfer proceeds in a controlled manner, without leading to dramatic changes in the system. The donor star loses mass at a rate that allows the binary system to remain bound and evolve over time. Typically, this results in a smooth and gradual transfer of mass.
 
-Unstable Mass Transfer: This occurs when the mass transfer process leads to rapid and uncontrollable changes in the system. The donor star loses mass at a rate that destabilizes the system, potentially leading to a common envelope phase, where the envelope of the donor star engulfs both stars, or even to the merger of the two stars. This usually results in dramatic, often short-lived, evolutionary changes in the binary system. Unstable mass transfer is typically thought to lead directly to a common envelope and/or merger between both stars.
+Unstable Mass Transfer: This occurs when the mass transfer process leads to rapid and uncontrollable changes in the system. The donor star loses mass at a rate that destabilizes the system, typically considered to a common envelope phase, where the envelope of the donor star engulfs both stars, or even to the merger of the two stars. This usually results in dramatic, often short-lived, evolutionary changes in the binary system. 
 
 
 
@@ -100,6 +100,7 @@ Now, we will run the model. As before, for this, we need to execute the below co
 $ ./mk
 $ ./rn
 ```
+
 |:clipboard: NOTE|
 |:--|
 |Not all models in this lab will reach this stopping condition, as they might terminate pre-maturely due to numerical difficulties associated with resolving unstable mass transfer.|
