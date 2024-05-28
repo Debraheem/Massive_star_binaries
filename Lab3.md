@@ -155,7 +155,7 @@ This will create a movie out of the `png` files and save it with the name `movie
 ## Does the accretor evolve differently than a single star with same initial mass?
 
 Although we have evolved the accretor as a single star, it would be instructive to check how this _differs from the evolution of a single star_ that never interacted with a companion. 
-Intuitively, we know that the accretor star gained mass through Roche lobe overflow and that this mass had a somewhat different chemical composition than the accretor star's surface. This is because the primary already contained substantial helium on its surface before the mass was transferred. Now we would like to explicitly very claim. 
+Intuitively, we know that the accretor star gained mass through Roche lobe overflow and that this mass had a somewhat different chemical composition than the accretor star's surface. This is because the primary already contained substantial helium on its surface before the mass was transferred. Now we would like to explicitly verify this claim. 
 
 
 **Task:** In this section, our goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer at the end of Lab1). Then, we will compare the structure and evolution of the accretor with that of a single star. To begin, download the necessary files required to evolve a single star from the following link
