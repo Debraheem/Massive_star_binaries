@@ -87,11 +87,47 @@ $ ./mk
 $ ./rn
 ```
 
-If all went as planned, then you should see a terminal window that should be similar to the one shown below.
- 
-![Terminal output Minilab 2](Figures/terminal_ouput_Minilab2.png)
-   *<br>An example of the terminal output for Minilab3*
+If all went as planned, you should see a terminal window similar to the one shown below.
 
+```
+All this and more are saved in the LOGS directory during the run.
+load saved model accretor_final.mod
+
+                             set_initial_number_retries           0
+ net name basic.net
+                            set_cumulative_energy_error    0.0000000000000000D+00
+ kap_option gs98
+ kap_CO_option gs98_co
+ kap_lowT_option lowT_fa05_gs98
+                                        OMP_NUM_THREADS           4
+
+
+__________________________________________________________________________________________________________________________________________________
+
+       step    lg_Tmax     Teff     lg_LH      lg_Lnuc     Mass       H_rich     H_cntr     N_cntr     Y_surf   eta_cntr   zones  retry
+  lg_dt_yrs    lg_Tcntr    lg_R     lg_L3a     lg_Lneu     lg_Mdot    He_core    He_cntr    O_cntr     Z_surf   gam_cntr   iters  
+    age_yrs    lg_Dcntr    lg_L     lg_LZ      lg_Lphoto   lg_Dsurf   CO_core    C_cntr     Ne_cntr    Z_cntr   v_div_cs       dt_limit
+__________________________________________________________________________________________________________________________________________________
+
+        375   7.570465  4.120E+04   4.941200   4.941200  21.920617  21.920617   0.449337   0.011206   0.863119  -6.466892    477      0
+ 3.5926E+00   7.570465   0.763286 -26.398861   3.775182 -99.000000   0.000000   0.531021   0.002125   0.019416   0.013561      5
+ 1.4185E+07   0.596017   4.940865 -10.837080 -99.000000  -8.762532   0.000000   0.000150   0.002085   0.019643  0.000E+00    initial dt
+
+save LOGS/profile1.data for model 375
+ png/Grid1_000375.png/png
+        376   7.570495  4.120E+04   4.941452   4.941452  21.920617  21.920617   0.448970   0.011212   0.863119  -6.467244    477      0
+ 3.6717E+00   7.570495   0.763464 -26.396466   3.775430 -99.000000   0.000000   0.531389   0.002118   0.019416   0.013564      5
+ 1.4190E+07   0.596020   4.941117 -99.000000 -99.000000  -8.762816   0.000000   0.000150   0.002085   0.019642  0.000E+00  max increase
+
+        377   7.570531  4.119E+04   4.941755   4.941755  21.920617  21.920617   0.448529   0.011219   0.863119  -6.467665    477      0
+ 3.7509E+00   7.570531   0.763678 -26.393584   3.775727 -99.000000   0.000000   0.531830   0.002110   0.019416   0.013568      5
+ 1.4196E+07   0.596024   4.941420 -99.000000 -99.000000  -8.763158   0.000000   0.000150   0.002085   0.019641  0.000E+00  max increase
+
+        378   7.570575  4.119E+04   4.942120   4.942120  21.920617  21.920617   0.448000   0.011227   0.863119  -6.468171    477      0
+ 3.8301E+00   7.570575   0.763935 -26.390116   3.776085 -99.000000   0.000000   0.532361   0.002100   0.019416   0.013573      5
+ 1.4202E+07   0.596029   4.941785 -10.536050 -99.000000  -8.763568   0.000000   0.000150   0.002085   0.019640  0.000E+00  max increase
+
+```
  
 Additionally, you should see a `pgstar` plot (similar to the image below) popping up on your screen that shows the real-time evolution of the star. The output shown in this plot depends on the user's requirements and can be modified at will. These modifications can be performed by changing the file `inlist_pgstar`
 
