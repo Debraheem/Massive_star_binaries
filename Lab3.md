@@ -126,7 +126,7 @@ If you have `vim` installed on your terminal, a quick way to see these differenc
 vimdiff ./evolve_accretor_star/inlist_accretor ./evolve_single_star/inlist_single_star
 ```
 
-This will show an output similar to the below image (Note that you will need to be in the Minilab3 directory for the above command to execute successfully)
+This will show an output similar to the below image (Note that you must be in the Minilab3 directory for the above command to execute successfully). To exit `vim`, type `:qa` in your terminal and hit enter.
 
 <img width="100%" src="https://raw.githubusercontent.com/Debraheem/Massive_star_binaries/main/Figures/vim_diff.png" />
 
