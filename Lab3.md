@@ -22,11 +22,12 @@ As a bonus exercise, you may also like to study the evolution of the binary once
 
 ## Evolving the mass gainer as a single star
 
-For computational ease, we will load the _saved accretor model_ from the last (Lab1) run and then evolve this model _as a single star_ (as opposed to Lab1 and Lab2, where we studied binary systems). 
+For computational ease, we will load the _saved accretor model_ (`accretor_final.mod`)from the Bonus 2 poriton of Lab1 and then evolve this model _as a single star_ (as opposed to Lab1 and Lab2, where we studied binary systems). 
 
 **Task:** To begin, first copy the necessary files required for Lab3 from the following link 
 
    [Click here to access Lab3](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link)
+   [If you did not complete the Bonus 2 from Lab1, you cna download an `accretor_final.mod` for your case here.](https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link)
    
 
 You will have to download and extract the contents of the `evolve_accretor_star.zip` directory. We recommend that you store them in a parent directory called Lab3. Now go to the directory of Lab1, and from there, copy the file named `accretor_final.mod` into the `Lab3/evolve_accretor_star` directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Lab1 and Lab3 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
