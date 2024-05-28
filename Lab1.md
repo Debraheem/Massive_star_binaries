@@ -56,7 +56,7 @@ For non-conservative mass transfer, part of the mass that is transferred to the 
 
 Now, let's explore the different types of mass transfer and the impact of nonconservative mass transfer on the evolution of our binary system.
 
-For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 15d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different masses and mass ratios later on in Lab3. In this lab we will explore the binary evolution of our system with varying periods by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting a different value for $\beta$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
+For this lab we will keep the primary and companion/accretor mass fixed at **`m1 = 15d0`** and **`m2 = 12d0`**, do not adjust these masses. We will explore the effect of different masses and mass ratios later on in Lab2. In this lab we will explore the binary evolution of our system with varying periods by modifying `initial_period_in_days`, and the impact of adopting nonconservative mass transfer by adopting a different value for $\beta$. Each person at your table will run one of the following four models shown in the table below, and you will compare and discuss your results with one another.
 
 | Case |Donor Mass ($M_{\odot}$) | Accretor Mass (M$_\odot$)|Period (days)| $\beta$ |
 |:--|:---|:---|:----|:----|
