@@ -222,14 +222,16 @@ $$
 Now, we are going to evolve the secondary star next to a black hole. As such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Minilab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Minilab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
 
 
-1. Download the `evolve_accretor_plus_point_mass` directory from [this URL](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
-2. In this directory, open `inlist1` and there in the `\&star_jobs` region, uncomment the following lines
+- Download the `evolve_accretor_plus_point_mass` directory from [this URL](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
+  
+- In this directory, open `inlist1` and there in the `\&star_jobs` region, uncomment the following lines
  ```
      load_saved_model = .true.
      load_model_filename = 'accretor_final.mod'  
  ```
 These lines instruct MESA to use the final profile of the accretor star from Minilab1 as the initial state of the current star in the `evolve_accretor_plus_point_mass` directory.
-3. Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass.
+
+- Next, we will need to specify the period of the binary at the moment when we set the primary to a point mass.
 
 | :question: QUESTION | 
 | :--- |
@@ -258,9 +260,9 @@ The primary, which is now a black hole, is much lighter than the companion star.
 ```
 Also note that we have approximately matched the period to that from the Minilab1 run.
 
-4. As our goal is to evolve the mass and spin of the black hole, we would like to save this spin evolution in the `binary_history.data` file (mass evolution is already saved by default). To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
+- As our goal is to evolve the mass and spin of the black hole, we would like to save this spin evolution in the `binary_history.data` file (mass evolution is already saved by default). To do this go to the `run_binary_extras.f90` file and there in the function `how_many_extra_binary_history_columns` replace the `how_many_extra_binary_history_columns = 0` line with `how_many_extra_binary_history_columns = 1`. This tells the code that we would like to have an extra history column.
    
-5. Next, we will have to tell the code what data we want to write in this column. For this, go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function, include the following lines
+- Next, we will have to tell the code what data we want to write in this column. For this, go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function, include the following lines
 ```fortran    
        names(1) = 'abh'
        ! Set the spin of the black hole at the beginning of mass transfer to zero
@@ -270,7 +272,7 @@ Also note that we have approximately matched the period to that from the Minilab
 ```
 Here `names(1) = 'abh'` is the name of the extra column that will be saved in the `binary_history.data` file and `val(1)` contains the data that will be stored in this column, i.e., the value of the spin of the black hole `abh`. As you can see, we set this to zero (using `vals(1) = 0`) until the black hole begins to accrete mass.
    
-6. Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition
+- Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition
 ```fortran
        call  calc_black_hole_spin(b% eq_initial_bh_mass, b% m(1), vals(1))
       
