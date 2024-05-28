@@ -119,6 +119,256 @@ $$
 
 to terminate the simulation.
 
+|:clipboard: TASK|
+|:--|
+| Let's add a stopping condition which terminates the model when $\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}$.|
+|Implement this check in `extras_binary_finish_step`.|
+
+|:information_source: Tips|
+|:--|
+|You can use the defined constant `standard_cgrav`. Compute both \(\dot{M}_{\text{thermal}}\) and \(\dot{M}_{\text{dynamical}}\) and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
+|The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
+|Setting `extras_binary_finish_step = terminate` within the subroutine will terminate your simulation.|
+|Whenever you terminate a simulation in this way, it is ideal to print a message so the run does not just silently stop.|
+
+
+
+<details markdown="block">
+<summary>Answers: Example unstable mass transfer stopping condition</summary>
+
+```fortran
+integer function extras_binary_finish_step(binary_id)
+   type (binary_info), pointer :: b
+   integer, intent(in) :: binary_id
+   integer :: ierr
+   real(dp):: check, mdot_th, mdot_dyn, avg_rho
+   call binary_ptr(binary_id, b, ierr)
+   if (ierr /= 0) then ! failure in  binary_ptr
+      return
+   end if
+
+  extras_binary_finish_step = keep_going
+  write(*,*) "---------------------"
+
+ ! check for unstable mass transfer
+ mdot_th = b% m(1)/(standard_cgrav*(b% m(1))**2/(b% s1% L(1)*b% r(1)))
+ avg_rho = b% m(1)/(4d0/3d0*(b% r(1))**3)
+ mdot_dyn = b% m(1)/(1/sqrt(standard_cgrav*avg_rho))
+
+ write(*,*) "Check maximum R/R_Rl", b% xtra(2)
+ write(*,*) "check: mdot_therm, mdot_dyn", mdot_th/Msun*secyer, mdot_dyn/Msun*secyer
+ write(*,*) "abs(mtransfer_rate)/mdot_th", abs(b% mtransfer_rate)/mdot_th
+ if (abs(b% mtransfer_rate)>100d0*mdot_th) then
+     write(*,*) "Finish simulation due to high mass transfer rate"
+     extras_binary_finish_step = terminate
+ end if
+
+
+end function extras_binary_finish_step
+      
+```
+
+
+</details>
+
+We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow \((R/R_{\text{Rl}})\). 
+
+|:clipboard: TASK|
+|:--|
+|In `extras_binary_finish_step` store the value of \(R/R_{\text{Rl}}\) in `b%xtra(2)` if it exceeds the value of `b%xtra(2)`. By default, `b%xtra(2)` is initiated at zero, so in this way, you will keep its maximum value.|
+|In `extras_binary_after_evolve` include a `write(*,*) "Check maximum R/R_Rl", b%xtra(2)` line to output the maximum value achieved. The `extras_binary_after_evolve` subroutine is called once the simulation finishes.|
+
+
+<details markdown="block">
+<summary>Answers: How to store time spent in RL overflow and max R/RL condition</summary>
+   
+The implementation below also includes the the time spent in Roche lobe overflow and the stopping condition we implemented in the previous task.
+
+In `extras_binary_finish_step`:
+```fortran   
+integer function extras_binary_finish_step(binary_id)
+   type (binary_info), pointer :: b
+   integer, intent(in) :: binary_id
+   integer :: ierr
+   real(dp):: check, mdot_th, mdot_dyn, avg_rho
+   call binary_ptr(binary_id, b, ierr)
+   if (ierr /= 0) then ! failure in  binary_ptr
+      return
+   end if
+
+  extras_binary_finish_step = keep_going
+  write(*,*) "---------------------"
+  ! calculate time in yrs spent in rl overflow
+  if (b% r(1) > b% rl(1)) then
+  b% xtra(1) = b% xtra(1)+b% time_step
+  end if
+  write(*,*) "time spent in rl_overflow", b% xtra(1)
+
+  ! calculate the max value of R/RL
+  b% xtra(2) = max(b% r(1)/b% rl(1), b% xtra(2))
+
+ ! check for unstable mass transfer
+ mdot_th = b% m(1)/(standard_cgrav*(b% m(1))**2/(b% s1% L(1)*b% r(1)))
+ avg_rho = b% m(1)/(4d0/3d0*(b% r(1))**3)
+ mdot_dyn = b% m(1)/(1/sqrt(standard_cgrav*avg_rho))
+
+ write(*,*) "Check maximum R/R_Rl", b% xtra(2)
+ write(*,*) "check: mdot_therm, mdot_dyn", mdot_th/Msun*secyer, mdot_dyn/Msun*secyer
+ write(*,*) "abs(mtransfer_rate)/mdot_th", abs(b% mtransfer_rate)/mdot_th
+ if (abs(b% mtransfer_rate)>100d0*mdot_th) then
+     write(*,*) "Finish simulation due to high mass transfer rate"
+     extras_binary_finish_step = terminate
+ end if
+end function extras_binary_finish_step
+```
+
+In `extras_binary_after_evolve`:
+```fortran   
+subroutine extras_binary_after_evolve(binary_id, ierr)
+      type (binary_info), pointer :: b
+      integer, intent(in) :: binary_id
+      integer, intent(out) :: ierr
+      call binary_ptr(binary_id, b, ierr)
+      if (ierr /= 0) then ! failure in  binary_ptr
+         return
+      end if
+
+     write(*,*) "Check maximum R/R_Rl", b% xtra(2)
+
+   end subroutine extras_binary_after_evolve     
+```
+</details>
+
+
+
+The other thing we will need to add is a check on overflow. The Kolb scheme allows stars to overflow, with larger mass transfer rates happening at larger overflow. But if the radius of the star exceeds the orbital separation, there's definitely something fishy happening! So go ahead and add another termination condition that checks if the radius of the star exceeds the binary separation (use `b%r(1)` and `b%separation`). Remember this can be added in `extras_binary_finish_step`. Be sure to add a `write(*,*)` statement saying why the run finished!
+
+<details markdown="block">
+<summary>Answers: Add stopping condition for when radius exceeds separation </summary>
+   
+In `extras_binary_finish_step`, add :
+```fortran   
+       if (b% r(1) > b% separation) then
+           write(*,*) "Finish simulation due to radius exceeding separation"
+           extras_binary_finish_step = terminate
+       end if
+```
+
+`extras_binary_finish_step` should now look something like this:
+```fortran   
+    integer function extras_binary_finish_step(binary_id)
+         type (binary_info), pointer :: b
+         integer, intent(in) :: binary_id
+         integer :: ierr
+         real(dp):: check, mdot_th, mdot_dyn, avg_rho
+         call binary_ptr(binary_id, b, ierr)
+         if (ierr /= 0) then ! failure in  binary_ptr
+            return
+         end if
+
+        extras_binary_finish_step = keep_going
+        write(*,*) "---------------------"
+        ! calculate time in yrs spent in rl overflow
+        if (b% r(1) > b% rl(1)) then
+        b% xtra(1) = b% xtra(1)+b% time_step
+        end if
+        write(*,*) "time spent in rl_overflow", b% xtra(1)
+
+        ! calculate the max value of R/RL
+        b% xtra(2) = max(b% r(1)/b% rl(1), b% xtra(2))
+
+       ! check for unstable mass transfer
+       mdot_th = b% m(1)/(standard_cgrav*(b% m(1))**2/(b% s1% L(1)*b% r(1)))
+       avg_rho = b% m(1)/(4d0/3d0*(b% r(1))**3)
+       mdot_dyn = b% m(1)/(1/sqrt(standard_cgrav*avg_rho))
+
+       write(*,*) "Check maximum R/R_Rl", b% xtra(2)
+       write(*,*) "check: mdot_therm, mdot_dyn", mdot_th/Msun*secyer, mdot_dyn/Msun*secyer
+       write(*,*) "abs(mtransfer_rate)/mdot_th", abs(b% mtransfer_rate)/mdot_th
+       if (abs(b% mtransfer_rate)>100d0*mdot_th) then
+           write(*,*) "Finish simulation due to high mass transfer rate"
+           extras_binary_finish_step = terminate
+       end if
+
+       if (b% r(1) > b% separation) then
+           write(*,*) "Finish simulation due to radius exceeding separation"
+           extras_binary_finish_step = terminate
+       end if
+
+
+      end function extras_binary_finish_step
+```
+</details>
+
+
+
+
+
+
+
+After making these changes let's run our model that had issues, and see if it triggers the condition. Also, see how the thermal timescale compares to the dynamical one.
+
+Having physical termination conditions to capture regions where MESA cannot properly model an evolutionary phase can be very valuable. It helps avoid the production of spurious results, and also avoids simulations from getting stuck into situations where timesteps become extremely small and simulations could in principle run for years without completing. This can be a big issue when running a large number of simulations in a cluster, potentially leading to a significant waste of resources. 
+
+
+### Approximating the final state of the Binary
+
+So if mass transfer can proceed stably for extreme mass ratios, we could potentially get an extreme reduction in orbital separation! This is particularly interesting in the context of gravitational wave sources (van den Heuvel et al. (2017)), where the time for two point masses to merge depends strongly on the orbital separation. For a circular orbit, the merger time is (Peters, P. C. (1964)):
+
+$$
+t_{\text{merger}} = \frac{a^4}{4B}, \quad B \equiv \frac{64G^3}{5c^5} \frac{(M_1 + M_2)}{M_1 M_2}
+$$
+
+Taking arbitrarily high initial mass ratios could, in principle, lead to arbitrarily small post mass-transfer separations, but there is a competition with mass transfer stability, which we have studied in the previous lab. The purpose of this lab is to study whether or not at the boundary for stability the mass ratio is extreme enough to provide the required shrinkage in orbital separation for gravitational waves to take over. We will consider a \(30M_{\odot}\) donor star with different masses for a black hole companion and compute a grid of simulations using all the cores at disposition from the attending crowd. Throughout the lab, we will make use of `mdot_scheme='Kolb'`.
+
+
+Now, rather than modeling the system all the way to helium depletion, we will make some big assumptions for its final state when a binary black hole can form. This will allow us to only model a fraction of its evolution, which is useful to explore a large input parameter space.
+
+We will assume that after the donor reaches \(20M_{\odot}\), mass transfer will proceed successfully until the star is stripped down to its helium core.
+
+The final separation after mass transfer will be computed using Equation (1).
+
+We will assume that after stripping, mass loss is negligible, and the star will form a black hole with no mass loss at all (direct collapse while ignoring any neutrino losses). This means we also take the separation after mass transfer to be the separation when the binary black hole forms. Using that information, we will compute the merger time with Equation (2).
+
+To include a termination condition based on reaching a minimum mass limit, you can use `star_mass_min_limit = 20d0` in the controls section of `inlist1`.
+
+The information on the helium core mass is stored in the `star_info` variable `he_core_mass`. In `run_binary_extras` you can access it with `b%s1%he_core_mass`. Beware that this is not in grams but in \(M_{\odot}\) units! Now, we are not interested in you spending too much time just typing equations, so we provide you here the solution right away. The following is the final version of `extras_binary_after_evolve`, be sure to check it and understand what it is doing (it includes the reporting of maximum overflow implemented previously).
+
+
+<details markdown="block">
+<summary>Answers: Add stopping condition for when radius exceeds separation </summary>
+   
+
+```fortran   
+subroutine extras_binary_after_evolve(binary_id, ierr)
+   type (binary_info), pointer :: b
+   integer, intent(in) :: binary_id
+   integer, intent(out) :: ierr
+   real(dp) :: m1f, m2f, qi, qf, ai, af, Bmerge, tmerge
+   call binary_ptr(binary_id, b, ierr)
+   if (ierr /= 0) then ! failure in  binary_ptr
+      return
+   end if
+
+  ! check merger time
+  qi = b% m(1)/b% m(2)
+
+  m1f = b% s1% he_core_mass*Msun ! assume stripping down to the helium core
+  m2f = b% m(2) ! assume no further accretion
+  qf = (b% s1% he_core_mass*Msun)/b% m(2)
+
+  ai = b% separation
+  af = ai*(qi/qf)**2*((1+qi)/(1+qf))*exp(2*(qf-qi))
+
+  Bmerge = 64d0/5d0*standard_cgrav**3/clight**5*(m1f+m2f)*m1f*m2f
+  tmerge = af**4/(4d0*Bmerge)
+
+  write(*,*) "Merger time in Gigayears", tmerge/secyer/1e9
+  write(*,*) "Check maximum R/R_Rl", b% xtra(2)
+
+end subroutine extras_binary_after_evolve     
+```
+</details>
 
 
 
