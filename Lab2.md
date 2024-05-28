@@ -64,16 +64,17 @@ $$
 \dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}
 $$
 
-to terminate the simulation.
+to terminate our simulation.
 
-|:clipboard: TASK|
+|:clipboard: TASK 1|
 |:--|
-| Let's add a stopping condition which terminates the model when $\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}$.|
+| For stable mass transfer, Ensure the model terminates at Helium depeletion with the stopping condition: $X(^4\mathrm{He})\leq10^{-4}$|
+| For unstable mass transfer, Let's add a stopping condition which terminates the model when $\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}$.|
 |Implement this check in `extras_binary_finish_step`.|
 
 |:information_source: Tips|
 |:--|
-|You can use the defined constant `standard_cgrav`. Compute both \(\dot{M}_{\text{thermal}}\) and \(\dot{M}_{\text{dynamical}}\) and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
+|You can use the defined constant `standard_cgrav`. Compute both $\(\dot{M}_{\text{thermal}}\)$ and $\(\dot{M}_{\text{dynamical}}\)$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
 |The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
 |Setting `extras_binary_finish_step = terminate` within the subroutine will terminate your simulation.|
 |Whenever you terminate a simulation in this way, it is ideal to print a message so the run does not just silently stop.|
@@ -81,7 +82,16 @@ to terminate the simulation.
 
 
 <details markdown="block">
-<summary>Answers: Example unstable mass transfer stopping condition</summary>
+<summary>Answers: Example stable/unstable mass transfer stopping condition</summary>
+
+In `inlist1`, ensure the following stopping condition is set:
+
+
+```plaintext
+   xa_central_lower_limit_species(1) = 'he4'
+   xa_central_lower_limit(1) = 1d-4
+```
+
 
 ```fortran
 integer function extras_binary_finish_step(binary_id)
@@ -120,7 +130,7 @@ end function extras_binary_finish_step
 
 We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we would like our run to report at the end what was the maximum amount of Roche lobe overflow \((R/R_{\text{Rl}})\). 
 
-|:clipboard: TASK|
+|:clipboard: TASK 2|
 |:--|
 |In `extras_binary_finish_step` store the value of \(R/R_{\text{Rl}}\) in `b%xtra(2)` if it exceeds the value of `b%xtra(2)`. By default, `b%xtra(2)` is initiated at zero, so in this way, you will keep its maximum value.|
 |In `extras_binary_after_evolve` include a `write(*,*) "Check maximum R/R_Rl", b%xtra(2)` line to output the maximum value achieved. The `extras_binary_after_evolve` subroutine is called once the simulation finishes.|
@@ -188,7 +198,14 @@ subroutine extras_binary_after_evolve(binary_id, ierr)
 
 
 
-The other thing we will need to add is a check on overflow. The Kolb scheme allows stars to overflow, with larger mass transfer rates happening at larger overflow. But if the radius of the star exceeds the orbital separation, there's definitely something fishy happening! So go ahead and add another termination condition that checks if the radius of the star exceeds the binary separation (use `b%r(1)` and `b%separation`). Remember this can be added in `extras_binary_finish_step`. Be sure to add a `write(*,*)` statement saying why the run finished!
+The other thing we will need to add is a check on overflow. The Kolb scheme allows stars to overflow, with larger mass transfer rates happening at larger overflow. But if the radius of the star exceeds the orbital separation, there's definitely something fishy happening! 
+|:clipboard: TASK 3|
+|:--|
+|Add another termination condition that checks if the radius of the star exceeds the binary separation (use `b%r(1)` and `b% separation`).| 
+
+|:information_source: Tips|
+|:--|
+|Remember this can be added in `extras_binary_finish_step`. Be sure to add a `write(*,*)` statement saying why the run finished!|
 
 <details markdown="block">
 <summary>Answers: Add stopping condition for when radius exceeds separation </summary>
@@ -249,15 +266,39 @@ In `extras_binary_finish_step`, add :
 
 
 
-
-
-
-
-After making these changes let's run our model that had issues, and see if it triggers the condition. Also, see how the thermal timescale compares to the dynamical one.
+After making these changes we want to run our model to see if it triggers the condition. Also, we want to see how the thermal timescale compares to the dynamical one.
 
 Having physical termination conditions to capture regions where MESA cannot properly model an evolutionary phase can be very valuable. It helps avoid the production of spurious results, and also avoids simulations from getting stuck into situations where timesteps become extremely small and simulations could in principle run for years without completing. This can be a big issue when running a large number of simulations in a cluster, potentially leading to a significant waste of resources. 
 
+Before running the model, adopt the following `&binary_controls` in `inlist_progject`:
 
+```
+   m1 = 15d0  ! donor mass in Msun
+   m2 = 6d0 ! companion mass in Msun
+   initial_period_in_days = 2d0
+```
+
+Now, we will run the model to test our termination condition. As before, for this, we need to execute the below commands in the terminal
+
+```shell-session
+$ ./clean
+$ ./mk
+$ ./rn
+```
+
+Your model should terminate roughly around model number 110 and return the following stopping condition
+
+```shell-session
+---------------------
+ time spent in rl_overflow   49503.438638193809     
+ Check maximum R/R_Rl   1.0405585676781244     
+ check: mdot_therm, mdot_dyn   5.5202653327987236E-006   51592.908753324053     
+ abs(mtransfer_rate)/mdot_th   266.09117503008014     
+ Finish simulation due to high mass transfer rate
+```
+
+
+<!--
 ### Approximating the final state of the Binary
 
 So if mass transfer can proceed stably for extreme mass ratios, we could potentially get an extreme reduction in orbital separation! This is particularly interesting in the context of gravitational wave sources (van den Heuvel et al. (2017)), where the time for two point masses to merge depends strongly on the orbital separation. For a circular orbit, the merger time is (Peters, P. C. (1964)):
@@ -269,9 +310,9 @@ $$
 Taking arbitrarily high initial mass ratios could, in principle, lead to arbitrarily small post mass-transfer separations, but there is a competition with mass transfer stability, which we have studied in the previous lab. The purpose of this lab is to study whether or not at the boundary for stability the mass ratio is extreme enough to provide the required shrinkage in orbital separation for gravitational waves to take over. We will consider a \(30M_{\odot}\) donor star with different masses for a black hole companion and compute a grid of simulations using all the cores at disposition from the attending crowd. Throughout the lab, we will make use of `mdot_scheme='Kolb'`.
 
 
-Now, rather than modeling the system all the way to helium depletion, we will make some big assumptions for its final state when a binary black hole can form. This will allow us to only model a fraction of its evolution, which is useful to explore a large input parameter space.
+Now, rather than modeling the system all the way to helium depletion, we will make some big assumptions for its final state of the system. This will allow us to only model a fraction of its evolution, which is useful to explore a large input parameter space.
 
-We will assume that after the donor reaches \(20M_{\odot}\), mass transfer will proceed successfully until the star is stripped down to its helium core.
+We will assume that after the donor stripped down to its helium core mass t\(20M_{\odot}\), mass transfer will proceed successfully until the star is stripped down to its helium core.
 
 The final separation after mass transfer will be computed using Equation (1).
 
@@ -317,7 +358,7 @@ end subroutine extras_binary_after_evolve
 ```
 </details>
 
-
+-->
 
 
 
