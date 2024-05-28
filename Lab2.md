@@ -70,7 +70,7 @@ In `inlist1`, set a stopping condition such that the model terminates when the p
 
 |:clipboard: NOTE|
 |:--|
-|Not all models in this lab will reach this stopping condition, as they might terminate pre-maturely due to numerical difficulties associated with resolving unstable mass transfer.|
+|Not all models in this lab will reach this stopping condition, as we will add an additional stopping condition to pre-maturely terminate our models if the mass transfer is too high.|
 
 
 ### Let's review the different types of mass transfer
@@ -93,6 +93,31 @@ Mass transfer in binary systems is often classified as stable or unstable. There
 Stable Mass transfer: When mass transfer proceeds in a controlled manner, without leading to dramatic changes in the system. The donor star loses mass at a rate that allows the binary system to remain bound and evolve over time. Typically, this results in a smooth and gradual transfer of mass.
 
 Unstable Mass Transfer: This occurs when the mass transfer process leads to rapid and uncontrollable changes in the system. The donor star loses mass at a rate that destabilizes the system, typically considered to lead to a common envelope phase, where the envelope of the donor star engulfs both stars, or even to the merger of the two stars. This usually results in dramatic, often short-lived, evolutionary changes in the binary system. 
+
+Mass transfer rates can reach values as high as a solar mass per year. "Due to the limitations within MESA, as a code which models the donor star as a 1-dimensional object. For extreme mass ratios, the shrinkage of the orbit as mass transfer proceeds becomes extreme enough that the star cannot adjust itself through mass loss to avoid extreme overflow. In such a case the donor would very likely engulf its companion, initiating a process of common-envelope evolution which is fundamentally 3-dimensional. MESA being a 1-dimensional code cannot deal with such a situation, but rather tries to keep modeling this evolutionary phase as a stable mass transfer event with an ever increasing mass transfer rate, which eventually leads to numerical problems." ~ Pablo Marchant
+
+Rather than attempting to approximate a common-envelope phase with MESA, we will simply construct a physical criteria to identify when an unstable mass transfer phase could start, and terminate the evolution at that stage. For this purpose we will consider the thermal and dynamical timescales of the the donor star.
+
+Although there are ways to approximate a common-envelope phase with MESA, here we wish to simply construct a physical criterion to identify when an unstable mass transfer phase could start, and terminate the evolution at that stage. For this purpose, we will consider the thermal and dynamical timescales of the star:
+
+$$\tau_{\text{thermal}} = \frac{GM^2}{RL}, \quad \tau_{\text{dynamical}} = \frac{1}{G \langle \rho \rangle} $$
+
+From these, one can define characteristic mass transfer rates:
+
+$$
+\dot{M}_{\text{thermal}} = \frac{M}{\tau_{\text{thermal}}}
+$$
+
+$$ \quad \dot{M}_{\text{dynamical}} = \frac{M}{\tau_{\text{dynamical}}}
+$$
+
+As a criterion to test for unstable mass transfer, we will check at the end of each timestep if the mass transfer rate \(\dot{M}_{\text{transfer}}\) exceeds significantly the thermal rate. This is indicative of the donor approaching a near-adiabatic behavior, leading to runaway overflow. In particular, we will require that 
+
+$$
+\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}
+$$
+
+to terminate the simulation.
 
 
 
