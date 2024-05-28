@@ -362,6 +362,9 @@ end subroutine extras_binary_after_evolve
 
 
 
+|:information_source: CATCH UP|
+|:--|
+| If you are having difficulty completing any of the previous portions of the lab, you can download the complete solution [`run_binary_extras.f90`](https://drive.google.com/file/d/12bZd-B_WbnHYi29LrjEdjXNAqKfNrfde/view?usp=share_link) and paste it into your './src' directory.|
 
 ## Exploring a grid of mass transfer models with varying mass ratios
 This lab will continue using the downloaded `Lab1_binary` directory, modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
@@ -408,52 +411,14 @@ For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do no
 | 4096       |
 
 
-Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
-
-
-In the `&binary_controls`, you should see the following lines:
-
-```
-   m1 = 15d0  ! donor mass in Msun
-   m2 = 12d0 ! companion mass in Msun
-   initial_period_in_days = 6d0
-```
-
-In `inlist1`, set a stopping condition such that the model terminates when the primary reaches helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
-
-
-```plaintext
-   xa_central_lower_limit_species(1) = 'he4'
-   xa_central_lower_limit(1) = 1d-4
-```
-
-|:clipboard: NOTE|
+|:clipboard: TASK 4|
 |:--|
-|Not all models in this lab will reach this stopping condition, as we added an additional stopping condition to pre-maturely terminate our models if the mass transfer is too high.|
+|In the [Day 4 Massive Binaries Lab2, Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), choose a period and companion mass and type your initials on the corresponding block. With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.| 
+|run your model, `./rn`|  
+|When your model is finished running, fill in your block in the spreadsheet with the appropriate colors for Stable versus unstable and mass transfer type.|
 
 
-Now, we will run the model. As before, for this, we need to execute the below commands in the terminal
-
-```shell-session
-$ ./mk
-$ ./rn
-```
-
-
-The model should take roughly 11 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
-
-When your model is finished running, try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
-
-```shell-session
-$ images_to_movie "png/*.png" movie.mp4
-```
-
-Now that you have created a wonderful `&pgbinary` movie, let's use this movie in conjuction with our terminal output from our run to answer the following questions!
-
-|:information_source: CATCH UP|
-|:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1yubo5s121aMKaxUs690oLAcAwxqOcm52?usp=share_link).|
-
+The model should take less than 10 minutes to run on a 4 core machine, you can use this time to inspect and discuss differences between your models and those of the others at your table. 
 
 | :question: Below are some questions to discuss at your table and answer while your model evolves | 
 | :--- |
@@ -463,7 +428,20 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 | 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 
 
-In the [Day 4 Massive Binaries Lab2 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), choose a Period and Companion Mass type your initials on the corresponding block. 																	
+
+You can try to make a movie of your `&pgbinary` diagram so you can watch the movie instead of re-running your MESA model. In your `Lab1_binary` directory you can execute the `images_to_movie` command to convert your saved `&pgbinary` pngs into a movie. Here is an example that produces a .mp4 movie named `movie.mp4`.
+
+```shell-session
+$ images_to_movie "png/*.png" movie.mp4
+```
+
+Now that you have created a wonderful `&pgbinary` movie, you can use this movie in conjuction with our terminal output from our run to answer the following questions!
+<!--
+|:information_source: CATCH UP|
+|:--|
+| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1yubo5s121aMKaxUs690oLAcAwxqOcm52?usp=share_link).|
+-->
+
 
 
 
