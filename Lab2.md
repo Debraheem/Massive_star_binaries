@@ -18,59 +18,6 @@ Our bonus goal is to explore the impact of adopting a nonconservative mass trans
 
 
 
-## Exploring a grid of mass transfer models with varying mass ratios
-This lab will continue using the downloaded `Lab1_binary` directory, modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
-
-
-To explore the stability of mass transfer across various mass ratios and orbital periods.
-
-
-Let's start by assuming fully conservative mass transfer, i.e. ($\beta=0$).
-
-For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios `m2/m1` by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1.5 - 12 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 512$ days. We've descritized this parameter space in the following two tables:
-
-| Companion (accretor) Mass ( $M_{\odot}$ ) |   
-|:------------------------|
-| 1.5      |
-| 3        |
-| 6        |
-| 9        |
-| 12        |
-
-| Period (days) |     
-|:--------------|
-| 2        | 
-| 4        | 
-| 8        | 
-| 16        |
-| 32       |
-| 64       |
-| 128       |
-| 256       |
-| 512       |
-
-Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
-
-
-In the `&binary_controls`, you should see the following lines:
-
-```
-   m1 = 15d0  ! donor mass in Msun
-   m2 = 12d0 ! companion mass in Msun
-   initial_period_in_days = 6d0
-```
-
-In `inlist1`, set a stopping condition such that the model terminates when the primary reaches helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
-
-
-```plaintext
-   xa_central_lower_limit_species(1) = 'he4'
-   xa_central_lower_limit(1) = 1d-4
-```
-
-|:clipboard: NOTE|
-|:--|
-|Not all models in this lab will reach this stopping condition, as we will add an additional stopping condition to pre-maturely terminate our models if the mass transfer is too high.|
 
 
 ### Let's review the different types of mass transfer
@@ -372,6 +319,78 @@ end subroutine extras_binary_after_evolve
 
 
 
+
+
+
+## Exploring a grid of mass transfer models with varying mass ratios
+This lab will continue using the downloaded `Lab1_binary` directory, modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
+
+
+To explore the stability of mass transfer across various mass ratios and orbital periods.
+
+
+Let's start by assuming fully conservative mass transfer, i.e. ($\beta=0$).
+
+For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios `m2/m1` by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1.5 - 12 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 512$ days. We've descritized this parameter space in the following two tables:
+
+| Companion (accretor) Mass ( $M_{\odot}$ ) |   
+|:------------------------|
+| 1      |
+| 2        |
+| 3        |
+| 4        |
+| 5        |
+| 6      |
+| 7        |
+| 8        |
+| 9        |
+| 10        |
+| 11        |
+| 12        |
+| 13        |
+| 14        |
+| 15        |
+
+| Period (days) |     
+|:--------------|
+| 2        | 
+| 4        | 
+| 8        | 
+| 16        |
+| 32       |
+| 64       |
+| 128       |
+| 256       |
+| 512       |
+| 1024       |
+| 2048       |
+| 4096       |
+
+
+Now choose a value for the initial mass and period of the binary system from this table by entering your name in the row next to the corresponding mass and period in the [Day 4 Massive Binaries Lab1 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing). With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.
+
+
+In the `&binary_controls`, you should see the following lines:
+
+```
+   m1 = 15d0  ! donor mass in Msun
+   m2 = 12d0 ! companion mass in Msun
+   initial_period_in_days = 6d0
+```
+
+In `inlist1`, set a stopping condition such that the model terminates when the primary reaches helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+
+
+```plaintext
+   xa_central_lower_limit_species(1) = 'he4'
+   xa_central_lower_limit(1) = 1d-4
+```
+
+|:clipboard: NOTE|
+|:--|
+|Not all models in this lab will reach this stopping condition, as we added an additional stopping condition to pre-maturely terminate our models if the mass transfer is too high.|
+
+
 Now, we will run the model. As before, for this, we need to execute the below commands in the terminal
 
 ```shell-session
@@ -398,16 +417,13 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 | :question: Below are some questions to discuss at your table and answer while your model evolves | 
 | :--- |
 | 1. What type of mass transfer does your system undergo? Case A, B, C? |
-| 2. Is the mass transfer in your system stable or unstable?|
+| 2. Does the mass transfer in your system stable or unstable?|
 | 3. What is the approximate mass of the primary when the mass transfer phase ends?|
 | 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 
 
-In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), fill in each column for your chosen values so we can discuss the global results as a class.
+In the [Day 4 Massive Binaries Lab2 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), choose a Period and Companion Mass type your initials on the corresponding block. 																	
 
-| M<sub>primary</sub> / M<sub>accretor</sub> | M<sub>primary</sub> Final | M<sub>accretor</sub> Final | Type of Mass Transfer (A, B, C?) | Stable or Unstable? | Final Period (days) |
-|:-----------------------------------------|:-------------------------|:-------------------------|:----------------------------------|:--------------------|:---------------------|
-|||||||
 
 
 |:question: DISCUSSION|
@@ -416,7 +432,7 @@ In the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.co
 | 2. How does the mass ratio influence the stability of mass transfer and their outcome? |
 | 3. We have ignored the effect of winds here. How do you think the evolution would change if we added winds on top of binary effects? |
 
-## Bonus1 : Evolving to Core-Carbon Depletion
+<!-- ## Bonus1 : Evolving to Core-Carbon Depletion
 
 Let's try extending our stopping condition to when the primary reaches core-Carbon depletion, and look for a second mass transfer phase. Then fill in the last column in the [Day 4 Massive Binaries Lab3 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing) .
 
@@ -427,15 +443,17 @@ Let's try extending our stopping condition to when the primary reaches core-Carb
 | 3. What type of observation supernova will your primary result in?|
 | 4. Is the mass transfer in your system stable or unstable?|
 
+-->
+## Bonus 1: Nonconservative Mass Transfer
 
-## Bonus 2: Nonconservative Mass Transfer
-
-As in Lab1, try adopting the following nonconservative Mass transfer controls and re-run your model.
+As in Lab1, try adopting the following nonconservative Mass transfer controls and re-run your model, then navigate to the [Bonus 1 tab in the Day 4 Massive Binaries Lab2 tab in Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing).
 
 | $\alpha$ | $\beta$ | $\delta$ | $\gamma$ |
 |:-----|:--------------|:--------------|:----------------|
 | 0 | 0.5 | 0 | 0 |
 
 
-Do your answers to any of the aforementioned questions change? Discuss with your group.
+|:question: DISCUSSION|
+|:--|
+|Do your answers to any of the aforementioned questions change? Discuss with your group|
 
