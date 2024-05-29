@@ -12,7 +12,7 @@ This lab will continue using the downloaded `Lab1_binary` directory from Lab1 wh
 
 ### Science goal
 
-The goal of this lab is to explore how binaries evolve depending on the companion mass and mass ratios $q\equiv M_2/M_1$. The aim is to see the diversity of stellar evolution when the star is in a binary. This lab will focus on identifying when mass transfer is stable or unstable and estimating the merger time in low and high mass ratio binary systems. This lab closely follows the [2022 MESA Summer School Maxilab provided by Pablo Marchant](https://orlox.github.io/mesa2022_hmxb/).
+The goal of this lab is to explore how binaries evolve depending on the companion mass and mass ratios $q\equiv M_2/M_1$. The aim is to see the diversity of stellar evolution when the star is in a binary. This lab will focus on identifying when mass transfer is stable or unstable in low and high mass ratio binary systems. This lab closely follows the [2022 MESA Summer School Maxilab provided by Pablo Marchant](https://orlox.github.io/mesa2022_hmxb/).
 
 ### Bonus goal
 
