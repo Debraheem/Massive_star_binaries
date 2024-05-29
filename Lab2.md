@@ -114,7 +114,7 @@ end function extras_binary_finish_step
 
 </details>
 
-We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So want our run to report the maximum amount of Roche lobe overflow $(R/R_{\text{Rl}})$ when it terminates. 
+We will need additional information at the end of a run, as well as an additional termination condition. While exploring a grid with multiple physical variations, one thing that can happen is that the binary is too wide to undergo Roche-lobe overflow. So we want our run to report the maximum amount of Roche lobe overflow $(R/R_{\text{Rl}})$ when it terminates. 
 
 |:clipboard: TASK 2|
 |:--|
@@ -258,7 +258,7 @@ After making these changes we want to run our model to see if it triggers the co
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having difficulty completing any of the previous portions of the lab, you can download the complete solution [`run_binary_extras.f90`](https://drive.google.com/file/d/12bZd-B_WbnHYi29LrjEdjXNAqKfNrfde/view?usp=share_link) and paste it into your './src' directory.|
+| If you are having difficulty completing any of the previous portions of the lab, you can download the complete solution [`run_binary_extras.f90`](https://drive.google.com/file/d/12bZd-B_WbnHYi29LrjEdjXNAqKfNrfde/view?usp=share_link) and paste it into your `./src` directory.|
 
 Having physical termination conditions to capture regions where MESA cannot properly model an evolutionary phase can be very valuable. It helps avoid the production of spurious results, and also avoids simulations from getting stuck into situations where timesteps become extremely small and simulations could in principle run for years without completing. This can be a big issue when running a large number of simulations in a cluster, potentially leading to a significant waste of resources. 
 
