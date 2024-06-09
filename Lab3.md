@@ -35,7 +35,7 @@ You will have to download and extract the contents of the `evolve_accretor_star.
 $ cp -r ./Lab1_binary/accretor_final.mod ./Lab3/Evolve_accretor_star
 ```
 
-If you did not complete Bonus 2 exercise from Lab1, you can download an `accretor_final.mod` for your case <a href="https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link" target="_blank"> here</a>. Alternatively, if you like, we have also provided a pre-evolved copy of the accretor model in the `evolve_accretor_star` directory with the name `accretor_final_1.mod` (note that this model may not be of the same mass as you would have got from Lab1, but that is OK). If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
+If you did not complete Bonus 2 exercise from Lab1, you can download an `accretor_final.mod` for your case <a href="https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link" target="_blank"> here</a>. Alternatively, if you like, we have also provided a pre-evolved copy of the accretor model in the `evolve_accretor_star` directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
 
  
 | :question: QUESTION | 
@@ -192,7 +192,7 @@ This will show an output similar to the below image (Note that you must be in th
 <details markdown="block">
 <summary> <bold> Answer: </bold> </summary>
    
-Your answer will depend on the initial mass and binary period you choose in Lab1. To guess the approximate mass, go to the `png` directory in Lab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $\approx 21.9 M_\odot$. 
+To guess the approximate mass, go to the `png` directory in Lab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $\approx 21.9 M_\odot$. 
 
 </details>
 
@@ -271,7 +271,7 @@ $$
 
 ### Task
 
-Now, we are going to evolve the secondary star next to a black hole. As such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Lab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
+Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Lab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
 
 
 - Download the `evolve_accretor_plus_point_mass` directory from <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">this URL</a>. You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
