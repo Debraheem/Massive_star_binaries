@@ -205,7 +205,14 @@ This will show an output similar to the below image (Note that you must be in th
 <details markdown="block">
 <summary> <bold> Answer: </bold> </summary>
    
-To guess the approximate mass, go to the `png` directory in Lab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $\approx 21.9 M_\odot$. 
+To guess the approximate mass, go to the `png` directory in Lab1 and look at the file that was saved with the most recent time stamp. For the pre-supplied `accretor_final_1.mod` file, the mass of the accretor is $\approx 21.9 M_\odot$. For the Bonus exercise is Lab 1 these masses are 
+
+| Case |Accretor Mass ($M_{\odot}$)|
+|:--|:-----|
+| 1 | 22.4 |
+| 2 | 21.2 | 
+| 3 | 21   | 
+| 4 | 17.2 | 
 
 </details>
 
@@ -284,7 +291,7 @@ $$
 
 |:clipboard: TASK|
 |:--|
-|Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Lab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below.|
+|Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `Lab1_binary` directory. However, the main difference is that the star in the `Lab1_binary` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below.|
 
 
 - Download the `evolve_accretor_plus_point_mass` directory from <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">this URL</a>. You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
