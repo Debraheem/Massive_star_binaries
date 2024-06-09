@@ -17,14 +17,15 @@ In Lab1 and Lab2, we explored the evolution of a stellar binary, with a particul
 ### Bonus goal
 
 As a bonus exercise, you may also like to study the evolution of the binary once the primary turns into a compact object, which we assume to be a black hole. In such a case, the secondary could subsequently expand and transfer its matter onto the black hole. This influences the properties of the black hole, like its mass and spin. 
-
-|:clipboard: TASK|
-|:--|
-|In the bonus exercise, we will explore how the mass and spin of the black hole evolve as a function of the mass accretion rate.|
+In the bonus exercise, we will explore how the mass and spin of the black hole evolve as a function of the mass accretion rate.
 
 
 
 ## Evolving the mass gainer as a single star
+
+|:clipboard: TASK|
+|:--|
+|Let us first evolve the mass gainer as a single star.|
 
 For computational ease, we will load the _saved accretor model_ (`accretor_final.mod`)from the Bonus 2 portion of Lab1 and then evolve this model _as a single star_ (as opposed to Lab1 and Lab2, where we studied binary systems). 
 
