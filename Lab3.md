@@ -402,6 +402,8 @@ We will run this model until it fails due to non-convergence issues. In case you
 
 **Solution:**  In case you got stuck while running this bonus exercise, <a href="https://drive.google.com/file/d/1ERyllUDPNKkmxHD-SBlVCW5olhmJi1tz/view?usp=drive_link" target="_blank">here</a> is the solved version of the  `run_binary_extras.f90` file.
 
+** Solutions for the Lab3: ** You can also find the solutions for the entire Lab3 <a href="https://drive.google.com/drive/folders/1sPxFykJKg6J0ukClgf5Buv3XMlsS62I4?usp=sharing" target="_blank">here</a>.
+
 
 ## References
 
