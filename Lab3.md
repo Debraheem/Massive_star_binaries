@@ -16,7 +16,11 @@ In Lab1 and Lab2, we explored the evolution of a stellar binary, with a particul
 
 ### Bonus goal
 
-As a bonus exercise, you may also like to study the evolution of the binary once the primary turns into a compact object, which we assume to be a black hole. In such a case, the secondary could subsequently expand and transfer its matter onto the black hole. This influences the properties of the black hole, like its mass and spin. In the bonus exercise, we will explore how these properties evolve as a function of the mass accretion rate.
+As a bonus exercise, you may also like to study the evolution of the binary once the primary turns into a compact object, which we assume to be a black hole. In such a case, the secondary could subsequently expand and transfer its matter onto the black hole. This influences the properties of the black hole, like its mass and spin. 
+
+|:clipboard: TASK|
+|:--|
+|In the bonus exercise, we will explore how the mass and spin of the black hole evolve as a function of the mass accretion rate.|
 
 
 
@@ -24,7 +28,7 @@ As a bonus exercise, you may also like to study the evolution of the binary once
 
 For computational ease, we will load the _saved accretor model_ (`accretor_final.mod`)from the Bonus 2 portion of Lab1 and then evolve this model _as a single star_ (as opposed to Lab1 and Lab2, where we studied binary systems). 
 
-**Task:** To begin, first copy the necessary files required for Lab3 from the following link 
+To begin, first copy the necessary files required for Lab3 from the following link 
 
 <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link" target="_blank">Click here to access Lab3</a>
 
@@ -143,7 +147,11 @@ This diagram is used to visualize the internal structure and evolution of a star
 
 The `pgstar` output shows the evolution of the star in real time. But  we would also like to see the evolution of the model at a later time, particularly when we compare it to that of a single star (coming up next).
 
-**Task:** Perhaps the best way to access the information contained in these `png` files is to make a movie out of them. As instructed in Lab1, to do this, execute the following command in your terminal from within the Lab3 directory
+|:clipboard: TASK|
+|:--|
+|Perhaps the best way to access the information contained in these `png` files is to make a movie out of them.|
+
+As instructed in Lab1, to do this, execute the following command in your terminal from within the Lab3 directory
 
 ```shell-session
 $ images_to_movie 'png/*.png' movie_accretor_star.mp4
@@ -152,13 +160,17 @@ This will create a movie out of the `png` files and save it with the name `movie
 
 
 
-## Does the accretor evolve differently than a single star with same initial mass?
+## Does the accretor evolve differently than a single star with the same initial mass?
 
 Although we have evolved the accretor as a single star, it would be instructive to check how this _differs from the evolution of a single star_ that never interacted with a companion. 
 Intuitively, we know that the accretor star gained mass through Roche lobe overflow and that this mass had a somewhat different chemical composition than the accretor star's surface. This is because the primary already contained substantial helium on its surface before the mass was transferred. Now we would like to explicitly verify this claim. 
 
 
-**Task:** In this section, our goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer at the end of Lab1). Then, we will compare the structure and evolution of the accretor with that of a single star. To begin, download the necessary files required to evolve a single star from the following link
+|:clipboard: TASK|
+|:--|
+|In this section, our goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer at the end of Lab1). Then, we will compare the structure and evolution of the accretor with that of a single star.|
+
+To begin, download the necessary files required to evolve a single star from the following link
 
 <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">Click here to access the single star model for Lab3</a>
 
@@ -269,9 +281,9 @@ $$
 $$
 
 
-### Task
-
-Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Lab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
+|:clipboard: TASK|
+|:--|
+|Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Lab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below.|
 
 
 - Download the `evolve_accretor_plus_point_mass` directory from <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">this URL</a>. You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
