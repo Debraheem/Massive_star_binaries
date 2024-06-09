@@ -337,8 +337,8 @@ Also note that we have approximately matched the period to that from the Lab1 ru
 - Next, we will have to tell the code what data we want to write in this column. For this, go to the `data_for_extra_binary_history_columns` function in the same file. At the end of the function, include the following lines
 ```fortran    
        names(1) = 'abh'
-       ! Set the spin of the black hole at the beginning of mass transfer to zero
-       if (b% eq_initial_bh_mass ==  b% m(1)) then
+       ! Set the mass of the black hole at the beginning of mass transfer to zero
+       if (b% eq_initial_bh_mass ==  b% m(2)) then
           vals(1) = 0
        endif
 ```
@@ -346,7 +346,7 @@ Here `names(1) = 'abh'` is the name of the extra column that will be saved in th
    
 - Once the black hole begins to accrete mass, its spin will increase. To evolve the spin of the black hole (in accordance with the discussion earlier), add the following lines underneath the previous addition
 ```fortran
-       call  calc_black_hole_spin(b% eq_initial_bh_mass, b% m(1), vals(1))
+       call  calc_black_hole_spin(b% eq_initial_bh_mass, b% m(2), vals(1))
       
        contains
        
