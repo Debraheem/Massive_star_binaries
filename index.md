@@ -100,7 +100,7 @@ All files are briefly described in the table below
 
 ### Binary parameters
 
-The primary file you while be modifying is `inlist_project` - which is relevant for binary parameters -  will look something like this
+The primary file you will be modifying is `inlist_project` - which is relevant for binary parameters -  will look something like this
 
 ```plaintext
 &binary_job
@@ -253,7 +253,7 @@ On executing the above commands, MESA will print the model output on the termina
 
 A picture is worth a thousand words! Rather than reading the output from the terminal, at times, an intuitive understanding of stellar evolution can be grasped from a diagram. The `Pgstar` module does exactly that. It plots the model output in real-time - depending on the chosen step size.
 
-The `pgbinary` plots are switched on via the following flag in `&starjob` in the file `inlist_project`.
+The `pgbinary` plots are switched on via the following flag in `&binary_job` in the file `inlist_project`.
 
 ```
    pgbinary_flag = .true.
