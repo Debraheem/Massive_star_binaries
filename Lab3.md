@@ -160,7 +160,7 @@ Intuitively, we know that the accretor star gained mass through Roche lobe overf
 
 **Task:** In this section, our goal would be to evolve a single star with the same initial mass as the accretor star (i.e., the mass of the accretor post mass transfer at the end of Lab1). Then, we will compare the structure and evolution of the accretor with that of a single star. To begin, download the necessary files required to evolve a single star from the following link
 
-   [Click here to access the single star model for Lab3](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm)
+<a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">Click here to access the single star model for Lab3</a>
 
 
 From the above link, download the `evolve_single_star` directory and extract its content in the Lab3 directory. You will notice that this directory has the same structure as the earlier `evolve_accretor_star` directory. However, the names of the `inlists` have been modified to show that we are now explicitly evolving a single star. Apart from some minor changes - that you can see by comparing the `inlist_accretor` to `inlist_single_star` - the rest of the directory is the same. 
@@ -274,7 +274,7 @@ $$
 Now, we are going to evolve the secondary star next to a black hole. As such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `evolve_star_plus_point_mass` directory from Lab1. However, the main difference is that the star in the `evolve_star_plus_point_mass` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below:
 
 
-- Download the `evolve_accretor_plus_point_mass` directory from [this URL](https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm). You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
+- Download the `evolve_accretor_plus_point_mass` directory from <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">this URL</a>. You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
   
 - In this directory, open `inlist1` and there in the `\&star_jobs` region, uncomment the following lines
  ```
@@ -378,9 +378,9 @@ See the below figure for a detailed answer.
 </details>
 
 
-We will run this model until it fails due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie [here](https://drive.google.com/file/d/1_HkbkMIGPxyHKUxGJKrK8gf1ClqNX_ep/view?usp=drive_link) with name `black_hole_mass_and_spin_evolution.mp4`.
+We will run this model until it fails due to non-convergence issues. In case your run does not finish, you can watch the pre-computed movie <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">here</a> with name `black_hole_mass_and_spin_evolution.mp4`.
 
-**Solution:**  In case you got stuck while running this bonus exercise, [here](https://drive.google.com/file/d/1ERyllUDPNKkmxHD-SBlVCW5olhmJi1tz/view?usp=drive_link) is the solved version of the  `run_binary_extras.f90` file.
+**Solution:**  In case you got stuck while running this bonus exercise, <a href="https://drive.google.com/file/d/1ERyllUDPNKkmxHD-SBlVCW5olhmJi1tz/view?usp=drive_link" target="_blank">here</a> is the solved version of the  `run_binary_extras.f90` file.
 
 
 ## References
