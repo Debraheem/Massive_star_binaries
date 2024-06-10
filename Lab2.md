@@ -250,7 +250,6 @@ In `extras_binary_finish_step`, add :
            extras_binary_finish_step = terminate
        end if
 
-
       end function extras_binary_finish_step
 ```
 
@@ -411,7 +410,7 @@ For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do no
 
 |:clipboard: TASK 4|
 |:--|
-|In the [Day 4 Massive Binaries Lab2, Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?usp=sharing), choose a period and companion mass and type your initials on the corresponding block. With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.| 
+|In the [Day 4 Massive Binaries Lab2, Google sheets](https://docs.google.com/spreadsheets/d/1__UPg_5JfiBkJpZTleyaSwW_faxHzmo_X7Us2RTfLOM/edit?gid=186649668#gid=186649668), choose a period and companion mass and type your initials on the corresponding block. With `inlist_project` open, fill in your chosen values of Primary Mass and Period from the spread sheet.| 
 |run your model, `./rn`|  
 |When your model is finished running, fill in your block in the spreadsheet with the appropriate colors for Stable versus unstable and mass transfer type.|
 
