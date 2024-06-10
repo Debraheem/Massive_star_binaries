@@ -413,7 +413,7 @@ The model should take less than 10 minutes to run on a 4 core machine, you can u
 | :question: Below are some questions to discuss at your table and answer while your model evolves | 
 | :--- |
 | 1. What type of mass transfer does your system undergo? Case A, B, C? |
-| 2. Does the mass transfer in your system stable or unstable?|
+| 2. Is the mass transfer in your system stable or unstable?|
 | 3. What is the approximate mass of the primary when the mass transfer phase ends?|
 | 4. What is the approximate mass of the secondary (accretor) when the mass transfer phase ends?|
 
