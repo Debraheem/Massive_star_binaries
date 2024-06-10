@@ -8,7 +8,7 @@ credit: ESO/L. Calçada
 
 # Introduction
 
-[HELP LINK for website building](./help.html)
+<!-- [HELP LINK for website building](./help.html) -->
 
 [Google drive link to download Thursday Lab Materials](https://drive.google.com/drive/folders/1yFy2I7kBh6UZPYmhFxkZswQVPI0Qavjc?usp=share_link)
 
@@ -105,19 +105,71 @@ The primary file you will be modifying is `inlist_project` - which is relevant f
 ```plaintext
 &binary_job
 
-   inlist_names(1) = 'inlist1'
+   inlist_names(1) = 'inlist1' 
    inlist_names(2) = 'inlist2'
 
-   evolve_both_stars = .true.
+   evolve_both_stars = .false.
+
+   ! save_model_when_terminate = .true.
+   ! save_model_filename = 'TAMS_model.dat'
+
+   pgbinary_flag = .true.
 
 / ! end of binary_job namelist
 
 &binary_controls
+   
 
    m1 = 15d0  ! donor mass in Msun
    m2 = 12d0 ! companion mass in Msun
    initial_period_in_days = 6d0
 
+   ! Mass transfer efficiency controls
+!   defaults are 0
+!   mass_transfer_alpha = 0d0      ! fraction of mass lost from the vicinity of donor as fast wind
+!   mass_transfer_beta = 0.6d0     ! fraction of mass lost from the vicinity of accretor as fast wind
+!   mass_transfer_delta = 0.1d0    ! fraction of mass lost from circumbinary coplanar toroid
+!   mass_transfer_gamma = 1.2d0    ! radius of the circumbinary coplanar toroid is ``gamma**2 * orbital_separation``
+
+   limit_retention_by_mdot_edd = .false. ! for evolution with a compact object
+
+   ! Mass transfer scheme
+   mdot_scheme = "Kolb" ! default is 'Ritter'
+
+   ! relax timestep controls
+   fr = 0.2 !0.05        ! change of relative Roche lobe gap (default 0.01)
+   fr_dt_limit = 5d2     ! Mimumum timestep limit allowed for fr in years
+   fj = 0.05             ! change of orbital angular momentum
+   fm = 0.05   ! default 0.01, envelope mass
+   fdm = 0.05  ! default 0.005, fractional mass change of either star
+   fa = 0.05   ! default 0.01, binary separation
+   fdm_hard = 0.1
+   fr_limit = 1d-3
+
+   ! Magentic braking
+   do_jdot_mb = .false.
+
+
+   min_mdot_for_implicit = 1d-7
+   implicit_scheme_tolerance = 1d-1
+   max_tries_to_achieve = 50
+   report_rlo_solver_progress = .false.
+
+
+
+   ! Allow for evolution even when accretor overflows
+   ! terminate evolution if (r-rl)/rl is bigger than this for accretor
+   accretor_overflow_terminate = 1d3 
+
+
+! output frequency section:
+       photo_interval         = 50
+       photo_digits           = 6
+       history_interval       = 1
+       terminal_interval      = 10
+       write_header_frequency = 10
+
+         
 / ! end of binary_controls namelist
 ```
 
@@ -144,7 +196,9 @@ Any (non-default) values for the parameters of the individual stars will be set 
 
       show_log_description_at_start = .false.
       save_model_when_terminate = .true.
-      save_model_filename = 'donor_final.mod'
+      save_model_filename = 'donar_final.mod'
+
+
 
 / ! end of star_job namelist
 
@@ -159,23 +213,7 @@ Zbase = 0.02
 
 
 &controls
-       max_model_number = 3500
-
-      ! convection 
-      use_ledoux_criterion = .true.
-      alpha_semiconvection = 1d0
-      
-      ! reduce resolution and solver tolerance to make runs faster
-      mesh_delta_coeff = 2.5d0
-      time_delta_coeff = 2.5d0
-      varcontrol_target = 1d-3
-      use_gold2_tolerances = .true.
-      use_gold_tolerances = .true.
-
-      ! stopping condition
-      xa_central_lower_limit_species(1) = 'he4'
-      xa_central_lower_limit(1) = 1d-4
-
+   max_model_number = 3500
 
       ! help the envelope carry energy to 
       ! the surface for solar metallicity
@@ -202,9 +240,25 @@ Zbase = 0.02
       overshoot_f(2) = 0.01
       overshoot_f0(2) = 0.005
 
-      !output
+      use_ledoux_criterion = .true.
+      alpha_semiconvection = 1d0
+
+
       extra_terminal_output_file = 'log1' 
       log_directory = 'LOGS1'
+
+      
+      ! reduce resolution and solver tolerance to make runs faster
+      mesh_delta_coeff = 2.5d0
+      time_delta_coeff = 2.5d0
+      varcontrol_target = 1d-3
+      use_gold2_tolerances = .true.
+      use_gold_tolerances = .true.
+
+      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit(1) = 1d-4
+
+
 
       ! output frequency section:
        photo_interval         = 50
@@ -223,7 +277,6 @@ Zbase = 0.02
    extra_pgstar_inlist_name(1)= 'inlist_pgstar'
 
 / ! end of pgstar namelist
-
 ```
 
 Many other (default) parameters which are not modified in the above inlist can be found in the directory
