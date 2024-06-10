@@ -6,7 +6,7 @@ title: Lab1
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-In this section, you will continue with the `Lab1_binary` directory from the introduction. You can also re-download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory, but make sure `pgstar_flag` is set to true in `inlist_project` as we did in the introduction.
+In this section, you will continue with the `Lab1_binary` directory from the introduction. You can also re-download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory, but make sure `pgbinary_flag` is set to true in `inlist_project` as we did in the introduction.
 
 
 # Lab1 - Modeling a star through envelope stripping
@@ -119,7 +119,7 @@ $ images_to_movie "png/*.png" movie.mp4
 |If the command doesn't work, make sure to update your MESA SDK. |
 
 <details>
-<summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+<summary>Answers: An example pgbinary produced from the case 1 in the table above</summary>
    
 <video width="640" height="480" controls>
   <source src="Figures/case_1.mp4" type="video/mp4">
@@ -132,7 +132,7 @@ Now that you have created a wonderful `&pgbinary` movie, let's use this movie in
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/141zIE0F86UDTk3ZmR5aKN6GkDOnoGuP1?usp=share_link).|
+| If you are having issues generating a pgbinary movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/141zIE0F86UDTk3ZmR5aKN6GkDOnoGuP1?usp=share_link).|
 
 Below are some questions to discuss at your table and answer while your model evolves
 
@@ -267,10 +267,10 @@ Again, you can make `&pgbinary` movie of your run and use it with your terminal 
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/15ZZN-SQOiDLfuvV1eugfkNQqfUy6Stmw?usp=share_link).|
+| If you are having issues generating a pgbinary movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/15ZZN-SQOiDLfuvV1eugfkNQqfUy6Stmw?usp=share_link).|
 
 <details>
-<summary>Answers: An example pgstar produced from the case 1 in the table above</summary>
+<summary>Answers: An example pgbinary produced from the case 1 in the table above</summary>
 
 <video width="640" height="480" controls>
   <source src="Figures/case_1_bonus1.mp4" type="video/mp4">
@@ -316,7 +316,7 @@ Run the same model as you did in Lab1 but now with
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating a pgstar movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1y-zGeKdwQ3mJL0QT-mJLx2IFLSAW1fXi?usp=share_link).|
+| If you are having issues generating a pgbinary movie, we have provided precomputed `&pgbinary` movies for all the runs [available for download here](https://drive.google.com/drive/folders/1y-zGeKdwQ3mJL0QT-mJLx2IFLSAW1fXi?usp=share_link).|
 
 You will now see both stars being evolved in the `&pgbinary` plots that looks like this.
 
