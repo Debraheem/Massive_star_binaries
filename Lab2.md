@@ -64,6 +64,7 @@ to terminate our simulation.
 
 |:information_source: Tips|
 |:--|
+|Binary point parameters can be found `$MESA_DIR/binary/public/binary_data.inc`|
 |You can use the defined constant `standard_cgrav`. Compute both $$(\dot{M}_{\text{thermal}})$$ and $$(\dot{M}_{\text{dynamical}})$$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
 |The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
 |Setting `extras_binary_finish_step = terminate` within the subroutine will terminate your simulation.|
