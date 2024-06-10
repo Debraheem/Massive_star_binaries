@@ -370,7 +370,7 @@ end subroutine extras_binary_after_evolve
 | If you are having difficulty completing any of the previous portions of the lab, you can download the complete solution [`run_binary_extras.f90`](https://drive.google.com/file/d/12bZd-B_WbnHYi29LrjEdjXNAqKfNrfde/view?usp=share_link) and paste it into your './src' directory.|
 
 ## Exploring a grid of mass transfer models with varying mass ratios
-To explore the stability of mass transfer across various mass ratios and orbital periods. Let's start by assuming fully conservative mass transfer, i.e. ($\beta=0$).
+To explore the stability of mass transfer across various mass ratios and orbital periods. Let's start by assuming fully conservative mass transfer, i.e. (`mass_transfer_beta = 0.0d0`).
 
 For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios `m2/m1` by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1.5 - 12 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 512$ days. We've discretized this parameter space in the following two tables:
 
