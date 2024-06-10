@@ -83,6 +83,8 @@ In `inlist1`, ensure the following stopping condition is set:
 ```
 
 
+Then add the following in `run_binary_extras.f90`.
+
 ```fortran
 integer function extras_binary_finish_step(binary_id)
    type (binary_info), pointer :: b
@@ -98,11 +100,10 @@ integer function extras_binary_finish_step(binary_id)
   write(*,*) "---------------------"
 
  ! check for unstable mass transfer
- mdot_th = b% m(1)/(standard_cgrav*(b% m(1))**2/(b% s1% L(1)*b% r(1)))
+ mdot_th = b% m(1)/(standard_cgrav*b% m(1)**2/(b% s1% L(1)*b% r(1)))
  avg_rho = b% m(1)/(4d0/3d0*(b% r(1))**3)
  mdot_dyn = b% m(1)/(1/sqrt(standard_cgrav*avg_rho))
 
- write(*,*) "Check maximum R/R_Rl", b% xtra(2)
  write(*,*) "check: mdot_therm, mdot_dyn", mdot_th/Msun*secyer, mdot_dyn/Msun*secyer
  write(*,*) "abs(mtransfer_rate)/mdot_th", abs(b% mtransfer_rate)/mdot_th
  if (abs(b% mtransfer_rate)>100d0*mdot_th) then
@@ -137,7 +138,7 @@ integer function extras_binary_finish_step(binary_id)
    type (binary_info), pointer :: b
    integer, intent(in) :: binary_id
    integer :: ierr
-   real(dp):: check, mdot_th, mdot_dyn, avg_rho
+   real(dp):: mdot_th, mdot_dyn, avg_rho
    call binary_ptr(binary_id, b, ierr)
    if (ierr /= 0) then ! failure in  binary_ptr
       return
@@ -215,7 +216,7 @@ In `extras_binary_finish_step`, add :
          type (binary_info), pointer :: b
          integer, intent(in) :: binary_id
          integer :: ierr
-         real(dp):: check, mdot_th, mdot_dyn, avg_rho
+         real(dp):: mdot_th, mdot_dyn, avg_rho
          call binary_ptr(binary_id, b, ierr)
          if (ierr /= 0) then ! failure in  binary_ptr
             return
@@ -253,6 +254,14 @@ In `extras_binary_finish_step`, add :
 
       end function extras_binary_finish_step
 ```
+
+Make sure to compile before running.
+
+```shell-session
+$ ./mk
+$ ./rn
+```
+
 </details>
 
 
