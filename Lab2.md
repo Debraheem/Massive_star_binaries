@@ -111,7 +111,6 @@ integer function extras_binary_finish_step(binary_id)
      extras_binary_finish_step = terminate
  end if
 
-
 end function extras_binary_finish_step
       
 ```
