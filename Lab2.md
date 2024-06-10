@@ -90,7 +90,7 @@ integer function extras_binary_finish_step(binary_id)
    type (binary_info), pointer :: b
    integer, intent(in) :: binary_id
    integer :: ierr
-   real(dp):: check, mdot_th, mdot_dyn, avg_rho
+   real(dp):: mdot_th, mdot_dyn, avg_rho
    call binary_ptr(binary_id, b, ierr)
    if (ierr /= 0) then ! failure in  binary_ptr
       return
