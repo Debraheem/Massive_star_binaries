@@ -298,7 +298,7 @@ $ ./rn
 
 ### Terminal Output
 
-On executing the above commands, MESA will print the model output on the terminal. After each step the new updated values of the binaries parameters would be printed to the display. An example output is shown in Fig. 2.
+On executing the above commands, MESA will print the model output on the terminal. After each step the new updated values of the binaries parameters would be printed to the display. An example output is shown below.
 
 ![An example of the output printed on the terminal](Figures/image.png)
 
