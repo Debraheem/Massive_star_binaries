@@ -214,12 +214,12 @@ This is because most of the initial $^{12}\textrm{C}$ present at ZAMS is convert
 
 |:clipboard: TASK|
 |:--|
-| Add a custom stopping condition that will terminate your model when $X(^{12}\mathrm{C})\leq10^{-4}$ and $X(^{4}\mathrm{He})\leq10^{-4}$ are both true.|
+| Add a custom stopping condition that will terminate your model when the central mass fractions $X(^{12}\mathrm{C})\leq10^{-4}$ and $X(^{4}\mathrm{He})\leq10^{-4}$ are both true.|
 
 
 |:information_source: Tips|
 |:--|
-|Specifically, you're looking to modify the `extras_finish_step` function.|
+|Specifically, you're looking to modify the `extras_finish_step` function in `run_star_extras.f90`.|
 
 
 <details markdown="block">
@@ -298,9 +298,9 @@ Red Supergiant (RSG): < 4,800 K
 
 ## Bonus 2: Evolving both stars
 
-In the next lab, we will be exploring how the accretor star can evolve differently from single stars of the same mass. For this, we need to run the evolution with both stars without assuming the secondary star is a point source. This typically takes much more time than the point source case, so let's keep a model running before you leave for lunch.
+In Lab3, we will be exploring how the accretor star can evolve differently from single stars of the same mass. For this, we need to run the evolution with both stars without assuming the secondary star is a point source. This typically takes much more time than the point source case, so let's keep a model running before you leave for lunch.
 
-We'd like to save the final `accretor_final.mod` file from the accretor (secondary) for use in Lab2, so let's remove all the stopping conditions we applied earlier. Then in `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
+We'd like to save the final `accretor_final.mod` file from the accretor (secondary) for use in Lab3, so let's remove all the stopping conditions we applied earlier. Then in `inlist1`, set a stopping condition such that the model terminates when the primary reaches core helium depletion. Let's terminate the model when $X(^4\mathrm{He})\leq10^{-4}$:
 
 We can do this by adding the following stopping condition in `inlist1`
 ```plaintext
