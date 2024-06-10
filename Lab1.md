@@ -65,7 +65,9 @@ For this lab we will keep the primary and companion/accretor mass fixed at **`m1
 | 3 | 15 | 12 | 200 | 0   |
 | 4 | 15 | 12 | 15  | 0.5 |
 
-Now choose a value for the initial period and $\beta$ of the binary system from this table. 
+|:clipboard: TASK|
+|:--|
+|Now choose a value for the initial period and $\beta$ of the binary system from this table. |
 
 <!-- 
 Since this lab is focused on envelope stripping and mass transfer physics,  we'd like to save some computation and terminate our models before the mass transfer phase ends. Evolving trhough the mass transfer phase for the default case happens around model number 370 (and takes 11 mins). We'll try to reduce this computation time by terminating our model once it loses 50% of its mass.
