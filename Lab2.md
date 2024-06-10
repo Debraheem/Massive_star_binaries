@@ -123,6 +123,7 @@ We will need additional information at the end of a run, as well as an additiona
 
 |:clipboard: TASK 2|
 |:--|
+|In `extras_binary_finish_step` calculate the total time spent in Roche Lobe overflow at each time step by checking when `b% r(1) > b% rl(1)` and adding the current time step (`b% time_step`) to `b% xtra(1)`. By default, `b% xtra(1)` is initiated at zero.|
 |In `extras_binary_finish_step` store the value of $\(R/R_{\text{Rl}}\)$ in `b% xtra(2)` if it exceeds the value of `b% xtra(2)`. By default, `b% xtra(2)` is initiated at zero, so in this way, you will keep its maximum value.|
 |In `extras_binary_after_evolve` include a `write(*,*) "Check maximum R/R_Rl", b% xtra(2)` line to output the maximum value achieved. The `extras_binary_after_evolve` subroutine is called once the simulation finishes.|
 
