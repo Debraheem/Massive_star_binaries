@@ -8,7 +8,11 @@ title: Lab2
 
 # Lab2 - Exploring the Stability of Mass Transfer
 
-This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. In `inlist_project` and make sure you are running in single star mode: `evolve_both_stars = .false.`.
+This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. Let's copy over the directory with a new name.
+```shell-session
+$ cp -r Lab1_binary Lab2_binary
+```
+In `inlist_project` and make sure you are running in single star mode: `evolve_both_stars = .false.`.
 
 ### Science goal
 
@@ -27,9 +31,9 @@ Stable Mass transfer: When mass transfer proceeds in a controlled manner, withou
 
 Unstable Mass Transfer: This occurs when the mass transfer process leads to rapid and uncontrollable changes in the system. The donor star loses mass at a rate that destabilizes the system, typically considered to lead to a common envelope phase, where the envelope of the donor star engulfs both stars, or even to the merger of the two stars. This usually results in dramatic, often short-lived, evolutionary changes in the binary system. 
 
-Mass transfer rates can reach values as high as a solar mass per year. "Due to the limitations within MESA, as a code which models the donor star as a 1-dimensional object. For extreme mass ratios, the shrinkage of the orbit as mass transfer proceeds becomes extreme enough that the star cannot adjust itself through mass loss to avoid extreme overflow. In such a case the donor would very likely engulf its companion, initiating a process of common-envelope evolution which is fundamentally 3-dimensional. MESA being a 1-dimensional code cannot deal with such a situation, but rather tries to keep modeling this evolutionary phase as a stable mass transfer event with an ever increasing mass transfer rate, which eventually leads to numerical problems." ~ Pablo Marchant
+Mass transfer rates can reach values as high as a solar mass per year. "Due to the limitations within MESA, as a code which models the donor star as a 1-dimensional object. For extreme mass ratios, the shrinkage of the orbit as mass transfer proceeds becomes extreme enough that the star cannot adjust itself through mass loss to avoid extreme overflow. In such a case the donor would very likely engulf its companion, initiating a process of common-envelope evolution which is fundamentally 3-dimensional. MESA being a 1-dimensional code cannot deal with such a situation, but rather tries to keep modeling this evolutionary phase as a stable mass transfer event with an ever increasing mass transfer rate, which eventually leads to numerical problems." (MESA Summer school 2022)
 
-Rather than attempting to approximate a common-envelope phase with MESA, we will simply construct a physical criteria to identify when an unstable mass transfer phase could start, and terminate the evolution at that stage. For this purpose we will consider the thermal and dynamical timescales of the the donor star.
+Rather than attempting to approximate a common-envelope phase with MESA, we will simply construct a physical criterion to identify when an unstable mass transfer phase could start, and terminate the evolution at that stage. For this purpose we will consider the thermal and dynamical timescales of the the donor star.
 
 Although there are ways to approximate a common-envelope phase with MESA, here we wish to simply construct a physical criterion to identify when an unstable mass transfer phase could start, and terminate the evolution at that stage. For this purpose, we will consider the thermal and dynamical timescales of the star:
 
@@ -54,9 +58,9 @@ to terminate our simulation.
 
 |:clipboard: TASK 1|
 |:--|
-| For stable mass transfer, Ensure the model terminates at Helium depeletion with the stopping condition: $X(^4\mathrm{He})\leq10^{-4}$|
+| For stable mass transfer, Ensure the model terminates at core Helium depeletion with the stopping condition: $X(^4\mathrm{He})\leq10^{-4}$|
 | For unstable mass transfer, Let's add a stopping condition which terminates the model when $$\dot{M}_{\text{transfer}} > 100 \dot{M}_{\text{thermal}}$$.|
-|Implement this check in `extras_binary_finish_step`.|
+|Implement this check in the function `extras_binary_finish_step` in `run_binary_extras.f90`.|
 
 |:information_source: Tips|
 |:--|
