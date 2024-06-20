@@ -9,12 +9,13 @@ title: Lab2
 # Lab2 - Exploring the Stability of Mass Transfer
 
 This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. Let's copy over the directory with a new name or redownload it from here: [Lab1_binary](https://drive.google.com/file/d/1p7A4C0r1Be3CPxPLLIVNXZTVtVWccvze/view?usp=share_link),but make sure pgbinary_flag is set to true in inlist_project as we did in the introduction.
-
-A complete solution to Lab2 can be found here: [Lab2_solution](https://drive.google.com/file/d/1mFaP6gWuC8VGxtTqoTg7lh6BCTkNYVzc/view?usp=share_link)
 ```shell-session
 $ cp -r Lab1_binary Lab2_binary
 ```
 In `inlist_project` and make sure you are running in single star mode: `evolve_both_stars = .false.`.
+
+
+A complete solution to this lab can be found here: [Lab2_solution](https://drive.google.com/file/d/1mFaP6gWuC8VGxtTqoTg7lh6BCTkNYVzc/view?usp=share_link)
 
 ### Science goal
 
