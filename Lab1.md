@@ -6,7 +6,7 @@ title: Lab1
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['\$','\$'],['\\(','\\)']],processEscapes:true},CommonHTML: {matchFontHeight:false}});</script>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-In this section, you will continue with the `Lab1_binary` directory from the introduction. You can also re-download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1AW-YvgATJEq5eFMmhT6RC4TUnl7rirqS/view?usp=share_link) MESA work directory, but make sure `pgbinary_flag` is set to true in `inlist_project` as we did in the introduction.
+In this section, you will continue with the `Lab1_binary` directory from the introduction. You can also re-download a copy of the desired [Lab1_binary](https://drive.google.com/file/d/1p7A4C0r1Be3CPxPLLIVNXZTVtVWccvze/view?usp=share_link) MESA work directory, but make sure `pgbinary_flag` is set to true in `inlist_project` as we did in the introduction.
 
 
 # Lab1 - Modeling a star through envelope stripping
@@ -18,14 +18,14 @@ In this lab, we will look at how stars stripped by binary interactions evolve co
 
 ### Bonus goal
 
-In order to smoothly lead into Lab2, we will start running a simulation with both stars to be left over lunch.
+If you'd like to prepare for Lab3, you can start running a simulation with both stars and leave it running over lunch.
 
 
 ## The evolution of the primary star
 
 Assume that we have a binary star system where the components are close enough to undergo Roche Lobe overflow (RLOF) from the inner L1 Lagrangian point. Additionally, assume that both components do not have the same mass so that the evolution of one star slightly lags the other star. In the lab, we would like to explore how the primary - more massive - star evolves in such a binary.
 
-Since here we are primarily interested in the evolution of the primary, to save some computation time we are going to approximate the secondary as a point mass. In other words, we are not going to model the evolution of the secondary. Then, later in Lab2, we will switch to treating the primary as a point mass and focus on evolving the secondary mass gainer (accretor).
+Since here we are primarily interested in the evolution of the primary, to save some computation time we are going to approximate the secondary as a point mass. In other words, we are not going to model the evolution of the secondary. Then, later in Lab3, we will switch to treating the primary as a point mass and focus on evolving the secondary mass gainer (accretor).
 
 
 Let's begin by using the downloaded `Lab1_binary` directory from the introduction. We will begin by modeling this system as a star + point mass. To do this, open `inlist_project` and make sure to set `evolve_both_stars = .false.`.
@@ -328,15 +328,15 @@ You will now see both stars being evolved in the `&pgbinary` plots that looks li
   Your browser does not support the video tag.
 </video>
 
-Remember you'll be using your `accretor_final.mod` from this bonus in Lab2, but don't worry if you don't get this far as we will provide a copy of `accretor_final.mod` for you if you run out of time before generating one yourself.
+Remember you'll be using your `accretor_final.mod` from this bonus in Lab3, but don't worry if you don't get this far as we will provide a copy of `accretor_final.mod` for you if you run out of time before generating one yourself.
 
 |:information_source: CATCH UP|
 |:--|
-| If you are having issues generating the `accretor_final.mod` file for Lab2, we have provided precomputed mod files [available for download here](https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link).|
+| If you are having issues generating the `accretor_final.mod` file for Lab3, we have provided precomputed mod files [available for download here](https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link).|
 
 <details>
 <summary>There's something we need to tell you...</summary>
 
-You may notice that during the calculation, the secondary star can greatly exceed its own Roche lobe size. This is because we have relaxed the stopping condition so that the calculation won't stop even though the binary has become an overcontact binary. In reality, the overcontact binary could lose mass through the second Lagrangian point or through winds, or simply merge into a single object. Given that we don't really know what should happen in nature, we will simply focus on how the accretor star evolves within this framework in Lab2. 
+You may notice that during the calculation, the secondary star can greatly exceed its own Roche lobe size. This is because we have relaxed the stopping condition so that the calculation won't stop even though the binary has become an overcontact binary. In reality, the overcontact binary could lose mass through the second Lagrangian point or through winds, or simply merge into a single object. Given that we don't really know what should happen in nature, we will simply focus on how the accretor star evolves within this framework in Lab3. 
 
 </details>

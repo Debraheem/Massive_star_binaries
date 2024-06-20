@@ -8,11 +8,14 @@ title: Lab2
 
 # Lab2 - Exploring the Stability of Mass Transfer
 
-This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. Let's copy over the directory with a new name.
+This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. Let's copy over the directory with a new name or redownload it from here: [Lab1_binary](https://drive.google.com/file/d/1p7A4C0r1Be3CPxPLLIVNXZTVtVWccvze/view?usp=share_link),but make sure pgbinary_flag is set to true in inlist_project as we did in the introduction.
 ```shell-session
 $ cp -r Lab1_binary Lab2_binary
 ```
 In `inlist_project` and make sure you are running in single star mode: `evolve_both_stars = .false.`.
+
+
+A complete solution to this lab can be found here: [Lab2_solution](https://drive.google.com/file/d/1mFaP6gWuC8VGxtTqoTg7lh6BCTkNYVzc/view?usp=share_link)
 
 ### Science goal
 
@@ -64,6 +67,8 @@ to terminate our simulation.
 
 |:information_source: Tips|
 |:--|
+|Don't forget to remove the stopping conditions you set in lab1.|
+|Binary point parameters can be found `$MESA_DIR/binary/public/binary_data.inc`|
 |You can use the defined constant `standard_cgrav`. Compute both $$(\dot{M}_{\text{thermal}})$$ and $$(\dot{M}_{\text{dynamical}})$$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
 |The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
 |Setting `extras_binary_finish_step = terminate` within the subroutine will terminate your simulation.|
@@ -122,6 +127,7 @@ We will need additional information at the end of a run, as well as an additiona
 
 |:clipboard: TASK 2|
 |:--|
+|In `extras_binary_finish_step` calculate the total time spent in Roche Lobe overflow at each time step by checking when `b% r(1) > b% rl(1)` and adding the current time step (`b% time_step`) to `b% xtra(1)`. By default, `b% xtra(1)` is initiated at zero.|
 |In `extras_binary_finish_step` store the value of $\(R/R_{\text{Rl}}\)$ in `b% xtra(2)` if it exceeds the value of `b% xtra(2)`. By default, `b% xtra(2)` is initiated at zero, so in this way, you will keep its maximum value.|
 |In `extras_binary_after_evolve` include a `write(*,*) "Check maximum R/R_Rl", b% xtra(2)` line to output the maximum value achieved. The `extras_binary_after_evolve` subroutine is called once the simulation finishes.|
 
@@ -273,7 +279,7 @@ After making these changes we want to run our model to see if it triggers the co
 
 Having physical termination conditions to capture regions where MESA cannot properly model an evolutionary phase can be very valuable. It helps avoid the production of spurious results, and also avoids simulations from getting stuck into situations where timesteps become extremely small and simulations could in principle run for years without completing. This can be a big issue when running a large number of simulations in a cluster, potentially leading to a significant waste of resources. 
 
-Before running the model, adopt the following `&binary_controls` in `inlist_progject`:
+Before running the model, adopt the following `&binary_controls` in `inlist_project`:
 
 ```
    m1 = 15d0  ! donor mass in Msun

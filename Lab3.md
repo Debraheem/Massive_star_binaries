@@ -34,10 +34,10 @@ To begin, first copy the necessary files required for Lab3 from the following li
 <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm?usp=drive_link" target="_blank">Click here to access Lab3</a>
 
 
-You will have to download and extract the contents of the `evolve_accretor_star.zip` directory. We recommend that you store them in a parent directory called Lab3. Now go to the directory of Lab1, and from there, copy the file named `accretor_final.mod` into the `Lab3/evolve_accretor_star` directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Lab1 and Lab3 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
+You will have to download and extract the contents of the `e_accretor_star.zip` directory. We recommend that you store them in a parent directory called Lab3. Now go to the directory of Lab1, and from there, copy the file named `accretor_final.mod` into the `Lab3/evolve_accretor_star` directory. This file contains the accretor's information from the previous run and will act as _an initial condition for the present run_. If your Lab1 and Lab3 are in the same base directory, then you could run the following command from the base directory in the terminal to perform the copy operation
 
 ```shell-session
-$ cp -r ./Lab1_binary/accretor_final.mod ./Lab3/Evolve_accretor_star
+$ cp -r ./Lab1_binary/accretor_final.mod ./Lab3/evolve_accretor_star
 ```
 
 If you did not complete Bonus 2 exercise from Lab1, you can download an `accretor_final.mod` for your case <a href="https://drive.google.com/drive/folders/1xK_zLYE7tF5S1QCADcIDLvrmOUqZTCvU?usp=share_link" target="_blank"> here</a>. Alternatively, if you like, we have also provided a pre-evolved copy of the accretor model in the `evolve_accretor_star` directory with the name `accretor_final_1.mod`. If you want to use this model, rename the file to `accretor_final.mod` to match the name included within `inlist_accretor`.
