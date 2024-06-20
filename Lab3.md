@@ -294,7 +294,7 @@ $$
 |Now, we are going to evolve the secondary star next to a black hole. Such a configuration corresponds to evolving a star next to a point mass; thus, we could simply use the earlier `Lab1_binary` directory. However, the main difference is that the star in the `Lab1_binary` directory will be a normal main sequence star and not the accretor star at the end of Lab1. To overcome this issue, we will first use the `accretor_final.mod` file and load the accretor's final profile in place of the normal main sequence star, as explained below.|
 
 
-- Download the `evolve_accretor_plus_point_mass` directory from <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">this URL</a>. You will notice that this directory is the same as `evolve_star_plus_point_mass` but with a different name.
+- Download the `evolve_accretor_plus_point_mass` directory from <a href="https://drive.google.com/drive/folders/1-ypOXDdakm_PsCxDUS6niXmAFkWx2zEm" target="_blank">this URL</a>. You will notice that this directory is the same as `evolve_star_plus_point_mass` (a variant of which was used in Lab1) but with a different name.
   
 - In this directory, open `inlist1` and there in the `\&star_jobs` region, uncomment the following lines
  ```
