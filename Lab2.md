@@ -295,14 +295,14 @@ $ ./mk
 $ ./rn
 ```
 
-Your model should terminate roughly around model number 110 and return the following stopping condition
+Your model should terminate roughly around model number 108 and return the following stopping condition
 
 ```shell-session
 ---------------------
- time spent in rl_overflow   49503.438638193809     
- Check maximum R/R_Rl   1.0405585676781244     
- check: mdot_therm, mdot_dyn   5.5202653327987236E-006   51592.908753324053     
- abs(mtransfer_rate)/mdot_th   266.09117503008014     
+ time spent in rl_overflow   53519.224932096622     
+ Check maximum R/R_Rl   1.0412387352806036     
+ check: mdot_therm, mdot_dyn   1.2608621574877103E-005   28723.606276916689     
+ abs(mtransfer_rate)/mdot_th   113.10883055244405     
  Finish simulation due to high mass transfer rate
 ```
 
@@ -378,7 +378,7 @@ end subroutine extras_binary_after_evolve
 ## Exploring a grid of mass transfer models with varying mass ratios
 To explore the stability of mass transfer across various mass ratios and orbital periods. Let's start by assuming fully conservative mass transfer, i.e. (`mass_transfer_beta = 0.0d0`).
 
-For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios `m2/m1` by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1 - 14 M_{\odot}$ and periods $P_\mathrm{orb} = 2 - 4096$ days. We've discretized this parameter space in the following two tables:
+For this lab we will keep the Primary/donor mass fixed at **`m1 = 15d0`**, do not adjust this mass. We will explore the binary evolution of our system with varying periods and mass ratios `m2/m1` by modifying `initial_period_in_days` and `m2`. We will explore the following mass range $M_{2} = 1 M_{\odot} - 14 M_{\odot}$ and periods $P_\mathrm{orb} = 2$ days - 4096 days. We've discretized this parameter space in the following two tables:
 
 | Companion (accretor) Mass ( $M_{\odot}$ ) |   
 |:------------------------|
