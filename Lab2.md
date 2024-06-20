@@ -8,7 +8,7 @@ title: Lab2
 
 # Lab2 - Exploring the Stability of Mass Transfer
 
-This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. Let's copy over the directory with a new name.
+This lab will continue using the downloaded `Lab1_binary` directory from Lab1 where we are modeling our system as a star + point mass. Let's copy over the directory with a new name or redownload it from here: [Lab1_binary](https://drive.google.com/file/d/1p7A4C0r1Be3CPxPLLIVNXZTVtVWccvze/view?usp=share_link).
 ```shell-session
 $ cp -r Lab1_binary Lab2_binary
 ```
@@ -64,6 +64,7 @@ to terminate our simulation.
 
 |:information_source: Tips|
 |:--|
+|Don't forget to remove the stopping conditions you set in lab1.|
 |Binary point parameters can be found `$MESA_DIR/binary/public/binary_data.inc`|
 |You can use the defined constant `standard_cgrav`. Compute both $$(\dot{M}_{\text{thermal}})$$ and $$(\dot{M}_{\text{dynamical}})$$ and print their values out. To convert them from cgs units to solar masses per year, you can use the constants `Msun` and `secyer`.|
 |The mass transfer rate is contained in `b%mtransfer_rate`. Bear in mind that it is defined as negative.|
