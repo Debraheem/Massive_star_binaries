@@ -299,10 +299,10 @@ Your model should terminate roughly around model number 110 and return the follo
 
 ```shell-session
 ---------------------
- time spent in rl_overflow   49503.438638193809     
- Check maximum R/R_Rl   1.0405585676781244     
- check: mdot_therm, mdot_dyn   5.5202653327987236E-006   51592.908753324053     
- abs(mtransfer_rate)/mdot_th   266.09117503008014     
+ time spent in rl_overflow   53519.224932096622     
+ Check maximum R/R_Rl   1.0412387352806036     
+ check: mdot_therm, mdot_dyn   1.2608621574877103E-005   28723.606276916689     
+ abs(mtransfer_rate)/mdot_th   113.10883055244405     
  Finish simulation due to high mass transfer rate
 ```
 
