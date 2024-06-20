@@ -271,7 +271,7 @@ Let us assume that the infalling matter has sufficient angular momentum to at le
 
 $$ \frac{dJ}{dm} = j_{\rm isco} , $$ 
 
-where $dm$ is the rest mass of the matter being accreted.
+where $dm$ is the rest mass of the matter being accreted and $j_{\rm isco}$ is the specific angular momentum of the particle at ISCO.
 Similarly, the change in $M$ is 
 
 $$ \frac{dM}{dm} = \frac{E_{\rm isco}}{c^2} , $$
