@@ -279,7 +279,7 @@ After making these changes we want to run our model to see if it triggers the co
 
 Having physical termination conditions to capture regions where MESA cannot properly model an evolutionary phase can be very valuable. It helps avoid the production of spurious results, and also avoids simulations from getting stuck into situations where timesteps become extremely small and simulations could in principle run for years without completing. This can be a big issue when running a large number of simulations in a cluster, potentially leading to a significant waste of resources. 
 
-Before running the model, adopt the following `&binary_controls` in `inlist_progject`:
+Before running the model, adopt the following `&binary_controls` in `inlist_project`:
 
 ```
    m1 = 15d0  ! donor mass in Msun
