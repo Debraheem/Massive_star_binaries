@@ -250,7 +250,7 @@ In case you were not able to make a movie, then you can access pre-made movies b
 
 ## Bonus task - Evolving the secondary alongside a black hole
 
-Although to save computation, we approximated the accretor's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. This section is devoted to that.
+Although to save computation, we at times have modeled the companion's evolution as if it was an isolated star, ideally, we would like to evolve the star in a binary system. This section is devoted to that.
 
 While initially, there would not be much difference in the evolution, once the accretor begins to expand, it might fill its Roche Lobe and initiate a phase of mass transfer on what was earlier the primary star. This will strip the secondary of its surface material and expose its inner core. Moreover, the primary star would have long disappeared, and only a compact remnant would be left behind. As such, we will approximate the primary star as a point mass, i.e., only the gravitational influence of the primary will be important to us. The primary star - which is now modeled as a _black hole_ - would feed on the mass dumped by the secondary and *would act as a source of strong electromagnetic radiation*. 
 
