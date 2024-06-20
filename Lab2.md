@@ -295,7 +295,7 @@ $ ./mk
 $ ./rn
 ```
 
-Your model should terminate roughly around model number 110 and return the following stopping condition
+Your model should terminate roughly around model number 108 and return the following stopping condition
 
 ```shell-session
 ---------------------
