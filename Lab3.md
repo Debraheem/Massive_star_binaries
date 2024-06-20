@@ -267,7 +267,7 @@ $$
 where $c, G$ is the speed of light and Newton's gravitational constant, respectively. The usefulness of this parameter is evident from the fact that for astrophysical black holes $a \in [0, 1)$ (e.g., Thorne 1974). A value of $a \geq 1$ implies the violation of the *cosmic censorship principle* (Penrose 1969).
 
 
-Let us assume that the infalling matter has sufficient AM to at least circularise outside the (innermost stable circular orbit) ISCO of the black hole from where it is directly accreted. Then the change in $J$ of the mass accreting black hole is 
+Let us assume that the infalling matter has sufficient angular momentum to at least circularise outside the (innermost stable circular orbit) ISCO of the black hole from where it is directly accreted. Then the change in $J$ of the mass accreting black hole is 
 
 $$ \frac{dJ}{dm} = j_{\rm isco} , $$ 
 
