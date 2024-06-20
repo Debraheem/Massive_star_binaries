@@ -240,7 +240,7 @@ In `extras_binary_finish_step`, add :
 
        ! check for unstable mass transfer
        mdot_th = b% m(1)/(standard_cgrav*(b% m(1))**2/(b% s1% L(1)*b% r(1)))
-       avg_rho = b% m(1)/(4d0/3d0*(b% r(1))**3)
+       avg_rho = b% m(1)/(4d0*pi/3d0*(b% r(1))**3)
        mdot_dyn = b% m(1)/(1/sqrt(standard_cgrav*avg_rho))
 
        write(*,*) "Check maximum R/R_Rl", b% xtra(2)
