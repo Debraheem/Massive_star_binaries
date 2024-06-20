@@ -37,7 +37,7 @@ Rather than attempting to approximate a common-envelope phase with MESA, we will
 
 Although there are ways to approximate a common-envelope phase with MESA, here we wish to simply construct a physical criterion to identify when an unstable mass transfer phase could start, and terminate the evolution at that stage. For this purpose, we will consider the thermal and dynamical timescales of the star:
 
-$$\tau_{\text{thermal}} = \frac{GM^2}{RL}, \quad \tau_{\text{dynamical}} = \frac{1}{G \langle \rho \rangle} $$
+$$\tau_{\text{thermal}} = \frac{GM^2}{RL}, \quad \tau_{\text{dynamical}} = \frac{1}{\sqrt{G \langle \rho \rangle}} $$
 
 From these, one can define characteristic mass transfer rates:
 
